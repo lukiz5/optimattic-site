@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimattic - Agencja automatyzacji AI</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --green: #38b76f;
+            --gray: #666;
+            --gray-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--gray-light);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-icon {
+            height: 20px;
+            width: auto;
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.75rem;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .lang-switch {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            color: var(--green);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 4rem 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--green);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 500px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 3rem;
+            left: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--green);
+            animation: scrollLine 2s ease infinite;
+        }
+
+        @keyframes scrollLine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        /* Value Section */
+        .value {
+            padding: 8rem 4rem;
+            background: var(--gray-light);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .value-left h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-left p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 450px;
+        }
+
+        .value-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .value-number {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--green);
+            min-width: 28px;
+        }
+
+        .value-item h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .value-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Build Section */
+        .build {
+          max-width: 1200px;
+          margin: 4rem auto 0;
+          padding-top: 3rem;
+          border-top: 1px solid #eaeaea;
+        }
+        .build-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          gap: 2rem;
+          margin-bottom: 1.5rem;
+        }
+        .build-head h3 {
+          font-family: 'Syne', sans-serif;
+          font-weight: 700;
+          font-size: 1.4rem;
+          letter-spacing: -0.02em;
+        }
+        .build-head p {
+          color: var(--gray);
+          max-width: 520px;
+          font-size: 0.95rem;
+        }
+        .build-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.25rem;
+        }
+        .build-card {
+          background: rgba(255, 255, 255, 0.7);
+          border: 1px solid #eaeaea;
+          border-radius: 16px;
+          padding: 1.5rem;
+        }
+        .build-label {
+          font-family: 'Syne', sans-serif;
+          font-weight: 700;
+          font-size: 0.9rem;
+          color: var(--green);
+          margin-bottom: 0.75rem;
+        }
+        .build-card h4 {
+          font-family: 'Syne', sans-serif;
+          font-weight: 600;
+          font-size: 1.05rem;
+          margin-bottom: 0.35rem;
+        }
+        .build-card p {
+          color: var(--gray);
+          font-size: 0.95rem;
+        }
+
+        /* Fit Section */
+        .fit {
+          padding: 6rem 4rem;
+          background: var(--white);
+        }
+        .fit-grid {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: start;
+        }
+        .fit-left h2 {
+          font-family: 'Syne', sans-serif;
+          font-size: clamp(1.8rem, 3vw, 2.5rem);
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          margin-bottom: 1rem;
+        }
+        .fit-left p {
+          color: var(--gray);
+          font-size: 1.05rem;
+          max-width: 420px;
+        }
+        .fit-right {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.25rem;
+        }
+        .fit-box {
+          border: 1px solid var(--gray-light);
+          border-radius: 16px;
+          padding: 1.5rem 1.5rem 1.25rem;
+          background: #fff;
+        }
+        .fit-box.muted {
+          background: #fafafa;
+        }
+        .fit-title {
+          font-family: 'Syne', sans-serif;
+          font-weight: 600;
+          font-size: 0.95rem;
+          margin-bottom: 0.75rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .fit-title::before {
+          content: '';
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--green);
+        }
+        .fit-box.muted .fit-title::before {
+          background: #999;
+        }
+        .fit-list {
+          list-style: none;
+          display: grid;
+          gap: 0.5rem;
+          color: var(--gray);
+          font-size: 0.95rem;
+          padding-left: 0;
+        }
+        .fit-list li {
+          position: relative;
+          padding-left: 1.25rem;
+        }
+        .fit-list li::before {
+          content: ' - ';
+          position: absolute;
+          left: 0;
+          color: var(--black);
+          opacity: 0.5;
+        }
+
+        /* Map Section */
+        .map {
+          padding: 6rem 4rem;
+          padding-bottom: 4rem;
+          background: var(--white);
+        }
+
+        .map-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .map-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          gap: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .map-head h2 {
+          font-family: 'Syne', sans-serif;
+          font-size: clamp(1.8rem, 3vw, 2.6rem);
+          font-weight: 700;
+          letter-spacing: -0.02em;
+        }
+
+        .map-head p {
+          color: var(--gray);
+          max-width: 520px;
+          font-size: 0.95rem;
+        }
+
+        .map-card {
+          border: 1px solid var(--gray-light);
+          border-radius: 18px;
+          padding: 1.25rem;
+          background: #fff;
+          overflow: hidden;
+        }
+
+        .map-svg {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        /* Proof Section */
+        .proof {
+            padding: 4rem 4rem 2rem;
+            background: var(--white);
+        }
+        .proof-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .proof-inner h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.25rem;
+        }
+        .proof-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .proof-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        .proof-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 4rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-sub {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(56, 183, 111, 0.1);
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+            appearance: none;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(56, 183, 111, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 1.25rem 2.5rem;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 100px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .form-status {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .form-status.ok {
+            color: var(--green);
+        }
+        .form-status.err {
+            color: #cc3b3b;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--green);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .hero {
+                padding: 6rem 2rem 4rem;
+            }
+
+            .value {
+                padding: 4rem 2rem;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .fit {
+                padding: 4rem 2rem;
+            }
+
+            .fit-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .fit-right {
+                grid-template-columns: 1fr;
+            }
+
+            .build {
+                margin-top: 3rem;
+                padding-top: 2rem;
+            }
+
+            .build-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .build-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map {
+                padding: 4rem 2rem;
+            }
+
+            .map-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .proof {
+                padding: 3rem 2rem 1.5rem;
+            }
+
+            .contact {
+                padding: 4rem 2rem;
+            }
+
+            footer {
+                padding: 2rem;
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .scroll-hint {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .nav-cta {
+                padding: 0.6rem 1.25rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Optimattic" class="logo-img">
+        </a>
+        <div class="nav-right">
+            <a href="#contact" class="nav-cta">Porozmawiajmy</a>
+            <a href="/index.html" class="lang-switch">EN</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Agencja automatyzacji AI</div>
+            <h1>Systemy AI.<br>Bez <span>chaosu</span>.</h1>
+            <p class="hero-sub">Zaprojektowane do działania, nie do demo.</p>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            Przewiń
+        </div>
+    </section>
+
+    <section class="fit">
+      <div class="fit-grid">
+        <div class="fit-left">
+          <h2>Dla kogo</h2>
+          <p>Dla firm, które chcą uporządkować operacje zamiast dokładać kolejne narzędzia.</p>
+        </div>
+        <div class="fit-right">
+          <div class="fit-box">
+            <div class="fit-title">Dobry fit</div>
+            <ul class="fit-list">
+              <li>Firmy usługowe B2B</li>
+              <li>E-commerce z powtarzalnymi procesami</li>
+              <li>Agencje i studia</li>
+              <li>Małe zespoły techniczne i SaaS</li>
+            </ul>
+          </div>
+          <div class="fit-box muted">
+            <div class="fit-title">Nie pasujemy</div>
+            <ul class="fit-list">
+              <li>Jednorazowe automatyzacje</li>
+              <li>Projekty bez wdrożenia i utrzymania</li>
+              <li>Firmy szukające promptów lub szybkich trików</li>
+              <li>Zespoły bez decyzyjności po stronie biznesu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value">
+        <div class="value-grid">
+            <div class="value-left">
+                <h2>Mniej chaosu.<br>Więcej kontroli.</h2>
+                <p>Budujemy inteligentne przepływy, które integrują się z Twoimi narzędziami - żeby Twój zespół mógł skupić się na tym, co naprawdę ważne.</p>
+            </div>
+            <div class="value-right">
+                <div class="value-item">
+                    <span class="value-number">01</span>
+                    <div>
+                        <h3>Jedno źródło logiki</h3>
+                        <p>Zamiast ręcznych decyzji rozproszonych po wielu miejscach.</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">02</span>
+                    <div>
+                        <h3>Spójne procesy</h3>
+                        <p>Które działają tak samo każdego dnia.</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">03</span>
+                    <div>
+                        <h3>Pełna kontrola</h3>
+                        <p>Automatyzacja bez utraty kontroli nad danymi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="build">
+          <div class="build-head">
+            <h3>Co faktycznie budujemy</h3>
+            <p>Niewielką liczbę systemów zaprojektowanych do codziennej pracy operacyjnej.</p>
+          </div>
+          <div class="build-grid">
+            <div class="build-card">
+              <div class="build-label">01</div>
+              <h4>Systemy AI</h4>
+              <p>Kwalifikacja leadów, research, raporty, routing, operacje wewnętrzne połączone w jeden przepływ.</p>
+            </div>
+            <div class="build-card">
+              <div class="build-label">02</div>
+              <h4>Integracje narzędzi</h4>
+              <p>CRM, e-mail, arkusze, bazy danych, Slack. Twój stack działa jak jeden system.</p>
+            </div>
+            <div class="build-card">
+              <div class="build-label">03</div>
+              <h4>Wdrożenie</h4>
+              <p>Wersjonowanie, monitoring i dokumentacja. System działa także po starcie.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="map">
+      <div class="map-inner">
+        <div class="map-head">
+          <h2>Projektujemy systemy.<br>Nie automatyzacje.</h2>
+          <p>Powtarzalna struktura stojąca za każdym wdrożeniem, zaprojektowana do codziennej pracy operacyjnej.</p>
+        </div>
+
+        <div class="map-card" aria-label="System map diagram">
+          <svg class="map-svg" viewBox="0 0 1200 340" role="img" aria-label="Inputs to AI layer to tools to outputs diagram" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#0a0a0a" opacity="0.35"></path>
+              </marker>
+            </defs>
+
+            <!-- Column titles -->
+            <text x="80" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Wejścia</text>
+            <text x="370" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Warstwa AI</text>
+            <text x="660" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Narzędzia</text>
+            <text x="950" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Rezultaty</text>
+
+            <!-- Inputs boxes -->
+            <rect x="60" y="90" width="230" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="80" y="123" font-family="Inter, sans-serif" font-size="15" fill="#666">Leady i formularze</text>
+
+            <rect x="60" y="160" width="230" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="80" y="193" font-family="Inter, sans-serif" font-size="15" fill="#666">E-maile i dokumenty</text>
+
+            <rect x="60" y="230" width="230" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="80" y="263" font-family="Inter, sans-serif" font-size="15" fill="#666">Zgłoszenia wewnętrzne</text>
+
+            <!-- AI layer box (highlight) -->
+            <rect x="340" y="120" width="260" height="160" rx="18" fill="#ffffff" stroke="#38b76f" stroke-width="2"/>
+            <text x="365" y="160" font-family="Syne, sans-serif" font-size="16" fill="#0a0a0a">Analiza i wzbogacanie</text>
+            <text x="365" y="190" font-family="Syne, sans-serif" font-size="16" fill="#0a0a0a">Reguły decyzyjne</text>
+            <text x="365" y="220" font-family="Syne, sans-serif" font-size="16" fill="#0a0a0a">Routing i automatyzacja</text>
+            <text x="365" y="250" font-family="Inter, sans-serif" font-size="14" fill="#666">monitorowane, wersjonowane</text>
+
+            <!-- Tools boxes -->
+            <rect x="630" y="90" width="250" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="650" y="123" font-family="Inter, sans-serif" font-size="15" fill="#666">CRM i bazy danych</text>
+
+            <rect x="630" y="160" width="250" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="650" y="193" font-family="Inter, sans-serif" font-size="15" fill="#666">E-mail i Slack</text>
+
+            <rect x="630" y="230" width="250" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="650" y="263" font-family="Inter, sans-serif" font-size="15" fill="#666">Arkusze i dashboardy</text>
+
+            <!-- Outputs boxes -->
+            <rect x="920" y="90" width="220" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="940" y="123" font-family="Inter, sans-serif" font-size="15" fill="#666">Leady zakwalifikowane</text>
+
+            <rect x="920" y="160" width="220" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="940" y="193" font-family="Inter, sans-serif" font-size="15" fill="#666">Raporty i briefy</text>
+
+            <rect x="920" y="230" width="220" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
+            <text x="940" y="263" font-family="Inter, sans-serif" font-size="15" fill="#666">Mniej pracy ręcznej</text>
+
+            <!-- Arrows Inputs -> AI -->
+            <line x1="290" y1="117" x2="340" y2="150" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="290" y1="187" x2="340" y2="200" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="290" y1="257" x2="340" y2="250" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+
+            <!-- Arrows AI -> Tools -->
+            <line x1="600" y1="160" x2="630" y2="117" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="600" y1="200" x2="630" y2="187" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="600" y1="240" x2="630" y2="257" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+
+            <!-- Arrows Tools -> Outputs -->
+            <line x1="880" y1="117" x2="920" y2="117" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="880" y1="187" x2="920" y2="187" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="880" y1="257" x2="920" y2="257" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+  <h2>Porozmawiajmy</h2>
+  <p class="contact-sub">Odpowiedz na 3 krótkie pytania. Wrócimy z kolejnymi krokami.</p>
+
+  <form class="contact-form" method="POST" action="https://formspree.io/f/mykjnzey">
+    <input type="hidden" name="_subject" value="Optimattic - zapytanie o system AI">
+
+    <div class="form-group">
+      <label for="name">Imię</label>
+      <input type="text" id="name" name="name" required placeholder="Twoje imię">
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required placeholder="twoj@email.com">
+    </div>
+
+    <div class="form-group">
+      <label for="companyType">Typ firmy</label>
+      <select id="companyType" name="companyType" required>
+        <option value="" disabled selected>Wybierz</option>
+        <option>Firma usługowa B2B</option>
+        <option>E-commerce</option>
+        <option>Agencja lub studio</option>
+        <option>SaaS lub zespół techniczny</option>
+        <option>Inne</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="bottleneck">Największy problem operacyjny</label>
+      <select id="bottleneck" name="bottleneck" required>
+        <option value="" disabled selected>Wybierz</option>
+        <option>Kwalifikacja leadów</option>
+        <option>Research i raportowanie</option>
+        <option>Operacje wewnętrzne</option>
+        <option>Przeciążona skrzynka lub support</option>
+        <option>Zbyt wiele narzędzi</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="volume">Skala operacji</label>
+      <select id="volume" name="volume" required>
+        <option value="" disabled selected>Wybierz</option>
+        <option>Niska (początek)</option>
+        <option>Średnia (co tydzień)</option>
+        <option>Wysoka (codziennie)</option>
+        <option>Bardzo wysoka (kilka razy dziennie)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="context">Jedno zdanie kontekstu (opcjonalnie)</label>
+      <input type="text" id="context" name="context" placeholder="np. Tracimy leady, bo odpowiadamy za wolno">
+    </div>
+
+    <button type="submit" class="submit-btn">Wyślij</button>
+    <p class="form-status" aria-live="polite"></p>
+  </form>
+</section>
+
+    <footer>
+        <div class="footer-left">
+            <img src="favicon.png" alt="Optimattic" class="footer-icon">
+            <span class="footer-text">© 2025 Optimattic</span>
+        </div>
+        <div class="footer-links">
+            <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Formspree form handling
+        document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const form = this;
+          const btn = form.querySelector('.submit-btn');
+          const statusEl = form.querySelector('.form-status');
+          const originalText = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = 'Wysyłanie...';
+          if (statusEl) {
+            statusEl.className = 'form-status';
+            statusEl.textContent = '';
+          }
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              if (statusEl) {
+                statusEl.classList.add('ok');
+                statusEl.textContent = 'Dziękujemy. Wrócimy wkrótce z odpowiedzią.';
+              }
+              form.reset();
+            } else {
+              if (statusEl) {
+                statusEl.classList.add('err');
+                statusEl.textContent = 'Coś poszło nie tak. Napisz na hello@optimattic.com.';
+              }
+            }
+          } catch (err) {
+            if (statusEl) {
+              statusEl.classList.add('err');
+              statusEl.textContent = 'Błąd połączenia. Napisz na hello@optimattic.com.';
+            }
+          } finally {
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }
+        });
+    </script>
+</body>
+</html>
