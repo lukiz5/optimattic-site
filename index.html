@@ -90,6 +90,27 @@
             transform: translateY(-2px);
         }
 
+        .lang-switch {
+            font-size: 0.9rem;
+            color: #777;
+            text-decoration: none;
+            padding: 0.35rem 0.55rem;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch:hover {
+            border-color: #dcdcdc;
+            color: #111;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -728,9 +749,10 @@
         <a href="#" class="logo">
             <img src="logo.png" alt="Optimattic" class="logo-img">
         </a>
-        <a href="#contact" class="nav-cta">Let's talk</a>
-        <a href="/pl.html" class="lang-switch">PL</a>
-  </div>
+        <div class="nav-right">
+            <a href="#contact" class="nav-cta">Let's talk</a>
+            <a href="/pl.html" class="lang-switch">PL</a>
+        </div>
     </nav>
 
     <section class="hero">
