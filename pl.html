@@ -872,15 +872,13 @@
             .diagram-scroll svg {
                 min-width: 860px;
             }
-            #navbar .nav-cta .cta-mobile { display: none !important; }
-#navbar .nav-cta .cta-desktop { display: inline !important; }
+        }
+        #navbar .nav-cta .cta-mobile { display: none; }
+        #navbar .nav-cta .cta-desktop { display: inline; }
 
-@media (max-width: 700px) {
-  #navbar .nav-cta .cta-desktop { display: none !important; }
-  #navbar .nav-cta .cta-mobile { display: inline !important; }
-}
-
-
+        @media (max-width: 700px) {
+            #navbar .nav-cta .cta-desktop { display: none; }
+            #navbar .nav-cta .cta-mobile { display: inline; }
         }
     </style>
 </head>
@@ -1188,11 +1186,11 @@
             <span class="footer-text">© 2025 Optimattic</span>
         </div>
         <div class="footer-links">
-            <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+            <a href="/cdn-cgi/l/email-protection#4d25282121220d223d3924202c3939242e632e2220"><span class="__cf_email__" data-cfemail="167e737a7a79567966627f7b7762627f753875797b">[email&#160;protected]</span></a>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1237,13 +1235,4 @@
           } catch (err) {
             if (statusEl) {
               statusEl.classList.add('err');
-              statusEl.textContent = 'Błąd połączenia. Napisz na hello@optimattic.com.';
-            }
-          } finally {
-            btn.disabled = false;
-            btn.textContent = originalText;
-          }
-        });
-    </script>
-</body>
-</html>
+              st
