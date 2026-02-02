@@ -169,12 +169,14 @@
             font-family: 'Syne', sans-serif;
             font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 800;
-            line-height: 1.05;
+            line-height: 0.95;
             letter-spacing: -0.03em;
             margin-bottom: 2rem;
             opacity: 0;
             animation: fadeUp 0.8s ease forwards;
             animation-delay: 0.4s;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
         }
 
         .hero h1 span {
@@ -764,6 +766,56 @@
             }
         }
 
+        .diagram-mobile { display: none; }
+        .diagram-desktop { display: block; }
+
+        .diagram-mobile {
+          margin-top: 18px;
+        }
+
+        .flow-step {
+          background: #fff;
+          border: 1px solid #f0f0f0;
+          border-radius: 18px;
+          padding: 14px 14px 12px;
+        }
+
+        .flow-title {
+          font-weight: 600;
+          font-size: 1rem;
+          margin-bottom: 8px;
+          letter-spacing: -0.01em;
+        }
+
+        .flow-list {
+          margin: 0;
+          padding-left: 18px;
+          color: #666;
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        .flow-arrow {
+          width: 10px;
+          height: 10px;
+          border-right: 2px solid #d8d8d8;
+          border-bottom: 2px solid #d8d8d8;
+          transform: rotate(45deg);
+          margin: 12px auto;
+          opacity: 0.9;
+        }
+
+        @media (max-width: 700px) {
+            .diagram-desktop { display: none; }
+            .diagram-mobile { display: block; }
+
+            .hero h1 {
+                line-height: 1.0;
+                padding-right: 2px;
+                transform: none;
+            }
+        }
+
         @media (max-width: 600px) {
             #navbar {
                 padding-left: 16px;
@@ -915,6 +967,7 @@
           <p>Powtarzalna struktura stojąca za każdym wdrożeniem, zaprojektowana do codziennej pracy operacyjnej.</p>
         </div>
 
+        <div class="diagram-desktop">
         <div class="diagram-card">
           <div class="diagram-scroll" aria-label="System diagram">
           <svg class="map-svg" viewBox="0 0 1200 340" role="img" aria-label="Inputs to AI layer to tools to outputs diagram" xmlns="http://www.w3.org/2000/svg">
@@ -982,6 +1035,52 @@
             <line x1="880" y1="187" x2="920" y2="187" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
             <line x1="880" y1="257" x2="920" y2="257" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
           </svg>
+          </div>
+        </div>
+        </div>
+
+        <div class="diagram-mobile" aria-label="System flow">
+          <div class="flow-step">
+            <div class="flow-title">Wejścia</div>
+            <ul class="flow-list">
+              <li>Leady i formularze</li>
+              <li>E-maile i dokumenty</li>
+              <li>Zgłoszenia wewnętrzne</li>
+            </ul>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true"></div>
+
+          <div class="flow-step">
+            <div class="flow-title">Warstwa AI</div>
+            <ul class="flow-list">
+              <li>Analiza i wzbogacanie</li>
+              <li>Reguły decyzyjne</li>
+              <li>Routing i automatyzacja</li>
+              <li>monitorowane, wersjonowane</li>
+            </ul>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true"></div>
+
+          <div class="flow-step">
+            <div class="flow-title">Narzędzia</div>
+            <ul class="flow-list">
+              <li>CRM i bazy danych</li>
+              <li>E-mail i Slack</li>
+              <li>Arkusze i dashboardy</li>
+            </ul>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true"></div>
+
+          <div class="flow-step">
+            <div class="flow-title">Rezultaty</div>
+            <ul class="flow-list">
+              <li>Leady zakwalifikowane</li>
+              <li>Raporty i briefy</li>
+              <li>Mniej pracy ręcznej</li>
+            </ul>
           </div>
         </div>
       </div>
