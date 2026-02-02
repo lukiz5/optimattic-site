@@ -809,10 +809,19 @@
             .diagram-desktop { display: none; }
             .diagram-mobile { display: block; }
 
+            .hero,
+            .hero .hero-content,
+            .hero h1 {
+                overflow: visible !important;
+            }
+
             .hero h1 {
                 line-height: 1.0;
-                padding-right: 2px;
-                transform: none;
+                display: inline-block;
+                padding-right: 0.08em;
+                -webkit-text-stroke: 0.01px transparent;
+                text-rendering: geometricPrecision;
+                transform: none !important;
             }
         }
 
