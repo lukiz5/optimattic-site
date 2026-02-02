@@ -872,6 +872,13 @@
             .diagram-scroll svg {
                 min-width: 860px;
             }
+            .cta-mobile { display: none; }
+
+@media (max-width: 700px) {
+  .cta-desktop { display: none; }
+  .cta-mobile { display: inline; }
+}
+
         }
     </style>
 </head>
@@ -881,7 +888,10 @@
             <img src="logo.png" alt="Optimattic" class="logo-img">
         </a>
         <div class="nav-right">
-            <a href="#contact" class="nav-cta">Porozmawiajmy</a>
+            <a href="#contact" class="nav-cta">
+  <span class="cta-desktop">Porozmawiajmy</span>
+  <span class="cta-mobile">Kontakt</span>
+</a>
             <a href="/index.html" class="lang-switch">EN</a>
         </div>
     </nav>
