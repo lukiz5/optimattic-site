@@ -872,12 +872,14 @@
             .diagram-scroll svg {
                 min-width: 860px;
             }
-            .cta-mobile { display: none; }
+            #navbar .nav-cta .cta-mobile { display: none !important; }
+#navbar .nav-cta .cta-desktop { display: inline !important; }
 
 @media (max-width: 700px) {
-  .cta-desktop { display: none; }
-  .cta-mobile { display: inline; }
+  #navbar .nav-cta .cta-desktop { display: none !important; }
+  #navbar .nav-cta .cta-mobile { display: inline !important; }
 }
+
 
         }
     </style>
