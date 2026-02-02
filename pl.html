@@ -167,7 +167,7 @@
 
         .hero h1 {
             font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 8vw, 6rem);
             font-weight: 800;
             line-height: 0.95;
             letter-spacing: -0.03em;
@@ -809,10 +809,19 @@
             .diagram-desktop { display: none; }
             .diagram-mobile { display: block; }
 
+            .hero,
+            .hero .hero-content {
+                overflow: visible !important;
+            }
+
             .hero h1 {
                 line-height: 1.0;
-                padding-right: 2px;
-                transform: none;
+                display: block;
+                max-width: 100%;
+                padding-right: 0.08em;
+                -webkit-text-stroke: 0.01px transparent;
+                text-rendering: geometricPrecision;
+                transform: none !important;
             }
         }
 
