@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Optimattic - Agencja automatyzacji AI</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,14 @@
             box-sizing: border-box;
         }
 
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -32,7 +38,13 @@
             background: var(--white);
             color: var(--black);
             line-height: 1.6;
+            width: 100%;
             overflow-x: hidden;
+        }
+
+        img, svg, video, canvas {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Navigation */
@@ -91,22 +103,24 @@
         }
 
         .lang-switch {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gray);
+            font-size: 0.9rem;
+            color: #777;
             text-decoration: none;
-            margin-left: 1.5rem;
-            transition: color 0.3s ease;
+            padding: 0.35rem 0.55rem;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            transition: all 0.2s ease;
         }
 
         .lang-switch:hover {
-            color: var(--green);
+            border-color: #dcdcdc;
+            color: #111;
         }
 
         .nav-right {
             display: flex;
             align-items: center;
+            gap: 14px;
         }
 
         /* Hero Section */
@@ -469,6 +483,26 @@
           display: block;
         }
 
+        .diagram-card {
+          background: #fff;
+          border: 1px solid #f0f0f0;
+          border-radius: 20px;
+          padding: 16px;
+        }
+
+        .diagram-scroll {
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 10px;
+        }
+
+        .diagram-scroll svg {
+          display: block;
+          height: auto;
+          min-width: 760px;
+        }
+
         /* Proof Section */
         .proof {
             padding: 4rem 4rem 2rem;
@@ -731,13 +765,38 @@
         }
 
         @media (max-width: 600px) {
+            #navbar {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .nav-right {
+                gap: 10px;
+            }
+
+            .nav-cta {
+                padding: 0.7rem 1rem;
+                font-size: 0.8rem;
+                border-radius: 999px;
+                white-space: nowrap;
+            }
+
+            .lang-switch {
+                padding: 0.45rem 0.6rem;
+                border-radius: 12px;
+            }
+
             .logo-text {
                 font-size: 1rem;
             }
 
-            .nav-cta {
-                padding: 0.6rem 1.25rem;
-                font-size: 0.8rem;
+            .diagram-card {
+                padding: 12px;
+                border-radius: 18px;
+            }
+
+            .diagram-scroll svg {
+                min-width: 860px;
             }
         }
     </style>
@@ -856,7 +915,8 @@
           <p>Powtarzalna struktura stojąca za każdym wdrożeniem, zaprojektowana do codziennej pracy operacyjnej.</p>
         </div>
 
-        <div class="map-card" aria-label="System map diagram">
+        <div class="diagram-card">
+          <div class="diagram-scroll" aria-label="System diagram">
           <svg class="map-svg" viewBox="0 0 1200 340" role="img" aria-label="Inputs to AI layer to tools to outputs diagram" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
@@ -922,6 +982,7 @@
             <line x1="880" y1="187" x2="920" y2="187" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
             <line x1="880" y1="257" x2="920" y2="257" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
           </svg>
+          </div>
         </div>
       </div>
     </section>
