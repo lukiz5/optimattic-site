@@ -1236,4 +1236,15 @@
           } catch (err) {
             if (statusEl) {
               statusEl.classList.add('err');
-              st
+              statusEl.textContent = 'Coś poszło nie tak. Napisz na hello@optimattic.com.';
+            }
+          } finally {
+            if (btn) {
+              btn.disabled = false;
+              btn.textContent = originalText;
+            }
+          }
+        });
+    </script>
+</body>
+</html>
