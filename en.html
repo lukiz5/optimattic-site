@@ -1,1238 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Optimattic  -  AI Automation Agency</title>
-    <link rel="canonical" href="https://optimattic.com/en.html">
-
-<link rel="alternate" hreflang="en" href="https://optimattic.com/en.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Optimattic - Meta ads and sales measurement</title>
+<meta name="description" content="Meta ads and sales measurement for subscription businesses and creators selling their own product.">
+<link rel="canonical" href="https://optimattic.com/en.html">
+<meta property="og:image" content="https://optimattic.com/logo.png">
+<meta name="twitter:card" content="summary">
 <link rel="alternate" hreflang="pl" href="https://optimattic.com/">
+<link rel="alternate" hreflang="en" href="https://optimattic.com/en.html">
 <link rel="alternate" hreflang="x-default" href="https://optimattic.com/">
 
-<meta name="description" content="AI systems for operations. Fewer manual tasks, more control.">
-
-<meta property="og:title" content="Optimattic — AI Systems">
-<meta property="og:description" content="We design AI systems, not one-off automations.">
+<meta property="og:title" content="You know what you spend. See what comes back.">
+<meta property="og:description" content="99 purchases according to Meta. 22 confirmed by payment.">
 <meta property="og:url" content="https://optimattic.com/en.html">
 <meta property="og:type" content="website">
-
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --white: #ffffff;
-            --black: #0a0a0a;
-            --green: #38b76f;
-            --gray: #666;
-            --gray-light: #f5f5f5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--white);
-            color: var(--black);
-            line-height: 1.6;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        img, svg, video, canvas {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        nav.scrolled {
-            border-bottom-color: var(--gray-light);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            height: 32px;
-            width: auto;
-        }
-
-        .footer-icon {
-            height: 20px;
-            width: auto;
-        }
-
-        .nav-cta {
-            padding: 0.75rem 1.75rem;
-            background: var(--black);
-            color: var(--white);
-            text-decoration: none;
-            font-family: 'Syne', sans-serif;
-            font-weight: 500;
-            font-size: 0.9rem;
-            border-radius: 100px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--green);
-            transform: translateY(-2px);
-        }
-
-        .lang-switch {
-            font-size: 0.9rem;
-            color: #777;
-            text-decoration: none;
-            padding: 0.35rem 0.55rem;
-            border-radius: 8px;
-            border: 1px solid #eaeaea;
-            transition: all 0.2s ease;
-        }
-
-        .lang-switch:hover {
-            border-color: #dcdcdc;
-            color: #111;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 8rem 4rem 4rem;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Syne', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--green);
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
-            animation-delay: 0.2s;
-        }
-
-        .hero-tag::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s ease infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .hero h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 800;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
-            animation-delay: 0.4s;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: geometricPrecision;
-        }
-
-        .hero h1 span {
-            color: var(--green);
-        }
-
-        .hero-sub {
-            font-size: 1.25rem;
-            color: var(--gray);
-            max-width: 500px;
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
-            animation-delay: 0.6s;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 3rem;
-            left: 4rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
-            color: var(--gray);
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
-            animation-delay: 1s;
-        }
-
-        .scroll-line {
-            width: 40px;
-            height: 1px;
-            background: var(--gray);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .scroll-line::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--green);
-            animation: scrollLine 2s ease infinite;
-        }
-
-        @keyframes scrollLine {
-            0% { left: -100%; }
-            50% { left: 100%; }
-            100% { left: 100%; }
-        }
-
-        /* Value Section */
-        .value {
-            padding: 8rem 4rem;
-            background: var(--gray-light);
-        }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .value-left h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
-
-        .value-left p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            max-width: 450px;
-        }
-
-        .value-right {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .value-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .value-number {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--green);
-            min-width: 28px;
-        }
-
-        .value-item h3 {
-            font-family: 'Syne', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .value-item p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        /* Build Section */
-        .build {
-          max-width: 1200px;
-          margin: 4rem auto 0;
-          padding-top: 3rem;
-          border-top: 1px solid #eaeaea;
-        }
-        .build-head {
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          gap: 2rem;
-          margin-bottom: 1.5rem;
-        }
-        .build-head h3 {
-          font-family: 'Syne', sans-serif;
-          font-weight: 700;
-          font-size: 1.4rem;
-          letter-spacing: -0.02em;
-        }
-        .build-head p {
-          color: var(--gray);
-          max-width: 520px;
-          font-size: 0.95rem;
-        }
-        .build-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1.25rem;
-        }
-        .build-card {
-          background: rgba(255, 255, 255, 0.7);
-          border: 1px solid #eaeaea;
-          border-radius: 16px;
-          padding: 1.5rem;
-        }
-        .build-label {
-          font-family: 'Syne', sans-serif;
-          font-weight: 700;
-          font-size: 0.9rem;
-          color: var(--green);
-          margin-bottom: 0.75rem;
-        }
-        .build-card h4 {
-          font-family: 'Syne', sans-serif;
-          font-weight: 600;
-          font-size: 1.05rem;
-          margin-bottom: 0.35rem;
-        }
-        .build-card p {
-          color: var(--gray);
-          font-size: 0.95rem;
-        }
-
-        /* Fit Section */
-        .fit {
-          padding: 6rem 4rem;
-          background: var(--white);
-        }
-        .fit-grid {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-          align-items: start;
-        }
-        .fit-left h2 {
-          font-family: 'Syne', sans-serif;
-          font-size: clamp(1.8rem, 3vw, 2.5rem);
-          font-weight: 700;
-          line-height: 1.2;
-          letter-spacing: -0.02em;
-          margin-bottom: 1rem;
-        }
-        .fit-left p {
-          color: var(--gray);
-          font-size: 1.05rem;
-          max-width: 420px;
-        }
-        .fit-right {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1.25rem;
-        }
-        .fit-box {
-          border: 1px solid var(--gray-light);
-          border-radius: 16px;
-          padding: 1.5rem 1.5rem 1.25rem;
-          background: #fff;
-        }
-        .fit-box.muted {
-          background: #fafafa;
-        }
-        .fit-title {
-          font-family: 'Syne', sans-serif;
-          font-weight: 600;
-          font-size: 0.95rem;
-          margin-bottom: 0.75rem;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-        .fit-title::before {
-          content: '';
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: var(--green);
-        }
-        .fit-box.muted .fit-title::before {
-          background: #999;
-        }
-        .fit-list {
-          list-style: none;
-          display: grid;
-          gap: 0.5rem;
-          color: var(--gray);
-          font-size: 0.95rem;
-          padding-left: 0;
-        }
-        .fit-list li {
-          position: relative;
-          padding-left: 1.25rem;
-        }
-        .fit-list li::before {
-          content: ' - ';
-          position: absolute;
-          left: 0;
-          color: var(--black);
-          opacity: 0.5;
-        }
-
-        /* Map Section */
-        .map {
-          padding: 6rem 4rem;
-          padding-bottom: 4rem;
-          background: var(--white);
-        }
-
-        .map-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .map-head {
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          gap: 2rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .map-head h2 {
-          font-family: 'Syne', sans-serif;
-          font-size: clamp(1.8rem, 3vw, 2.6rem);
-          font-weight: 700;
-          letter-spacing: -0.02em;
-        }
-
-        .map-head p {
-          color: var(--gray);
-          max-width: 520px;
-          font-size: 0.95rem;
-        }
-
-        .map-card {
-          border: 1px solid var(--gray-light);
-          border-radius: 18px;
-          padding: 1.25rem;
-          background: #fff;
-          overflow: hidden;
-        }
-
-        .map-svg {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-
-        .diagram-card {
-          background: #fff;
-          border: 1px solid #f0f0f0;
-          border-radius: 20px;
-          padding: 16px;
-        }
-
-        .diagram-scroll {
-          width: 100%;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 10px;
-        }
-
-        .diagram-scroll svg {
-          display: block;
-          height: auto;
-          min-width: 760px;
-        }
-
-        /* Proof Section */
-        .proof {
-            padding: 4rem 4rem 2rem;
-            background: var(--white);
-        }
-        .proof-inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .proof-inner h3 {
-            font-family: 'Syne', sans-serif;
-            font-weight: 600;
-            font-size: 1.25rem;
-            letter-spacing: -0.01em;
-            margin-bottom: 1.25rem;
-        }
-        .proof-grid {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .proof-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-        .proof-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--green);
-            margin-top: 0.5rem;
-            flex-shrink: 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 4rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .contact-sub {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 3rem;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            font-family: 'Syne', sans-serif;
-            font-weight: 500;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-            color: var(--black);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: var(--white);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(56, 183, 111, 0.1);
-        }
-
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: var(--white);
-            appearance: none;
-        }
-
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(56, 183, 111, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            padding: 1.25rem 2.5rem;
-            background: var(--black);
-            color: var(--white);
-            border: none;
-            border-radius: 100px;
-            font-family: 'Syne', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .submit-btn:hover {
-            background: var(--green);
-            transform: translateY(-2px);
-        }
-
-        .form-status {
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        .form-status.ok {
-            color: var(--green);
-        }
-        .form-status.err {
-            color: #cc3b3b;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 4rem;
-            border-top: 1px solid var(--gray-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-text {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--green);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 900px) {
-            nav {
-                padding: 1rem 2rem;
-            }
-
-            .hero {
-                padding: 6rem 2rem 4rem;
-            }
-
-            .value {
-                padding: 4rem 2rem;
-            }
-
-            .value-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .fit {
-                padding: 4rem 2rem;
-            }
-
-            .fit-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .fit-right {
-                grid-template-columns: 1fr;
-            }
-
-            .build {
-                margin-top: 3rem;
-                padding-top: 2rem;
-            }
-
-            .build-head {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .build-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .map {
-                padding: 4rem 2rem;
-            }
-
-            .map-head {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .proof {
-                padding: 3rem 2rem 1.5rem;
-            }
-
-            .contact {
-                padding: 4rem 2rem;
-            }
-
-            footer {
-                padding: 2rem;
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-
-            .scroll-hint {
-                display: none;
-            }
-        }
-
-        .diagram-mobile { display: none; }
-        .diagram-desktop { display: block; }
-
-        .diagram-mobile {
-          margin-top: 18px;
-        }
-
-        .flow-step {
-          background: #fff;
-          border: 1px solid #f0f0f0;
-          border-radius: 18px;
-          padding: 14px 14px 12px;
-        }
-
-        .flow-title {
-          font-weight: 600;
-          font-size: 1rem;
-          margin-bottom: 8px;
-          letter-spacing: -0.01em;
-        }
-
-        .flow-list {
-          margin: 0;
-          padding-left: 18px;
-          color: #666;
-          font-size: 0.95rem;
-          line-height: 1.5;
-        }
-
-        .flow-arrow {
-          width: 10px;
-          height: 10px;
-          border-right: 2px solid #d8d8d8;
-          border-bottom: 2px solid #d8d8d8;
-          transform: rotate(45deg);
-          margin: 12px auto;
-          opacity: 0.9;
-        }
-
-        @media (max-width: 700px) {
-            .diagram-desktop { display: none; }
-            .diagram-mobile { display: block; }
-
-            .hero,
-            .hero .hero-content {
-                overflow: visible !important;
-            }
-
-            .hero h1 {
-                line-height: 1.0;
-                display: block;
-                max-width: 100%;
-                padding-right: 0.08em;
-                -webkit-text-stroke: 0.01px transparent;
-                text-rendering: geometricPrecision;
-                transform: none !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #navbar {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            .nav-right {
-                gap: 10px;
-            }
-
-            .nav-cta {
-                padding: 0.7rem 1rem;
-                font-size: 0.8rem;
-                border-radius: 999px;
-                white-space: nowrap;
-            }
-
-            .lang-switch {
-                padding: 0.45rem 0.6rem;
-                border-radius: 12px;
-            }
-
-            .logo-text {
-                font-size: 1rem;
-            }
-
-            .diagram-card {
-                padding: 12px;
-                border-radius: 18px;
-            }
-
-            .diagram-scroll svg {
-                min-width: 860px;
-            }
-        }
-    </style>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0A0A0A; --green:#38B76F; --mint:#E8F5ED; --mint-light:#F0FAF4;
+  --gray:#666666; --gray-light:#F5F5F5; --white:#FFFFFF; --border:#E0E0E0;
+  --pad:clamp(20px,5vw,80px); --max:1240px;
+  --dense:clamp(56px,8vw,96px); --quiet:clamp(96px,16vw,220px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',system-ui,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:'Syne',sans-serif;margin:0;letter-spacing:-.04em}
+p,ul,ol{margin:0}
+::selection{background:var(--mint)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--black);color:var(--white);padding:12px 20px;z-index:100}
+.skip:focus{left:8px;top:8px}
+
+/* ---------- type scale (3 steps only) ---------- */
+.t-display{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,calc((100vw - 2*var(--pad))/9.9),6.8rem);line-height:.86;letter-spacing:-.05em;overflow-wrap:break-word}
+.t-head{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(2rem,6vw,4rem);line-height:.98;letter-spacing:-.04em}
+.t-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;line-height:1.25;letter-spacing:-.02em}
+.lead{font-size:clamp(1.1rem,2.4vw,1.4rem);line-height:1.5;max-width:46ch;text-wrap:pretty}
+.muted{color:var(--gray)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:13px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.dense{padding-top:var(--dense);padding-bottom:var(--dense)}
+.quiet{padding-top:var(--quiet);padding-bottom:var(--quiet)}
+.band-gray{background:var(--gray-light)}
+.grid-3{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.grid-3>*{background:var(--white);padding:clamp(24px,3.2vw,36px)}
+.split{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+.nav img{height:26px;width:auto}
+.nav__right{display:flex;align-items:center;gap:8px}
+.lang{display:inline-flex;align-items:center;justify-content:center;height:44px;min-width:44px;padding:0 12px;
+  border:1px solid var(--border);border-radius:100px;color:var(--gray);text-decoration:none;font-size:14px;font-weight:500;
+  transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.lang:hover{color:var(--black);transform:translateY(-1px)}
+
+/* ---------- buttons (one motion pattern: translateY + opacity) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 34px;border:1px solid var(--black);
+  border-radius:100px;background:var(--black);color:var(--white);text-decoration:none;cursor:pointer;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:16px;
+  transition:transform .25s var(--ease),opacity .25s var(--ease),background-color .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--black);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn--sm{height:44px;padding:0 20px;font-size:14px}
+.btn--ghost{background:transparent;color:var(--black);border-color:var(--border)}
+.btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
+.btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
+.btn--onDark:hover{background:var(--white);border-color:var(--white);color:var(--black)}
+.btn--outlineDark{background:transparent;color:var(--white);border-color:#3a3a3a}
+.btn--outlineDark:hover{background:transparent;color:var(--white);border-color:var(--white)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.textlink{display:inline-flex;align-items:center;gap:8px;color:var(--black);text-decoration:none;font-family:'Syne',sans-serif;
+  font-weight:700;font-size:15px;border-bottom:2px solid var(--green);padding-bottom:3px;
+  transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.textlink:hover{transform:translateY(-2px)}
+.textlink--onDark{color:var(--white)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(64px,14vw,180px);padding-bottom:clamp(56px,10vw,140px)}
+.hero .eyebrow{margin-bottom:clamp(28px,5vw,52px)}
+.hero h1{max-width:13ch;margin-bottom:clamp(28px,5vw,48px)}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .lead{margin-bottom:clamp(32px,5vw,52px)}
+
+/* ---------- SIGNATURE MOMENT ---------- */
+.signal{background:var(--black);color:var(--white);padding-top:clamp(72px,11vw,132px);padding-bottom:clamp(72px,11vw,132px)}
+.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px)}
+.signal__row{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:end;margin-bottom:clamp(40px,6vw,64px)}
+@media (min-width:760px){.signal__row{grid-template-columns:auto auto 1fr;gap:clamp(32px,5vw,72px)}}
+.signal__row>span{display:block}
+.signal__num{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(5rem,18vw,13rem);line-height:.78;letter-spacing:-.06em;
+  font-variant-numeric:tabular-nums}
+.signal__num--kept{color:var(--green)}
+.signal__label{display:block;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--white);margin-top:14px;max-width:20ch}
+.signal__minus{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--green);
+  letter-spacing:-.03em;padding-bottom:clamp(8px,2vw,22px);white-space:nowrap}
+.dots{display:grid;grid-template-columns:repeat(11,1fr);gap:clamp(6px,1.4vw,14px);max-width:640px;margin-bottom:clamp(32px,5vw,48px)}
+.dot{aspect-ratio:1;border-radius:50%;background:var(--green);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i)*7ms)}
+.dot--lost{opacity:.14;transform:scale(.4)}
+.signal__note{color:var(--border);font-size:1rem;max-width:52ch}
+/* JS start state - page without JS shows the end state */
+.signal.is-armed .dot--lost{opacity:1;transform:scale(1)}
+.signal.is-armed .signal__kept,.signal.is-armed .signal__minus{opacity:0;transform:translateY(10px)}
+.signal__kept,.signal__minus{transition:opacity .5s var(--ease) .35s,transform .5s var(--ease) .35s}
+@media (prefers-reduced-motion:reduce){
+  .dot,.signal__kept,.signal__minus,.reveal{transition:none!important}
+  .signal.is-armed .dot--lost{opacity:.14;transform:scale(.4)}
+  .signal.is-armed .signal__kept,.signal.is-armed .signal__minus{opacity:1;transform:none}
+}
+
+/* ---------- reveal (single pattern, whole page) ---------- */
+.reveal{transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .reveal.is-armed{opacity:0;transform:translateY(14px)}
+
+/* ---------- statement ---------- */
+.statement{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,3rem);line-height:1.06;
+  letter-spacing:-.035em;max-width:20ch}
+.statement em{font-style:normal;color:var(--green)}
+
+/* ---------- cards + lists ---------- */
+.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--green);margin-bottom:20px;letter-spacing:.08em}
+.card .t-sub{margin-bottom:10px}
+.card p{color:var(--gray);font-size:.98rem;margin-bottom:20px}
+.card--mint{background:var(--mint-light)!important}
+.list{list-style:none;padding:0;display:grid;gap:11px}
+.list li{display:grid;grid-template-columns:15px 1fr;gap:11px;align-items:start;font-size:.98rem}
+.list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:8px}
+.list--muted li{color:var(--gray)}
+.list--muted li::before{width:9px;height:1px;border-radius:0;background:var(--gray);margin-top:12px}
+.list--lg li{font-size:1.05rem}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;padding:0}
+.steps li{display:grid;grid-template-columns:48px 1fr;gap:clamp(14px,3vw,40px);padding:26px 0;border-top:1px solid var(--border)}
+.steps li:last-child{border-bottom:1px solid var(--border)}
+.steps__num{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--green)}
+.steps h3{margin-bottom:6px}
+.steps p{color:var(--gray);font-size:.98rem;max-width:56ch}
+
+/* ---------- form ---------- */
+.form{display:grid;gap:18px;max-width:660px}
+@media (min-width:720px){.form{grid-template-columns:1fr 1fr}.form .field--full,.form .form-foot{grid-column:1/-1}}
+.field{display:grid;gap:8px}
+.field label{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--border);border-radius:12px;background:var(--white);
+  color:var(--black);font-family:'Inter',sans-serif;font-size:16px;
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.field input,.field select{height:56px;padding:0 16px}
+.field select{appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--black) 50%),linear-gradient(135deg,var(--black) 50%,transparent 50%);
+  background-position:calc(100% - 21px) 25px,calc(100% - 16px) 25px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.field textarea{padding:15px 16px;min-height:112px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--mint)}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.form-status{font-size:14px;color:var(--gray);margin:0}
+.form-status.ok{color:var(--green)}
+.form-status.err{color:var(--black);font-weight:500}
+
+/* ---------- CTA band ---------- */
+.cta{background:var(--black);color:var(--white);border-radius:22px;padding:clamp(32px,6vw,64px);
+  display:grid;gap:clamp(24px,4vw,48px);grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:center}
+.cta p{color:var(--border);max-width:38ch}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--border);padding:36px var(--pad);display:flex;flex-wrap:wrap;gap:18px;
+  justify-content:space-between;align-items:center;max-width:var(--max);margin:0 auto}
+.footer__brand{display:flex;align-items:center;gap:10px}
+.footer img{height:18px}
+.footer span,.footer a{font-size:14px;color:var(--gray)}
+.footer a{text-decoration:none;transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.footer a:hover{color:var(--black)}
+.footer__links{display:flex;flex-wrap:wrap;gap:22px}
+
+@media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
+
+/* ---------- fork (moment wyboru) ---------- */
+.fork{position:relative}
+.fork__stem{width:2px;height:44px;background:var(--border);margin:0 0 0 22px}
+.fork__paths{display:grid;gap:24px;grid-template-columns:1fr}
+.fork__path{position:relative;padding:26px 26px 26px 26px;border:1px solid var(--border);border-radius:18px;background:var(--white)}
+.fork__path::before{content:'';position:absolute;left:22px;top:-24px;width:2px;height:24px;background:var(--border)}
+.fork__path--b::before{background:var(--green)}
+.fork__node{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+  background:var(--black);color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:14px;margin-bottom:16px}
+.fork__path--b .fork__node{background:var(--green);color:var(--black)}
+@media (min-width:820px){
+  .fork__stem{margin:0 auto;height:56px}
+  .fork__paths{grid-template-columns:1fr 1fr;gap:64px;position:relative}
+  .fork__paths::before{content:'';position:absolute;top:-28px;left:25%;right:25%;height:2px;background:var(--border)}
+  .fork__path{padding:34px}
+  .fork__path::before{left:50%;transform:translateX(-50%);top:-28px;height:28px}
+}
+</style>
 </head>
 <body>
-    <nav id="navbar">
-        <a href="#" class="logo">
-            <img src="logo.png" alt="Optimattic" class="logo-img">
-        </a>
-        <div class="nav-right">
-            <a href="#contact" class="nav-cta">Let's talk</a>
-            <a href="/" class="lang-switch">PL</a>
-        </div>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <a href="index.html" aria-label="Optimattic - home"><img src="logo.png" alt="Optimattic"></a>
+  <div class="nav__right">
+    <a class="btn btn--sm" href="#kontakt">Let's talk</a>
+    <a class="lang" href="index.html" hreflang="pl" aria-label="Wersja polska">PL</a>
+  </div>
+</header>
+<main id="main">
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-tag">AI Automation Agency</div>
-            <h1>We automate.<br>You <span>grow</span>.</h1>
-            <p class="hero-sub">Custom AI systems that handle the work you shouldn't be doing manually.</p>
-        </div>
-        <div class="scroll-hint">
-            <div class="scroll-line"></div>
-            Scroll
-        </div>
-    </section>
-
-    <section class="fit">
-      <div class="fit-grid">
-        <div class="fit-left">
-          <h2>Built for teams with real operational load.</h2>
-          <p>If you already feel the bottlenecks daily, we can turn them into systems.</p>
-        </div>
-        <div class="fit-right">
-          <div class="fit-box">
-            <div class="fit-title">Best fit</div>
-            <ul class="fit-list">
-              <li>Teams 5–50 people</li>
-              <li>High volume leads, ops, or support</li>
-              <li>Multiple tools that don't talk to each other</li>
-              <li>Clear owners and decision-making</li>
-            </ul>
-          </div>
-          <div class="fit-box muted">
-            <div class="fit-title">Not a fit</div>
-            <ul class="fit-list">
-              <li>Solo projects and "just exploring AI"</li>
-              <li>One-off automations without ownership</li>
-              <li>No data, no process, no follow-through</li>
-              <li>Looking for a cheap Zapier setup</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="value">
-        <div class="value-grid">
-            <div class="value-left">
-                <h2>Less chaos.<br>More clarity.</h2>
-                <p>We build intelligent workflows that integrate with your existing tools - so your team can focus on what actually matters.</p>
-            </div>
-            <div class="value-right">
-                <div class="value-item">
-                    <span class="value-number">01</span>
-                    <div>
-                        <h3>Save time</h3>
-                        <p>Automate repetitive tasks that drain your team's energy.</p>
-                    </div>
-                </div>
-                <div class="value-item">
-                    <span class="value-number">02</span>
-                    <div>
-                        <h3>Reduce errors</h3>
-                        <p>AI-powered precision where human mistakes are costly.</p>
-                    </div>
-                </div>
-                <div class="value-item">
-                    <span class="value-number">03</span>
-                    <div>
-                        <h3>Scale smarter</h3>
-                        <p>Systems that grow with you - without growing headcount.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="build">
-          <div class="build-head">
-            <h3>What we actually build</h3>
-            <p>Small number of systems. Designed to run daily operations with less manual work.</p>
-          </div>
-          <div class="build-grid">
-            <div class="build-card">
-              <div class="build-label">01</div>
-              <h4>AI workflows</h4>
-              <p>Lead enrichment, research, reporting, routing, internal ops  -  connected end-to-end.</p>
-            </div>
-            <div class="build-card">
-              <div class="build-label">02</div>
-              <h4>Tool integrations</h4>
-              <p>CRM, email, sheets, databases, Slack  -  your stack becomes one system.</p>
-            </div>
-            <div class="build-card">
-              <div class="build-label">03</div>
-              <h4>Deployment</h4>
-              <p>Versioned, monitored, documented  -  so it works after launch, not only in a demo.</p>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section class="map">
-      <div class="map-inner">
-        <div class="map-head">
-          <h2>We design systems.<br>Not automations.</h2>
-          <p>A repeatable structure behind every deployment  -  built to run daily operations.</p>
-        </div>
-
-        <div class="diagram-desktop">
-        <div class="diagram-card">
-          <div class="diagram-scroll" aria-label="System diagram">
-          <svg class="map-svg" viewBox="0 0 1200 340" role="img" aria-label="Inputs to AI layer to tools to outputs diagram" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-                <path d="M0,0 L10,5 L0,10 Z" fill="#0a0a0a" opacity="0.35"></path>
-              </marker>
-            </defs>
-
-            <!-- Column titles -->
-            <text x="80" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Inputs</text>
-            <text x="370" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">AI layer</text>
-            <text x="660" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Tools</text>
-            <text x="950" y="58" font-family="Syne, sans-serif" font-size="18" fill="#0a0a0a" opacity="0.8">Outputs</text>
-
-            <!-- Inputs boxes -->
-            <rect x="60" y="90" width="230" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="80" y="123" font-family="Inter, sans-serif" font-size="15" fill="#666">Leads / forms / calls</text>
-
-            <rect x="60" y="160" width="230" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="80" y="193" font-family="Inter, sans-serif" font-size="15" fill="#666">Docs / emails / PDFs</text>
-
-            <rect x="60" y="230" width="230" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="80" y="263" font-family="Inter, sans-serif" font-size="15" fill="#666">Internal requests</text>
-
-            <!-- AI layer box (highlight) -->
-            <rect x="340" y="120" width="260" height="160" rx="18" fill="#ffffff" stroke="#38b76f" stroke-width="2"/>
-            <text x="365" y="160" font-family="Syne, sans-serif" font-size="16" fill="#0a0a0a">Parsing + enrichment</text>
-            <text x="365" y="190" font-family="Syne, sans-serif" font-size="16" fill="#0a0a0a">Decision rules</text>
-            <text x="365" y="220" font-family="Syne, sans-serif" font-size="16" fill="#0a0a0a">Routing + automation</text>
-            <text x="365" y="250" font-family="Inter, sans-serif" font-size="14" fill="#666">monitored, versioned, logged</text>
-
-            <!-- Tools boxes -->
-            <rect x="630" y="90" width="250" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="650" y="123" font-family="Inter, sans-serif" font-size="15" fill="#666">CRM / database</text>
-
-            <rect x="630" y="160" width="250" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="650" y="193" font-family="Inter, sans-serif" font-size="15" fill="#666">Email / Slack</text>
-
-            <rect x="630" y="230" width="250" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="650" y="263" font-family="Inter, sans-serif" font-size="15" fill="#666">Sheets / dashboards</text>
-
-            <!-- Outputs boxes -->
-            <rect x="920" y="90" width="220" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="940" y="123" font-family="Inter, sans-serif" font-size="15" fill="#666">Qualified leads</text>
-
-            <rect x="920" y="160" width="220" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="940" y="193" font-family="Inter, sans-serif" font-size="15" fill="#666">Reports / briefs</text>
-
-            <rect x="920" y="230" width="220" height="54" rx="14" fill="#ffffff" stroke="#e6e6e6"/>
-            <text x="940" y="263" font-family="Inter, sans-serif" font-size="15" fill="#666">Fewer manual tasks</text>
-
-            <!-- Arrows Inputs -> AI -->
-            <line x1="290" y1="117" x2="340" y2="150" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-            <line x1="290" y1="187" x2="340" y2="200" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-            <line x1="290" y1="257" x2="340" y2="250" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-
-            <!-- Arrows AI -> Tools -->
-            <line x1="600" y1="160" x2="630" y2="117" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-            <line x1="600" y1="200" x2="630" y2="187" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-            <line x1="600" y1="240" x2="630" y2="257" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-
-            <!-- Arrows Tools -> Outputs -->
-            <line x1="880" y1="117" x2="920" y2="117" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-            <line x1="880" y1="187" x2="920" y2="187" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-            <line x1="880" y1="257" x2="920" y2="257" stroke="#0a0a0a" stroke-opacity="0.25" stroke-width="2" marker-end="url(#arrow)"/>
-          </svg>
-          </div>
-        </div>
-        </div>
-
-        <div class="diagram-mobile" aria-label="System flow">
-          <div class="flow-step">
-            <div class="flow-title">Inputs</div>
-            <ul class="flow-list">
-              <li>Leads and forms</li>
-              <li>Emails and docs</li>
-              <li>Internal requests</li>
-            </ul>
-          </div>
-
-          <div class="flow-arrow" aria-hidden="true"></div>
-
-          <div class="flow-step">
-            <div class="flow-title">AI layer</div>
-            <ul class="flow-list">
-              <li>Parsing and enrichment</li>
-              <li>Decision rules</li>
-              <li>Routing and automation</li>
-              <li>monitored, versioned</li>
-            </ul>
-          </div>
-
-          <div class="flow-arrow" aria-hidden="true"></div>
-
-          <div class="flow-step">
-            <div class="flow-title">Tools</div>
-            <ul class="flow-list">
-              <li>CRM and database</li>
-              <li>Email and Slack</li>
-              <li>Sheets and dashboards</li>
-            </ul>
-          </div>
-
-          <div class="flow-arrow" aria-hidden="true"></div>
-
-          <div class="flow-step">
-            <div class="flow-title">Outputs</div>
-            <ul class="flow-list">
-              <li>Qualified leads</li>
-              <li>Reports and briefs</li>
-              <li>Fewer manual tasks</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-  <h2>Let's talk</h2>
-  <p class="contact-sub">Answer 3 quick questions. We'll reply with next steps.</p>
-
-  <form class="contact-form" method="POST" action="https://formspree.io/f/mykjnzey">
-    <input type="hidden" name="_subject" value="Optimattic  -  AI system inquiry">
-
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your name">
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="your@email.com">
-    </div>
-
-    <div class="form-group">
-      <label for="companyType">Company type</label>
-      <select id="companyType" name="companyType" required>
-        <option value="" disabled selected>Select one</option>
-        <option>Service business (B2B)</option>
-        <option>E-commerce</option>
-        <option>Agency / studio</option>
-        <option>SaaS / tech</option>
-        <option>Other</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="bottleneck">Main bottleneck</label>
-      <select id="bottleneck" name="bottleneck" required>
-        <option value="" disabled selected>Select one</option>
-        <option>Lead qualification</option>
-        <option>Research / reporting</option>
-        <option>Internal operations</option>
-        <option>Support / inbox overload</option>
-        <option>Tool fragmentation</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="volume">Current volume</label>
-      <select id="volume" name="volume" required>
-        <option value="" disabled selected>Select one</option>
-        <option>Low (starting)</option>
-        <option>Medium (weekly)</option>
-        <option>High (daily)</option>
-        <option>Very high (multiple per day)</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="context">One sentence context (optional)</label>
-      <input type="text" id="context" name="context" placeholder="e.g., We lose leads because response time is slow">
-    </div>
-
-    <button type="submit" class="submit-btn">Send</button>
-    <p class="form-status" aria-live="polite"></p>
-  </form>
+<section class="wrap hero">
+  <p class="eyebrow">Sales measurement + Meta ads</p>
+  <h1 class="t-display">You know what you spend. See what comes <em>back</em>.</h1>
+  <p class="lead muted">I run Meta ads and connect their cost to actual payments. You see separately what Meta claims for itself and how much money really came in.</p>
+  <div class="btn-row">
+    <a class="btn" href="#kontakt">Let's talk</a>
+    <a class="btn btn--ghost" href="#pomiar">See the problem</a>
+  </div>
 </section>
 
-    <footer>
-        <div class="footer-left">
-            <img src="favicon.png" alt="Optimattic" class="footer-icon">
-            <span class="footer-text">© 2026 Optimattic</span>
-        </div>
-        <div class="footer-links">
-            <a href="polityka-prywatnosci-aplikacji.html">Polityka prywatności aplikacji</a>
-            <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
-        </div>
-    </footer>
 
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+<section class="signal" id="pomiar" aria-labelledby="signal-title">
+  <div class="wrap">
+    <div class="eyebrow signal__eyebrow">The core</div>
+    <h2 id="signal-title" class="signal__row">
+      <span>
+        <span class="signal__num">99</span>
+        <span class="signal__label">purchases according to Meta</span>
+      </span>
+      <span class="signal__minus" aria-hidden="true">− 77</span>
+      <span class="signal__kept">
+        <span class="signal__num signal__num--kept">22</span>
+        <span class="signal__label">confirmed by payment</span>
+      </span>
+    </h2>
+    <div class="dots" role="img" aria-label="99 purchases according to Meta, z czego 22 confirmed by payment"><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot dot--lost" style="--i:0"></span><span class="dot dot--lost" style="--i:1"></span><span class="dot dot--lost" style="--i:2"></span><span class="dot dot--lost" style="--i:3"></span><span class="dot dot--lost" style="--i:4"></span><span class="dot dot--lost" style="--i:5"></span><span class="dot dot--lost" style="--i:6"></span><span class="dot dot--lost" style="--i:7"></span><span class="dot dot--lost" style="--i:8"></span><span class="dot dot--lost" style="--i:9"></span><span class="dot dot--lost" style="--i:10"></span><span class="dot dot--lost" style="--i:11"></span><span class="dot dot--lost" style="--i:12"></span><span class="dot dot--lost" style="--i:13"></span><span class="dot dot--lost" style="--i:14"></span><span class="dot dot--lost" style="--i:15"></span><span class="dot dot--lost" style="--i:16"></span><span class="dot dot--lost" style="--i:17"></span><span class="dot dot--lost" style="--i:18"></span><span class="dot dot--lost" style="--i:19"></span><span class="dot dot--lost" style="--i:20"></span><span class="dot dot--lost" style="--i:21"></span><span class="dot dot--lost" style="--i:22"></span><span class="dot dot--lost" style="--i:23"></span><span class="dot dot--lost" style="--i:24"></span><span class="dot dot--lost" style="--i:25"></span><span class="dot dot--lost" style="--i:26"></span><span class="dot dot--lost" style="--i:27"></span><span class="dot dot--lost" style="--i:28"></span><span class="dot dot--lost" style="--i:29"></span><span class="dot dot--lost" style="--i:30"></span><span class="dot dot--lost" style="--i:31"></span><span class="dot dot--lost" style="--i:32"></span><span class="dot dot--lost" style="--i:33"></span><span class="dot dot--lost" style="--i:34"></span><span class="dot dot--lost" style="--i:35"></span><span class="dot dot--lost" style="--i:36"></span><span class="dot dot--lost" style="--i:37"></span><span class="dot dot--lost" style="--i:38"></span><span class="dot dot--lost" style="--i:39"></span><span class="dot dot--lost" style="--i:40"></span><span class="dot dot--lost" style="--i:41"></span><span class="dot dot--lost" style="--i:42"></span><span class="dot dot--lost" style="--i:43"></span><span class="dot dot--lost" style="--i:44"></span><span class="dot dot--lost" style="--i:45"></span><span class="dot dot--lost" style="--i:46"></span><span class="dot dot--lost" style="--i:47"></span><span class="dot dot--lost" style="--i:48"></span><span class="dot dot--lost" style="--i:49"></span><span class="dot dot--lost" style="--i:50"></span><span class="dot dot--lost" style="--i:51"></span><span class="dot dot--lost" style="--i:52"></span><span class="dot dot--lost" style="--i:53"></span><span class="dot dot--lost" style="--i:54"></span><span class="dot dot--lost" style="--i:55"></span><span class="dot dot--lost" style="--i:56"></span><span class="dot dot--lost" style="--i:57"></span><span class="dot dot--lost" style="--i:58"></span><span class="dot dot--lost" style="--i:59"></span><span class="dot dot--lost" style="--i:60"></span><span class="dot dot--lost" style="--i:61"></span><span class="dot dot--lost" style="--i:62"></span><span class="dot dot--lost" style="--i:63"></span><span class="dot dot--lost" style="--i:64"></span><span class="dot dot--lost" style="--i:65"></span><span class="dot dot--lost" style="--i:66"></span><span class="dot dot--lost" style="--i:67"></span><span class="dot dot--lost" style="--i:68"></span><span class="dot dot--lost" style="--i:69"></span><span class="dot dot--lost" style="--i:70"></span><span class="dot dot--lost" style="--i:71"></span><span class="dot dot--lost" style="--i:72"></span><span class="dot dot--lost" style="--i:73"></span><span class="dot dot--lost" style="--i:74"></span><span class="dot dot--lost" style="--i:75"></span><span class="dot dot--lost" style="--i:76"></span></div>
+    <p class="signal__note">One month on the Grupa Mocy account. The rest was revenue that would have happened anyway. This does not mean the ads were not working - it means the budget was being set on a number that did not match reality.</p>
+  </div>
+</section>
 
-        // Formspree form handling
-        document.querySelector('.contact-form').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const form = this;
-          const btn = form.querySelector('.submit-btn');
-          const statusEl = form.querySelector('.form-status');
-          const originalText = btn.textContent;
-          btn.disabled = true;
-          btn.textContent = 'Sending...';
-          if (statusEl) {
-            statusEl.className = 'form-status';
-            statusEl.textContent = '';
-          }
-          try {
-            const res = await fetch(form.action, {
-              method: 'POST',
-              body: new FormData(form),
-              headers: { 'Accept': 'application/json' }
-            });
-            if (res.ok) {
-              if (statusEl) {
-                statusEl.classList.add('ok');
-                statusEl.textContent = "Thanks  -  message received. We'll reply shortly.";
-              }
-              form.reset();
-            } else {
-              if (statusEl) {
-                statusEl.classList.add('err');
-                statusEl.textContent = 'Something went wrong. Please email hello@optimattic.com.';
-              }
-            }
-          } catch (err) {
-            if (statusEl) {
-              statusEl.classList.add('err');
-              statusEl.textContent = 'Network error. Please email hello@optimattic.com.';
-            }
-          } finally {
-            btn.disabled = false;
-            btn.textContent = originalText;
-          }
-        });
-    </script>
+<section class="wrap quiet reveal">
+  <p class="statement">Ads optimise on the data they are given. If the data is <em>invented</em>, so is the budget.</p>
+</section>
+
+<section class="wrap dense reveal" id="co-robie" aria-labelledby="co-robie-title">
+  <h2 class="t-head" id="co-robie-title" style="margin-bottom:16px">What I do</h2>
+  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Three parts of one system. Usually implemented in this order.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card__num">01</div>
+      <h3 class="t-sub">Sales measurement</h3>
+      <p>I connect the ad account to the system where the money actually lands. You stop trusting a single number from the dashboard.</p>
+      <ul class="list"><li>server-side measurement, resistant to browser blocking</li><li>what Meta reports set side by side with what actually came in</li><li>cost per acquisition counted from the first real payment</li></ul>
+    </div>
+    <div class="card">
+      <div class="card__num">02</div>
+      <h3 class="t-sub">Meta ads</h3>
+      <p>I run the account on the data from step one, not on what Ads Manager shows.</p>
+      <ul class="list"><li>rebuilding the account structure where it is needed</li><li>creative direction, briefs and a list of material to record</li><li>scaling based on cost, not on gut feeling</li></ul>
+    </div>
+    <div class="card card--mint">
+      <div class="card__num">03</div>
+      <h3 class="t-sub">Running the system</h3>
+      <p>A dashboard where you see it yourself, without asking for a report.</p>
+      <ul class="list"><li>one place with cost, revenue and the gap between sources</li><li>for subscriptions: how much revenue drops out on failed payments and how much comes back</li><li>weekly decisions instead of a monthly PDF</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="band-gray">
+  <div class="wrap quiet split reveal">
+    <div>
+      <h2 class="t-head" style="margin-bottom:16px">Who it is for</h2>
+      <p class="lead muted">Businesses where money comes back every month, and creators selling their own product. What they share is that the revenue is already there, and the problem is that nobody knows exactly where it comes from.</p>
+    </div>
+    <div class="split" style="gap:clamp(24px,4vw,40px)">
+      <div>
+        <h3 class="t-sub" style="margin-bottom:16px">A fit</h3>
+        <ul class="list list--lg">
+          <li>subscription, membership, repeat purchase</li>
+          <li>creators selling their own digital product</li>
+          <li>payment happens outside your own website</li>
+          <li>a sensible margin once product cost is deducted</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="t-sub" style="margin-bottom:16px">Not a fit</h3>
+        <ul class="list list--muted list--lg">
+          <li>before the first sale</li>
+          <li>one-off sales with no repeat business</li>
+          <li>margins in the low teens, where my fee has no way of paying for itself</li>
+          <li>looking for a second opinion to win an argument with your current agency</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap dense reveal">
+  <div class="split" style="align-items:end">
+    <h2 class="t-head">How this looks with a client</h2>
+    <div><a class="textlink" href="case-en.html">Read the case study</a></div>
+  </div>
+</section>
+
+
+<section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
+  <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Let's talk</h2>
+  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Six fields. I reply within one business day.</p>
+  <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
+    <input type="hidden" name="_subject" value="Optimattic - enquiry from homepage">
+      <div class="field">
+        <label for="name">First name</label>
+        <input type="text" id="name" name="name" required autocomplete="given-name" placeholder="Your first name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="you@email.com">
+      </div>
+      <div class="field">
+        <label for="biznes">Type of business</label>
+        <select id="biznes" name="biznes" required>
+          <option value="" disabled selected>Select</option>
+          <option>Subscription / membership</option>
+          <option>Creator selling own product</option>
+          <option>E-commerce</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="przychod">Monthly revenue</label>
+        <select id="przychod" name="przychod" required>
+          <option value="" disabled selected>Select</option>
+          <option>under PLN 20,000</option>
+          <option>PLN 20,000 - 50,000</option>
+          <option>PLN 50,000 - 150,000</option>
+          <option>over PLN 150,000</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="budzet">Current ad spend</label>
+        <select id="budzet" name="budzet" required>
+          <option value="" disabled selected>Select</option>
+          <option>Not advertising yet</option>
+          <option>under PLN 5,000 / month</option>
+          <option>PLN 5,000 - 20,000 / month</option>
+          <option>PLN 20,000 - 50,000 / month</option>
+          <option>over PLN 50,000 / month</option>
+        </select>
+      </div>
+      <div class="field field--full">
+        <label for="kontekst">One line of context</label>
+        <textarea id="kontekst" name="kontekst" rows="3" placeholder="e.g. I have no idea which campaigns actually bring subscriptions"></textarea>
+      </div>
+      <div class="form-foot">
+        <button type="submit" class="btn">Send</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </div>
+  </form>
+</section>
+<script>
+(function(){
+  var form = document.querySelector('.form'); if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...'; status.className = 'form-status'; status.textContent = '';
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
+      .then(function(res){
+        if(res.ok){ status.classList.add('ok'); status.textContent = 'Thank you. I will get back to you within one business day.'; form.reset(); }
+        else { status.classList.add('err'); status.textContent = 'Something went wrong. Please email hello@optimattic.com.'; }
+      })
+      .catch(function(){ status.classList.add('err'); status.textContent = 'Something went wrong. Please email hello@optimattic.com.'; })
+      .then(function(){ btn.disabled = false; btn.textContent = label; });
+  });
+})();
+</script>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand"><img src="favicon.png" alt=""><span>© 2026 Optimattic</span></div>
+  <div class="footer__links">
+    <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+    <a href="marketing-en.html">Services</a>
+    <a href="case-en.html">Case study</a>
+    <a href="polityka-prywatnosci-aplikacji.html">Privacy policy</a>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = [].slice.call(document.querySelectorAll('.signal, .reveal'));
+  if (!('IntersectionObserver' in window) || reduce) return;
+  function disarm(el){ el.classList.remove('is-armed'); }
+  targets.forEach(function(el){
+    // only arm what is still below the fold; anything at or above the viewport stays final
+    if (el.getBoundingClientRect().top > window.innerHeight * 0.9) el.classList.add('is-armed');
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting || e.boundingClientRect.top < 0){ disarm(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+  // safety net: nothing may stay invisible (fast scroll, hash jump, restored scroll position)
+  window.setTimeout(function(){ targets.forEach(disarm); }, 4000);
+  window.addEventListener('hashchange', function(){ targets.forEach(disarm); });
+})();
+</script>
 </body>
 </html>
