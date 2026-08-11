@@ -104,7 +104,7 @@ p,ul,ol{margin:0}
 .signal{background:var(--black);color:var(--white);padding-top:clamp(72px,11vw,132px);padding-bottom:clamp(72px,11vw,132px)}
 .signal__eyebrow{margin-bottom:clamp(36px,6vw,64px)}
 .signal__row{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:end;margin-bottom:clamp(40px,6vw,64px)}
-@media (min-width:760px){.signal__row{grid-template-columns:auto auto 1fr;gap:clamp(32px,5vw,72px)}}
+@media (min-width:760px){.signal__row{grid-template-columns:auto auto;justify-content:start;gap:clamp(48px,8vw,120px)}}
 .signal__row>span{display:block}
 .signal__num{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(5rem,18vw,13rem);line-height:.78;letter-spacing:-.06em;
   font-variant-numeric:tabular-nums}
@@ -239,7 +239,6 @@ p,ul,ol{margin:0}
         <span class="signal__num">99</span>
         <span class="signal__label">purchases according to Meta</span>
       </span>
-      <span class="signal__minus" aria-hidden="true">− 77</span>
       <span class="signal__kept">
         <span class="signal__num signal__num--kept">22</span>
         <span class="signal__label">confirmed by payment</span>
