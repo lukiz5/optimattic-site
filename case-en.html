@@ -110,6 +110,7 @@ p,ul,ol{margin:0}
 .signal__minus{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--green);
   letter-spacing:-.03em;padding-bottom:clamp(8px,2vw,22px);white-space:nowrap}
 .dots{display:grid;grid-template-columns:repeat(11,1fr);gap:clamp(6px,1.4vw,14px);max-width:640px;margin-bottom:clamp(32px,5vw,48px)}
+@media (min-width:760px){.dots{grid-template-columns:repeat(33,1fr);gap:6px;max-width:720px}}
 .dot{aspect-ratio:1;border-radius:50%;background:var(--green);
   transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i)*7ms)}
 .dot--lost{opacity:.14;transform:scale(.4)}
