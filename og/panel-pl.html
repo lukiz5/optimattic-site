@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>panel pl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#888}
+  .panel{width:1200px;height:720px;background:#FFFFFF;color:#0A0A0A;font-family:'Inter',sans-serif;
+    padding:44px 48px;display:flex;flex-direction:column;gap:30px;border:1px solid #E0E0E0}
+  .top{display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid #E0E0E0;padding-bottom:20px}
+  .top__t{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.03em}
+  .top__s{font-size:15px;color:#666666}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .kpi{background:#F5F5F5;border-radius:14px;padding:22px 24px}
+  .kpi--mint{background:#E8F5ED}
+  .kpi__l{font-size:14px;color:#666666;margin-bottom:12px;min-height:34px}
+  .kpi__v{font-family:'Syne',sans-serif;font-weight:800;font-size:44px;line-height:1;letter-spacing:-.04em}
+  .kpi--mint .kpi__v{color:#38B76F}
+  .chart{flex:1;display:flex;flex-direction:column;gap:12px}
+  .chart__h{font-size:15px;color:#666666}
+  .bars{flex:1;display:grid;grid-template-columns:repeat(11,1fr);gap:14px;align-items:end}
+  .bar{display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+  .bar__fill{background:#38B76F;border-radius:6px 6px 0 0;min-height:4px}
+  .bar__lbl{text-align:center;font-size:13px;color:#666666;margin-top:8px}
+  .split{display:flex;gap:14px;align-items:center;font-size:15px;color:#666666}
+  .split__bar{flex:1;height:14px;border-radius:7px;overflow:hidden;display:flex}
+  .split__a{background:#38B76F;width:57.7%}
+  .split__b{background:#0A0A0A;width:42.3%}
+</style>
+</head>
+<body>
+<div class="panel">
+  <div class="top"><div class="top__t">Panel klienta</div><div class="top__s">konto reklamowe zestawione z systemem płatności</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi__l">Nowe klientki</div><div class="kpi__v">437</div></div>
+    <div class="kpi"><div class="kpi__l">Przychód od nowych</div><div class="kpi__v">61 193 zł</div></div>
+    <div class="kpi"><div class="kpi__l">Wydatek na reklamy</div><div class="kpi__v">6 691 zł</div></div>
+    <div class="kpi kpi--mint"><div class="kpi__l">Koszt jednej nowej klientki</div><div class="kpi__v">15,31 zł</div></div>
+  </div>
+  <div class="chart">
+    <div class="chart__h">Wydatek na reklamy, dzień po dniu</div>
+    <div class="bars"><div class="bar"><div class="bar__fill" style="height:57.8%"></div><div class="bar__lbl">1</div></div><div class="bar"><div class="bar__fill" style="height:74.9%"></div><div class="bar__lbl">2</div></div><div class="bar"><div class="bar__fill" style="height:64.2%"></div><div class="bar__lbl">3</div></div><div class="bar"><div class="bar__fill" style="height:100.0%"></div><div class="bar__lbl">4</div></div><div class="bar"><div class="bar__fill" style="height:66.4%"></div><div class="bar__lbl">5</div></div><div class="bar"><div class="bar__fill" style="height:51.8%"></div><div class="bar__lbl">6</div></div><div class="bar"><div class="bar__fill" style="height:94.0%"></div><div class="bar__lbl">7</div></div><div class="bar"><div class="bar__fill" style="height:61.5%"></div><div class="bar__lbl">8</div></div><div class="bar"><div class="bar__fill" style="height:64.1%"></div><div class="bar__lbl">9</div></div><div class="bar"><div class="bar__fill" style="height:92.9%"></div><div class="bar__lbl">10</div></div><div class="bar"><div class="bar__fill" style="height:24.3%"></div><div class="bar__lbl">11</div></div></div>
+  </div>
+  <div class="split">
+    <span>252 subskrypcje</span>
+    <div class="split__bar"><div class="split__a"></div><div class="split__b"></div></div>
+    <span>185 jednorazówek</span>
+  </div>
+</div>
+</body>
+</html>
