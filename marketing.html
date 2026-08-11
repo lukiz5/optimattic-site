@@ -209,6 +209,7 @@ p,ul,ol{margin:0}
   .fork__path::before{left:50%;transform:translateX(-50%);top:-28px;height:28px}
 }
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
 </head>
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -366,11 +367,26 @@ p,ul,ol{margin:0}
         <button type="submit" class="btn">Wyślij</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </div>
+      <input type="hidden" name="utm_source" value="">
+      <input type="hidden" name="utm_medium" value="">
+      <input type="hidden" name="utm_campaign" value="">
+      <input type="hidden" name="utm_content" value="">
+      <input type="hidden" name="utm_term" value="">
+      <input type="hidden" name="strona" value="">
   </form>
 </section>
 <script>
 (function(){
   var form = document.querySelector('.form'); if(!form) return;
+  try{
+    var qs = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+      var f = form.querySelector('input[name="'+k+'"]');
+      if(f) f.value = (qs.get(k) || '').slice(0,200);
+    });
+    var p = form.querySelector('input[name="strona"]');
+    if(p) p.value = window.location.pathname;
+  }catch(e){}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
