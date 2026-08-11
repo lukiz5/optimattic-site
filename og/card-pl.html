@@ -11,32 +11,28 @@
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;background:#666}
   .card{width:1200px;height:630px;background:#0A0A0A;color:#FFFFFF;
-    font-family:'Inter',sans-serif;padding:64px 80px;
+    font-family:'Inter',sans-serif;padding:60px 72px;
     display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
-  .brand{font-size:22px;font-weight:500;color:#E0E0E0}
-  .row{display:flex;align-items:flex-end;gap:104px}
-  .num{font-family:'Syne',sans-serif;font-weight:800;font-size:176px;line-height:.78;
+  .brand{font-size:24px;font-weight:500;color:#E0E0E0}
+  .row{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
+  .col{flex:1}
+  .num{font-family:'Syne',sans-serif;font-weight:800;font-size:250px;line-height:.76;
     letter-spacing:-.06em;font-variant-numeric:tabular-nums}
   .num--kept{color:#38B76F}
-  .lbl{font-size:25px;line-height:1.25;margin-top:20px;max-width:16ch}
-  .note{font-size:26px;line-height:1.4;color:#E0E0E0;max-width:54ch;margin-bottom:26px}
-  .note b{color:#FFFFFF;font-weight:500}
-  .dots{display:grid;grid-template-columns:repeat(33,11px);gap:5px;width:max-content}
-  .dot{width:11px;height:11px;border-radius:50%;background:#38B76F}
-  .dot--lost{opacity:.16}
+  .lbl{font-size:34px;line-height:1.2;margin-top:22px;max-width:14ch;font-weight:500}
+  .dots{display:grid;grid-template-columns:repeat(33,20px);gap:8px;width:max-content}
+  .dot{width:20px;height:20px;border-radius:50%;background:#38B76F}
+  .dot--lost{opacity:.18}
 </style>
 </head>
 <body>
 <div class="card">
   <div class="brand">optimattic.com</div>
   <div class="row">
-    <div><div class="num">99</div><div class="lbl">zakupów według Meta</div></div>
-    <div><div class="num num--kept">22</div><div class="lbl">potwierdzone płatnością</div></div>
+    <div class="col"><div class="num">99</div><div class="lbl">zakupów według Meta</div></div>
+    <div class="col"><div class="num num--kept">22</div><div class="lbl">potwierdzone płatnością</div></div>
   </div>
-  <div>
-    <div class="note">Meta liczy zakup każdemu, kto kliknął reklamę w ciągu siedmiu dni przed zakupem. <b>Budżet ustawia się na 99, decyzje podejmuje na 22.</b></div>
-    <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span></div>
-  </div>
+  <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span><span class="dot dot--lost"></span></div>
 </div>
 </body>
 </html>
