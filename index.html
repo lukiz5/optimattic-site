@@ -68,6 +68,9 @@ p,ul,ol{margin:0}
   padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
 .nav img{height:26px;width:auto}
 .nav__right{display:flex;align-items:center;gap:8px}
+.nav__links{display:flex;align-items:center;gap:18px}
+.nav__link{color:var(--black);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+.nav__link[aria-current="page"]{color:var(--gray)}
 .lang{display:inline-flex;align-items:center;justify-content:center;height:44px;min-width:44px;padding:0 12px;
   border:1px solid var(--border);border-radius:100px;color:var(--gray);text-decoration:none;font-size:14px;font-weight:500;
   transition:transform .25s var(--ease),opacity .25s var(--ease)}
@@ -193,6 +196,7 @@ p,ul,ol{margin:0}
 .footer__links{display:flex;flex-wrap:wrap;gap:22px}
 
 @media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
+@media (max-width:600px){.nav{padding-left:12px;padding-right:12px;gap:6px}.nav img{height:24px}.nav__right{gap:6px}.nav__links{gap:12px}.nav__right>.btn--sm{display:none}}
 
 /* ---------- fork (moment wyboru) ---------- */
 .fork{position:relative}
@@ -219,6 +223,7 @@ p,ul,ol{margin:0}
 <header class="nav">
   <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
+    <div class="nav__links"><a class="nav__link" href="marketing.html">Oferta</a><a class="nav__link" href="case.html">Case study</a></div>
     <a class="btn btn--sm" href="#kontakt">Umów rozmowę</a>
     <a class="lang" href="en.html" hreflang="en" aria-label="English version">EN</a>
   </div>
