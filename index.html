@@ -50,7 +50,7 @@ p,ul,ol{margin:0}
 .lead{font-size:clamp(1.1rem,2.4vw,1.4rem);line-height:1.5;max-width:46ch;text-wrap:pretty}
 .muted{color:var(--gray)}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:13px;
-  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
 
 /* ---------- layout ---------- */
@@ -85,7 +85,7 @@ p,ul,ol{margin:0}
 .btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
 .btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
 .btn--onDark:hover{background:var(--white);border-color:var(--white);color:var(--black)}
-.btn--outlineDark{background:transparent;color:var(--white);border-color:#3a3a3a}
+.btn--outlineDark{background:transparent;color:var(--white);border-color:var(--gray)}
 .btn--outlineDark:hover{background:transparent;color:var(--white);border-color:var(--white)}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px}
 .textlink{display:inline-flex;align-items:center;gap:8px;color:var(--black);text-decoration:none;font-family:'Syne',sans-serif;
@@ -103,7 +103,7 @@ p,ul,ol{margin:0}
 
 /* ---------- SIGNATURE MOMENT ---------- */
 .signal{background:var(--black);color:var(--white);padding-top:clamp(72px,11vw,132px);padding-bottom:clamp(72px,11vw,132px)}
-.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px)}
+.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px);color:var(--green)}
 .signal__row{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:end;margin-bottom:clamp(40px,6vw,64px)}
 @media (min-width:760px){.signal__row{grid-template-columns:auto auto;justify-content:start;gap:clamp(48px,8vw,120px)}}
 .signal__row>span{display:block}
@@ -139,7 +139,7 @@ p,ul,ol{margin:0}
 .statement em{font-style:normal;color:var(--green)}
 
 /* ---------- cards + lists ---------- */
-.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--green);margin-bottom:20px;letter-spacing:.08em}
+.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--gray);margin-bottom:20px;letter-spacing:.08em}
 .card .t-sub{margin-bottom:10px}
 .card p{color:var(--gray);font-size:.98rem;margin-bottom:20px}
 .card--mint{background:var(--mint-light)!important}
@@ -217,7 +217,7 @@ p,ul,ol{margin:0}
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
 <header class="nav">
-  <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic"></a>
+  <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
     <a class="btn btn--sm" href="#kontakt">Porozmawiajmy</a>
     <a class="lang" href="en.html" hreflang="en" aria-label="English version">EN</a>
@@ -384,10 +384,19 @@ p,ul,ol{margin:0}
 (function(){
   var form = document.querySelector('.form'); if(!form) return;
   try{
-    var qs = new URLSearchParams(window.location.search);
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+    var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var qs = new URLSearchParams(window.location.search), saved = null;
+    var hasUtm = keys.some(function(k){ return qs.has(k); });
+    if(hasUtm){
+      saved = {};
+      keys.forEach(function(k){ saved[k] = (qs.get(k) || '').slice(0,200); });
+      try{ sessionStorage.setItem('optimattic_utm', JSON.stringify(saved)); }catch(storageError){}
+    }else{
+      try{ saved = JSON.parse(sessionStorage.getItem('optimattic_utm') || 'null'); }catch(storageError){}
+    }
+    keys.forEach(function(k){
       var f = form.querySelector('input[name="'+k+'"]');
-      if(f) f.value = (qs.get(k) || '').slice(0,200);
+      if(f) f.value = saved && typeof saved[k] === 'string' ? saved[k] : '';
     });
     var p = form.querySelector('input[name="strona"]');
     if(p) p.value = window.location.pathname;
@@ -409,7 +418,7 @@ p,ul,ol{margin:0}
 </main>
 
 <footer class="footer">
-  <div class="footer__brand"><img src="favicon.png" alt=""><span>© Optimattic</span></div>
+  <div class="footer__brand"><img src="favicon.png" alt="" width="180" height="180"><span>© 2026 Optimattic</span></div>
   <div class="footer__links">
     <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
     <a href="marketing.html">Oferta</a>
