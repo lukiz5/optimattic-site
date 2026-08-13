@@ -194,21 +194,16 @@ p,ul,ol{margin:0}
 @media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
 
 /* ---------- fork (moment wyboru) ---------- */
-.fork{position:relative}
-.fork__stem{width:2px;height:44px;background:var(--border);margin:0 0 0 22px}
+.fork{position:relative;padding-top:44px}
 .fork__paths{display:grid;gap:24px;grid-template-columns:1fr}
 .fork__path{position:relative;padding:26px 26px 26px 26px;border:1px solid var(--border);border-radius:18px;background:var(--white)}
-.fork__path::before{content:'';position:absolute;left:22px;top:-24px;width:2px;height:24px;background:var(--border)}
-.fork__path--b::before{background:var(--green)}
 .fork__node{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
   background:var(--black);color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:14px;margin-bottom:16px}
 .fork__path--b .fork__node{background:var(--green);color:var(--black)}
 @media (min-width:820px){
-  .fork__stem{margin:0 auto;height:56px}
-  .fork__paths{grid-template-columns:1fr 1fr;gap:64px;position:relative}
-  .fork__paths::before{content:'';position:absolute;top:-28px;left:25%;right:25%;height:2px;background:var(--border)}
+  .fork{padding-top:56px}
+  .fork__paths{grid-template-columns:1fr 1fr;gap:64px}
   .fork__path{padding:34px}
-  .fork__path::before{left:50%;transform:translateX(-50%);top:-28px;height:28px}
 }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
@@ -228,7 +223,6 @@ p,ul,ol{margin:0}
   <p class="eyebrow">Oferta</p>
   <h1 class="t-display">Meta pokazuje sprzedaż. Ja pokazuję, ile z niej <em>wpłynęło</em>.</h1>
   <p class="lead muted">Prowadzenie reklam Meta połączone z pomiarem faktycznych płatności. Przy subskrypcji dochodzi pilnowanie odnowień i nieudanych płatności. Dla biznesów subskrypcyjnych i twórców sprzedających własny produkt.</p>
-  <p class="muted" style="margin:14px 0 0;font-size:.95rem">U jednej klientki: 99 zakupów według Meta, 22 potwierdzone płatnością.</p>
   <div class="btn-row"><a class="btn" href="#kontakt">Umów rozmowę</a></div>
 </section>
 
@@ -255,7 +249,6 @@ p,ul,ol{margin:0}
   <h2 class="t-head" id="wybor-title" style="margin-bottom:16px">Który przypadek to Ty</h2>
   <p class="lead muted" style="margin-bottom:clamp(40px,6vw,64px)">Nie obiecuję, że Meta zacznie pokazywać dokładnie tyle, ile masz na koncie. To niewykonalne i każdy, kto to obiecuje, albo nie rozumie, jak działa atrybucja, albo liczy, że nie sprawdzisz. Obiecuję co innego: zobaczysz obie liczby osobno i będziesz wiedzieć, skąd bierze się różnica.</p>
   <div class="fork">
-    <div class="fork__stem" aria-hidden="true"></div>
     <div class="fork__paths">
       <div class="fork__path">
         <div class="fork__node">A</div>
@@ -305,7 +298,7 @@ p,ul,ol{margin:0}
       <p class="lead muted">Zaczynamy od Kalibracji. To jest jednorazowa praca z konkretnym wynikiem, a nie zobowiązanie na rok.</p>
       <p class="lead muted" style="margin-top:20px">Cena prowadzenia zależy od tego, czy jest subskrypcja do pilnowania. Ustalam ją na rozmowie, po Kalibracji, kiedy oboje wiemy, o czym mówimy.</p>
       <h3 class="t-sub" style="margin:clamp(32px,5vw,48px) 0 12px">Kto nagrywa kreacje</h3>
-      <p class="muted">Ja nie. Dostaniesz ode mnie komplet: co nagrać, w jakiej kolejności, jakim językiem zacząć, które ujęcie ma sprzedawać. Kierunek, briefy, analizę tego, co zadziałało, i listę na kolejny miesiąc.</p>
+      <p class="muted">Dostaniesz ode mnie komplet: co nagrać, w jakiej kolejności, jakim językiem zacząć, które ujęcie ma sprzedawać. Kierunek, briefy, analizę tego, co zadziałało, i listę na kolejny miesiąc.</p>
       <p class="muted" style="margin-top:16px">Ale nagrywasz Ty. Twoja twarz i Twój głos sprzedają lepiej niż materiał zrobiony przez kogoś, kto Cię nie zna. To jedyne wąskie gardło po Twojej stronie i mówię o nim przed startem, a nie w trzecim miesiącu.</p>
     </div>
     <div class="card card--mint" style="border-radius:18px;padding:clamp(24px,3.2vw,36px)">
@@ -428,7 +421,7 @@ p,ul,ol{margin:0}
 </main>
 
 <footer class="footer">
-  <div class="footer__brand"><img src="favicon.png" alt="" width="180" height="180"><span>© 2026 Optimattic</span></div>
+  <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
   <div class="footer__links">
     <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
     <a href="marketing.html">Oferta</a>
