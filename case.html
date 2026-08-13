@@ -49,7 +49,7 @@ p,ul,ol{margin:0}
 .lead{font-size:clamp(1.1rem,2.4vw,1.4rem);line-height:1.5;max-width:46ch;text-wrap:pretty}
 .muted{color:var(--gray)}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:13px;
-  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
 
 /* ---------- layout ---------- */
@@ -84,7 +84,7 @@ p,ul,ol{margin:0}
 .btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
 .btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
 .btn--onDark:hover{background:var(--white);border-color:var(--white);color:var(--black)}
-.btn--outlineDark{background:transparent;color:var(--white);border-color:#3a3a3a}
+.btn--outlineDark{background:transparent;color:var(--white);border-color:var(--gray)}
 .btn--outlineDark:hover{background:transparent;color:var(--white);border-color:var(--white)}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px}
 .textlink{display:inline-flex;align-items:center;gap:8px;color:var(--black);text-decoration:none;font-family:'Syne',sans-serif;
@@ -102,7 +102,7 @@ p,ul,ol{margin:0}
 
 /* ---------- SIGNATURE MOMENT ---------- */
 .signal{background:var(--black);color:var(--white);padding-top:clamp(72px,11vw,132px);padding-bottom:clamp(72px,11vw,132px)}
-.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px)}
+.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px);color:var(--green)}
 .signal__row{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:end;margin-bottom:clamp(40px,6vw,64px)}
 @media (min-width:760px){.signal__row{grid-template-columns:auto auto;justify-content:start;gap:clamp(48px,8vw,120px)}}
 .signal__row>span{display:block}
@@ -138,7 +138,7 @@ p,ul,ol{margin:0}
 .statement em{font-style:normal;color:var(--green)}
 
 /* ---------- cards + lists ---------- */
-.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--green);margin-bottom:20px;letter-spacing:.08em}
+.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--gray);margin-bottom:20px;letter-spacing:.08em}
 .card .t-sub{margin-bottom:10px}
 .card p{color:var(--gray);font-size:.98rem;margin-bottom:20px}
 .card--mint{background:var(--mint-light)!important}
@@ -216,7 +216,7 @@ p,ul,ol{margin:0}
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
 <header class="nav">
-  <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic"></a>
+  <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
     <a class="btn btn--sm" href="marketing.html#kontakt">Porozmawiajmy</a>
     <a class="lang" href="case-en.html" hreflang="en" aria-label="English version">EN</a>
@@ -266,7 +266,7 @@ p,ul,ol{margin:0}
   <p class="lead muted">Jedenaście dni na odbudowanym koncie: 437 nowych klientek i 61 193 zł przychodu od nowych klientek, przy 6 691 zł wydanych na reklamy. Liczby po stronie płatności, wyłącznie pierwsze zakupy.</p>
   <p class="lead muted" style="margin-top:20px">Przy dziennym wydatku wyższym o niemal 60 procent niż w oknie promocyjnym koszt jednej nowej klientki nie drgnął: 14,96 zł wobec 15,31 zł. To koszt mieszany, liczony na wszystkich nowych klientkach, także tych z zasięgów organicznych, a nie koszt pozyskania z samych reklam.</p>
   <figure style="margin:clamp(32px,5vw,48px) 0 0">
-    <img src="panel-pl.png" alt="Panel zestawiający wydatek na reklamy ze sprzedażą w systemie płatności" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--border)">
+    <img src="panel-pl.png" alt="Panel zestawiający wydatek na reklamy ze sprzedażą w systemie płatności" width="1200" height="720" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--border)">
     <figcaption class="muted" style="font-size:.9rem;margin-top:12px">Widok panelu, liczby rzeczywiste.</figcaption>
   </figure>
 </section>
@@ -304,7 +304,7 @@ p,ul,ol{margin:0}
 </main>
 
 <footer class="footer">
-  <div class="footer__brand"><img src="favicon.png" alt=""><span>© Optimattic</span></div>
+  <div class="footer__brand"><img src="favicon.png" alt="" width="180" height="180"><span>© 2026 Optimattic</span></div>
   <div class="footer__links">
     <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
     <a href="marketing.html">Oferta</a>
