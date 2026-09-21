@@ -180,7 +180,7 @@ p,ul,ol{margin:0}
 .form-status.ok{color:var(--green)}
 .form-status.err{color:var(--black);font-weight:500}
 .form-result{max-width:660px;padding:clamp(24px,4vw,36px);border-radius:18px;background:var(--mint-light)}
-.form-result[hidden]{display:none}
+[hidden]{display:none!important}
 .form-result p{margin-bottom:20px}
 
 /* ---------- audit + FAQ ---------- */
@@ -384,7 +384,7 @@ p,ul,ol{margin:0}
 
 <section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
   <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Let's talk</h2>
-  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Five fields. After sending, you pick a 15-minute slot right away.</p>
+  <p class="lead muted form-intro" style="margin-bottom:clamp(32px,5vw,48px)">Five fields. After sending, you pick a 15-minute slot right away.</p>
   <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
     <input type="hidden" name="_subject" value="Optimattic - enquiry from services page">
       <div class="field">
@@ -432,7 +432,7 @@ p,ul,ol{margin:0}
       <input type="hidden" name="strona" value="">
   </form>
   <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Prefer to book right away? Pick a 15-minute slot in the calendar</a></p>
-  <div class="form-result" hidden>
+  <div class="form-result" tabindex="-1" hidden>
     <p>Thanks, I will reply within one business day. The fastest option is to pick a 15-minute slot now. Before the call, I will review your ads in the Meta Ad Library.</p>
     <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Pick a time</a>
   </div>
@@ -461,14 +461,19 @@ p,ul,ol{margin:0}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
-    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking');
+    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking'), formIntro = document.querySelector('.form-intro');
     btn.disabled = true; btn.textContent = 'Sending...'; status.className = 'form-status'; status.textContent = '';
     fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
       .then(function(res){
         if(res.ok){
-          form.reset(); form.hidden = true;
+          form.reset(); form.hidden = true; form.style.display = 'none';
+          if(formIntro) formIntro.hidden = true;
           if(formBooking) formBooking.hidden = true;
-          if(result) result.hidden = false;
+          if(result){
+            result.hidden = false;
+            result.scrollIntoView({block:'center'});
+            result.focus({preventScroll:true});
+          }
           if(window.umami && typeof window.umami.track === 'function') window.umami.track('form-submit-ok');
         }else{
           status.classList.add('err');
