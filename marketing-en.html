@@ -178,6 +178,21 @@ p,ul,ol{margin:0}
 .form-status{font-size:14px;color:var(--gray);margin:0}
 .form-status.ok{color:var(--green)}
 .form-status.err{color:var(--black);font-weight:500}
+.form-result{max-width:660px;padding:clamp(24px,4vw,36px);border-radius:18px;background:var(--mint-light)}
+.form-result[hidden]{display:none}
+.form-result p{margin-bottom:20px}
+
+/* ---------- audit + FAQ ---------- */
+.audit-box{background:var(--mint-light);border-radius:22px;padding:clamp(28px,5vw,56px)}
+.audit-box>.lead{max-width:60ch}
+.audit-list{display:grid;gap:14px;padding-left:24px;margin:24px 0 0}
+.audit-list li{padding-left:6px}
+.audit-block{margin-top:clamp(32px,5vw,48px)}
+.faq{display:grid;gap:12px;max-width:860px}
+.faq details{border-top:1px solid var(--border);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--border)}
+.faq summary{cursor:pointer;font-family:'Syne',sans-serif;font-weight:700}
+.faq details p{color:var(--gray);margin-top:12px;max-width:64ch}
 
 /* ---------- CTA band ---------- */
 .cta{background:var(--black);color:var(--white);border-radius:22px;padding:clamp(32px,6vw,64px);
@@ -211,6 +226,7 @@ p,ul,ol{margin:0}
 }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
+<script defer src="site.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -218,7 +234,7 @@ p,ul,ol{margin:0}
   <a href="en.html" aria-label="Optimattic - home"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
     <div class="nav__links"><span class="nav__link" aria-current="page">Services</span><a class="nav__link" href="case-en.html">Case study</a></div>
-    <a class="btn btn--sm" href="#kontakt">Book a call</a>
+    <a class="btn btn--sm" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
     <a class="lang" href="marketing.html" hreflang="pl" aria-label="Wersja polska">PL</a>
   </div>
 </header>
@@ -228,7 +244,7 @@ p,ul,ol{margin:0}
   <p class="eyebrow">Services</p>
   <h1 class="t-display">Meta shows revenue. I show how much of it <em>landed</em>.</h1>
   <p class="lead muted">Meta ads run together with measurement of actual payments. With a subscription that also means watching renewals and failed payments. For subscription businesses and creators selling their own product.</p>
-  <div class="btn-row"><a class="btn" href="#kontakt">Book a call</a></div>
+  <div class="btn-row"><a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a></div>
 </section>
 
 
@@ -286,11 +302,39 @@ p,ul,ol{margin:0}
   </div>
 </section>
 
+<section class="wrap dense reveal" id="audyt" aria-labelledby="audyt-title">
+  <div class="audit-box">
+    <h2 class="t-head" id="audyt-title" style="margin-bottom:16px">Meta Ads and measurement audit</h2>
+    <p class="lead">PLN 2,900 net, paid upfront. Start within 2 days of payment, result within 5 working days.</p>
+    <div class="audit-block">
+      <h3 class="t-sub">What you get</h3>
+      <ol class="audit-list">
+        <li>Measurement verification. Purchases reported by Meta matched against payments from the last 90 days. You get one number: how many times the platform overstates results on your account.</li>
+        <li>Technical diagnosis. Pixel, Conversions API, deduplication, purchase events and checkout on another domain. A list of errors explaining what each one breaks.</li>
+        <li>90 days of account data. Each campaign broken down by cost, how many new customers it brings and how much budget is spent boosting people who would have bought anyway. In PLN.</li>
+        <li>Creatives. Which ones drive results in the payment data, which to switch off, what is missing from the tests, plus 3 briefs to record first.</li>
+        <li>Compliance. Meta policy risks, for example in health and fitness, that may block ad delivery.</li>
+        <li>An 8-10 page report and a list of fixes ordered by impact on results.</li>
+        <li>A 30-day plan: what to do in weeks 1, 2, 3 and 4. You can implement it yourself, with your current agency or with me.</li>
+        <li>A 60-minute video review, with a recording.</li>
+        <li>14 days of email questions after the review.</li>
+      </ol>
+    </div>
+    <div class="audit-block"><h3 class="t-sub" style="margin-bottom:10px">Guarantee</h3><p>If I do not find at least three specific fixes in the report, I refund the full PLN 2,900.</p></div>
+    <div class="audit-block"><h3 class="t-sub" style="margin-bottom:10px">For comparison</h3><p>At PLN 10,000 in monthly spend, the audit costs the same as 9 days of budget. If even one campaign spends money on customers who would have bought anyway, the difference pays back in the first month. If we continue with ongoing management, PLN 2,900 is deducted from the first invoice.</p></div>
+    <div class="audit-block">
+      <h3 class="t-sub" style="margin-bottom:10px">What I need</h3>
+      <ul class="list"><li>read-only access to the ad account (Analyst role), I change nothing in the account during the audit</li><li>a payment export from the last 3 months and the website address</li><li>I do not need access to the payment system or the code</li><li>about 30 minutes from you at the start and one hour for the review</li></ul>
+    </div>
+    <div class="btn-row" style="margin-top:clamp(32px,5vw,48px)"><a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a><a class="btn btn--ghost" href="#kontakt">Fill in the form</a></div>
+  </div>
+</section>
+
 <section class="band-gray">
   <div class="wrap dense reveal">
     <h2 class="t-head" style="margin-bottom:clamp(32px,5vw,48px)">How working together looks</h2>
     <ol class="steps">
-      <li><span class="steps__num">01</span><div><h3 class="t-sub">Calibration, five working days</h3><p>I check how much of the revenue Meta reports is visible in your payment system, where measurement breaks down, which campaigns are bidding against each other and how much budget goes nowhere. You get a document and a 45-minute call.</p></div></li>
+      <li><span class="steps__num">01</span><div><h3 class="t-sub">Audit, five working days</h3><p>I check how much of the revenue Meta reports is visible in your payment system, where measurement breaks down, which campaigns are bidding against each other and how much budget goes nowhere. You get a report, a 30-day plan and a one-hour review.</p></div></li>
       <li><span class="steps__num">02</span><div><h3 class="t-sub">Fixing measurement</h3><p>Server-side measurement and the dashboard go live. From that point both numbers are visible separately and every budget decision rests on the second one.</p></div></li>
       <li><span class="steps__num">03</span><div><h3 class="t-sub">Ongoing management</h3><p>Ads, creative direction, weekly decisions. For subscriptions, renewals and failed payments are watched as well.</p></div></li>
     </ol>
@@ -301,16 +345,11 @@ p,ul,ol{margin:0}
   <div class="split">
     <div>
       <h2 class="t-head" style="margin-bottom:16px">Terms</h2>
-      <p class="lead muted">We start with Calibration. It is a one-off piece of work with a specific output, not a year-long commitment.</p>
+      <p class="lead muted">We start with an audit. It is a closed piece of work with a specific result, not a year-long commitment.</p>
       <p class="lead muted" style="margin-top:20px">The retainer price depends on whether there is a subscription to look after. We agree the fee during the call.</p>
       <h3 class="t-sub" style="margin:clamp(32px,5vw,48px) 0 12px">Who records the ad creatives</h3>
       <p class="muted">You get the full package from me: what to record, in what order, what language to open with, which shot has to do the selling. Direction, briefs, analysis of what worked and a list for the following month.</p>
       <p class="muted" style="margin-top:16px">But you do the recording. Your face and your voice sell better than material made by someone who does not know you. This is the one bottleneck on your side and I say so before we start, not in month three.</p>
-    </div>
-    <div class="card card--mint" style="border-radius:18px;padding:clamp(24px,3.2vw,36px)">
-      <div class="card__num">Package</div>
-      <div class="t-head" style="font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:18px">PLN 1,999 net</div>
-      <ul class="list"><li>Calibration, five working days</li><li>the fee is deducted from the first invoice if we start working together</li><li>I need read access to the ad account, a three month payment export and your website address</li><li>I do not need access to your payment system or your code</li></ul>
     </div>
   </div>
 </section>
@@ -323,15 +362,28 @@ p,ul,ol{margin:0}
       <li>before the first sale</li>
       <li>one-off sales with no repeat business</li>
       <li>margins in the low teens, where my fee has no way of paying for itself</li>
-      <li>looking for a second opinion to win an argument with your current agency</li>
+      <li>expecting the audit to confirm a conclusion you have already reached</li>
     </ul>
+  </div>
+</section>
+
+<section class="wrap dense reveal" aria-labelledby="faq-title">
+  <h2 class="t-head" id="faq-title" style="margin-bottom:clamp(32px,5vw,48px)">Frequently asked questions</h2>
+  <div class="faq">
+    <details><summary>How is this different from my agency's report?</summary><p>An agency reports numbers from Ads Manager, the same numbers it is assessed on. I match them against payments and show the difference on your account.</p></details>
+    <details><summary>I have an agency. Does this make sense?</summary><p>Yes. You can give the 30-day plan to the agency. I am not looking for an argument, I show the numbers.</p></details>
+    <details><summary>What if you find nothing?</summary><p>If the report does not contain at least three specific fixes, I refund the full PLN 2,900.</p></details>
+    <details><summary>Do I have to stay with you for ongoing management after the audit?</summary><p>No. The audit is a closed piece of work. If we continue, its cost is deducted from the first invoice.</p></details>
+    <details><summary>Why is it paid upfront?</summary><p>I reserve 5 working days for your account only. That lets me start within 2 days of payment, not in a month.</p></details>
+    <details><summary>How much time will this take on my side?</summary><p>About 30 minutes to grant access and export payments, then one hour for the review.</p></details>
+    <details><summary>Is my account safe?</summary><p>Read-only access. During the audit I change nothing, launch nothing and switch nothing off.</p></details>
   </div>
 </section>
 
 
 <section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
   <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Let's talk</h2>
-  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Six fields. I reply within one business day.</p>
+  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Five fields. After sending, you pick a 15-minute slot right away.</p>
   <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
     <input type="hidden" name="_subject" value="Optimattic - enquiry from services page">
       <div class="field">
@@ -353,16 +405,6 @@ p,ul,ol{margin:0}
         </select>
       </div>
       <div class="field">
-        <label for="przychod">Monthly revenue</label>
-        <select id="przychod" name="przychod" required>
-          <option value="" disabled selected>Select</option>
-          <option>under PLN 20,000</option>
-          <option>PLN 20,000 - 50,000</option>
-          <option>PLN 50,000 - 150,000</option>
-          <option>over PLN 150,000</option>
-        </select>
-      </div>
-      <div class="field">
         <label for="budzet">Current ad spend</label>
         <select id="budzet" name="budzet" required>
           <option value="" disabled selected>Select</option>
@@ -378,7 +420,7 @@ p,ul,ol{margin:0}
         <textarea id="kontekst" name="kontekst" rows="3" placeholder="e.g. I have no idea which campaigns actually bring subscriptions"></textarea>
       </div>
       <div class="form-foot">
-        <button type="submit" class="btn">Send enquiry</button>
+        <button type="submit" class="btn">Send and pick a time</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </div>
       <input type="hidden" name="utm_source" value="">
@@ -388,6 +430,11 @@ p,ul,ol{margin:0}
       <input type="hidden" name="utm_term" value="">
       <input type="hidden" name="strona" value="">
   </form>
+  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Prefer to book right away? Pick a 15-minute slot in the calendar</a></p>
+  <div class="form-result" hidden>
+    <p>Thanks, I will reply within one business day. The fastest option is to pick a 15-minute slot now. Before the call, I will review your ads in the Meta Ad Library.</p>
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Pick a time</a>
+  </div>
 </section>
 <script>
 (function(){
@@ -413,13 +460,24 @@ p,ul,ol{margin:0}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
+    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking');
     btn.disabled = true; btn.textContent = 'Sending...'; status.className = 'form-status'; status.textContent = '';
     fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
       .then(function(res){
-        if(res.ok){ status.classList.add('ok'); status.textContent = 'Thank you. I will get back to you within one business day.'; form.reset(); }
-        else { status.classList.add('err'); status.textContent = 'Something went wrong. Please email hello@optimattic.com.'; }
+        if(res.ok){
+          form.reset(); form.hidden = true;
+          if(formBooking) formBooking.hidden = true;
+          if(result) result.hidden = false;
+          if(window.umami && typeof window.umami.track === 'function') window.umami.track('form-submit-ok');
+        }else{
+          status.classList.add('err');
+          status.innerHTML = 'The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">pick a time in the calendar</a>.';
+        }
       })
-      .catch(function(){ status.classList.add('err'); status.textContent = 'Something went wrong. Please email hello@optimattic.com.'; })
+      .catch(function(){
+        status.classList.add('err');
+        status.innerHTML = 'The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">pick a time in the calendar</a>.';
+      })
       .then(function(){ btn.disabled = false; btn.textContent = label; });
   });
 })();
@@ -430,6 +488,7 @@ p,ul,ol{margin:0}
   <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
   <div class="footer__links">
     <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+    <a href="tel:+48606221835">+48 606 221 835</a>
     <a href="marketing-en.html">Services</a>
     <a href="case-en.html">Case study</a>
     <a href="polityka-prywatnosci-aplikacji.html">Privacy policy</a>

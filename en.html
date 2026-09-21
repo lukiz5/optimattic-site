@@ -180,6 +180,20 @@ p,ul,ol{margin:0}
 .form-status{font-size:14px;color:var(--gray);margin:0}
 .form-status.ok{color:var(--green)}
 .form-status.err{color:var(--black);font-weight:500}
+.form-result{max-width:660px;padding:clamp(24px,4vw,36px);border-radius:18px;background:var(--mint-light)}
+.form-result[hidden]{display:none}
+.form-result p{margin-bottom:20px}
+
+/* ---------- proof + audit ---------- */
+.proof{padding-top:0}
+.proof__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.proof__item{background:var(--white);padding:clamp(22px,4vw,36px)}
+.proof__num{display:block;font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1;color:var(--green);margin-bottom:10px}
+.proof__caption{margin-top:18px;color:var(--gray);font-size:.95rem}
+.audit-box{background:var(--mint-light);border-radius:22px;padding:clamp(28px,6vw,64px)}
+.audit-box .lead{max-width:62ch}
+.audit-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.35rem,3vw,2rem);margin-top:24px}
+@media (max-width:700px){.proof__grid{grid-template-columns:1fr}}
 
 /* ---------- CTA band ---------- */
 .cta{background:var(--black);color:var(--white);border-radius:22px;padding:clamp(32px,6vw,64px);
@@ -218,6 +232,7 @@ p,ul,ol{margin:0}
 }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
+<script defer src="site.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -225,7 +240,7 @@ p,ul,ol{margin:0}
   <a href="en.html" aria-label="Optimattic - home"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
     <div class="nav__links"><a class="nav__link" href="marketing-en.html">Services</a><a class="nav__link" href="case-en.html">Case study</a></div>
-    <a class="btn btn--sm" href="#kontakt">Book a call</a>
+    <a class="btn btn--sm" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
     <a class="lang" href="index.html" hreflang="pl" aria-label="Wersja polska">PL</a>
   </div>
 </header>
@@ -236,9 +251,18 @@ p,ul,ol{margin:0}
   <h1 class="t-display">You know what you spend. See what comes <em>back</em>.</h1>
   <p class="lead muted">I run Meta ads and connect their cost to actual payments. You see separately what Meta claims for itself and how much money really came in.</p>
   <div class="btn-row">
-    <a class="btn" href="#kontakt">Book a call</a>
-    <a class="btn btn--ghost" href="#pomiar">See the problem</a>
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
+    <a class="btn btn--ghost" href="marketing-en.html#audyt" data-umami-event="audit-scope">Audit - PLN 2,900</a>
   </div>
+</section>
+
+<section class="wrap dense proof reveal" aria-label="Case study results">
+  <div class="proof__grid">
+    <div class="proof__item"><span class="proof__num">-45%</span><span>cost to acquire a new customer</span></div>
+    <div class="proof__item"><span class="proof__num">x3.3</span><span>new customers from ads, with an 81% higher budget</span></div>
+    <div class="proof__item"><span class="proof__num">3x</span><span>how much the ad platform overstated the result</span></div>
+  </div>
+  <p class="proof__caption">Subscription training platform, 2 months, counted from first payments. <a class="textlink" href="case-en.html">Read the case study</a></p>
 </section>
 
 
@@ -257,6 +281,20 @@ p,ul,ol{margin:0}
     </h2>
     <div class="dots" role="img" aria-label="99 purchases according to Meta, of which 22 confirmed by payment"><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot dot--lost" style="--i:0"></span><span class="dot dot--lost" style="--i:1"></span><span class="dot dot--lost" style="--i:2"></span><span class="dot dot--lost" style="--i:3"></span><span class="dot dot--lost" style="--i:4"></span><span class="dot dot--lost" style="--i:5"></span><span class="dot dot--lost" style="--i:6"></span><span class="dot dot--lost" style="--i:7"></span><span class="dot dot--lost" style="--i:8"></span><span class="dot dot--lost" style="--i:9"></span><span class="dot dot--lost" style="--i:10"></span><span class="dot dot--lost" style="--i:11"></span><span class="dot dot--lost" style="--i:12"></span><span class="dot dot--lost" style="--i:13"></span><span class="dot dot--lost" style="--i:14"></span><span class="dot dot--lost" style="--i:15"></span><span class="dot dot--lost" style="--i:16"></span><span class="dot dot--lost" style="--i:17"></span><span class="dot dot--lost" style="--i:18"></span><span class="dot dot--lost" style="--i:19"></span><span class="dot dot--lost" style="--i:20"></span><span class="dot dot--lost" style="--i:21"></span><span class="dot dot--lost" style="--i:22"></span><span class="dot dot--lost" style="--i:23"></span><span class="dot dot--lost" style="--i:24"></span><span class="dot dot--lost" style="--i:25"></span><span class="dot dot--lost" style="--i:26"></span><span class="dot dot--lost" style="--i:27"></span><span class="dot dot--lost" style="--i:28"></span><span class="dot dot--lost" style="--i:29"></span><span class="dot dot--lost" style="--i:30"></span><span class="dot dot--lost" style="--i:31"></span><span class="dot dot--lost" style="--i:32"></span><span class="dot dot--lost" style="--i:33"></span><span class="dot dot--lost" style="--i:34"></span><span class="dot dot--lost" style="--i:35"></span><span class="dot dot--lost" style="--i:36"></span><span class="dot dot--lost" style="--i:37"></span><span class="dot dot--lost" style="--i:38"></span><span class="dot dot--lost" style="--i:39"></span><span class="dot dot--lost" style="--i:40"></span><span class="dot dot--lost" style="--i:41"></span><span class="dot dot--lost" style="--i:42"></span><span class="dot dot--lost" style="--i:43"></span><span class="dot dot--lost" style="--i:44"></span><span class="dot dot--lost" style="--i:45"></span><span class="dot dot--lost" style="--i:46"></span><span class="dot dot--lost" style="--i:47"></span><span class="dot dot--lost" style="--i:48"></span><span class="dot dot--lost" style="--i:49"></span><span class="dot dot--lost" style="--i:50"></span><span class="dot dot--lost" style="--i:51"></span><span class="dot dot--lost" style="--i:52"></span><span class="dot dot--lost" style="--i:53"></span><span class="dot dot--lost" style="--i:54"></span><span class="dot dot--lost" style="--i:55"></span><span class="dot dot--lost" style="--i:56"></span><span class="dot dot--lost" style="--i:57"></span><span class="dot dot--lost" style="--i:58"></span><span class="dot dot--lost" style="--i:59"></span><span class="dot dot--lost" style="--i:60"></span><span class="dot dot--lost" style="--i:61"></span><span class="dot dot--lost" style="--i:62"></span><span class="dot dot--lost" style="--i:63"></span><span class="dot dot--lost" style="--i:64"></span><span class="dot dot--lost" style="--i:65"></span><span class="dot dot--lost" style="--i:66"></span><span class="dot dot--lost" style="--i:67"></span><span class="dot dot--lost" style="--i:68"></span><span class="dot dot--lost" style="--i:69"></span><span class="dot dot--lost" style="--i:70"></span><span class="dot dot--lost" style="--i:71"></span><span class="dot dot--lost" style="--i:72"></span><span class="dot dot--lost" style="--i:73"></span><span class="dot dot--lost" style="--i:74"></span><span class="dot dot--lost" style="--i:75"></span><span class="dot dot--lost" style="--i:76"></span></div>
     <p class="signal__note">One month on a client account. The rest cannot be tied to the ads on the payment side. This does not mean the ads were not working - it means the budget was being set on a number nobody had verified.</p>
+  </div>
+</section>
+
+<section class="wrap dense reveal" aria-labelledby="audit-home-title">
+  <div class="audit-box">
+    <p class="eyebrow">Services</p>
+    <h2 class="t-head" id="audit-home-title" style="margin-bottom:18px">Meta Ads and measurement audit</h2>
+    <p class="lead muted">In 5 business days I check how many purchases reported by Meta appear in your payment system, where budget leaks and which creatives actually drive the result.</p>
+    <p class="muted" style="margin-top:16px;max-width:62ch">An 8-10 page report, a list of fixes ordered by impact, a 30-day plan, 3 recording briefs and a one-hour review. If I do not find three specific fixes, I refund your money.</p>
+    <p class="audit-price">PLN 2,900 net, paid upfront. The amount comes off the first invoice if we continue working together.</p>
+    <div class="btn-row">
+      <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
+      <a class="btn btn--outlineDark" href="marketing-en.html#audyt" data-umami-event="audit-scope">See the full scope</a>
+    </div>
   </div>
 </section>
 
@@ -311,7 +349,7 @@ p,ul,ol{margin:0}
           <li>before the first sale</li>
           <li>one-off sales with no repeat business</li>
           <li>margins in the low teens, where my fee has no way of paying for itself</li>
-          <li>looking for a second opinion to win an argument with your current agency</li>
+          <li>expecting the audit to confirm a conclusion you have already reached</li>
         </ul>
       </div>
     </div>
@@ -321,14 +359,14 @@ p,ul,ol{margin:0}
 <section class="wrap dense reveal">
   <div class="split" style="align-items:end">
     <h2 class="t-head">How this looks with a client</h2>
-    <div><a class="textlink" href="case-en.html">Read the case study</a></div>
+    <div><p class="muted" style="margin-bottom:12px">After taking over the account and fixing measurement, the cost to acquire a new customer fell by 45%, while the number of new customers from ads grew 3.3 times in two months.</p><a class="textlink" href="case-en.html">Read the case study</a></div>
   </div>
 </section>
 
 
 <section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
   <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Let's talk</h2>
-  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Six fields. I reply within one business day.</p>
+  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Five fields. After sending, you pick a 15-minute slot right away.</p>
   <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
     <input type="hidden" name="_subject" value="Optimattic - enquiry from homepage">
       <div class="field">
@@ -350,16 +388,6 @@ p,ul,ol{margin:0}
         </select>
       </div>
       <div class="field">
-        <label for="przychod">Monthly revenue</label>
-        <select id="przychod" name="przychod" required>
-          <option value="" disabled selected>Select</option>
-          <option>under PLN 20,000</option>
-          <option>PLN 20,000 - 50,000</option>
-          <option>PLN 50,000 - 150,000</option>
-          <option>over PLN 150,000</option>
-        </select>
-      </div>
-      <div class="field">
         <label for="budzet">Current ad spend</label>
         <select id="budzet" name="budzet" required>
           <option value="" disabled selected>Select</option>
@@ -375,7 +403,7 @@ p,ul,ol{margin:0}
         <textarea id="kontekst" name="kontekst" rows="3" placeholder="e.g. I have no idea which campaigns actually bring subscriptions"></textarea>
       </div>
       <div class="form-foot">
-        <button type="submit" class="btn">Send enquiry</button>
+        <button type="submit" class="btn">Send and pick a time</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </div>
       <input type="hidden" name="utm_source" value="">
@@ -385,6 +413,11 @@ p,ul,ol{margin:0}
       <input type="hidden" name="utm_term" value="">
       <input type="hidden" name="strona" value="">
   </form>
+  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Prefer to book right away? Pick a 15-minute slot in the calendar</a></p>
+  <div class="form-result" hidden>
+    <p>Thanks, I will reply within one business day. The fastest option is to pick a 15-minute slot now. Before the call, I will review your ads in the Meta Ad Library.</p>
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Pick a time</a>
+  </div>
 </section>
 <script>
 (function(){
@@ -410,13 +443,24 @@ p,ul,ol{margin:0}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
+    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking');
     btn.disabled = true; btn.textContent = 'Sending...'; status.className = 'form-status'; status.textContent = '';
     fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
       .then(function(res){
-        if(res.ok){ status.classList.add('ok'); status.textContent = 'Thank you. I will get back to you within one business day.'; form.reset(); }
-        else { status.classList.add('err'); status.textContent = 'Something went wrong. Please email hello@optimattic.com.'; }
+        if(res.ok){
+          form.reset(); form.hidden = true;
+          if(formBooking) formBooking.hidden = true;
+          if(result) result.hidden = false;
+          if(window.umami && typeof window.umami.track === 'function') window.umami.track('form-submit-ok');
+        }else{
+          status.classList.add('err');
+          status.innerHTML = 'The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">pick a time in the calendar</a>.';
+        }
       })
-      .catch(function(){ status.classList.add('err'); status.textContent = 'Something went wrong. Please email hello@optimattic.com.'; })
+      .catch(function(){
+        status.classList.add('err');
+        status.innerHTML = 'The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">pick a time in the calendar</a>.';
+      })
       .then(function(){ btn.disabled = false; btn.textContent = label; });
   });
 })();
@@ -427,6 +471,7 @@ p,ul,ol{margin:0}
   <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
   <div class="footer__links">
     <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+    <a href="tel:+48606221835">+48 606 221 835</a>
     <a href="marketing-en.html">Services</a>
     <a href="case-en.html">Case study</a>
     <a href="polityka-prywatnosci-aplikacji.html">Privacy policy</a>

@@ -179,6 +179,20 @@ p,ul,ol{margin:0}
 .form-status{font-size:14px;color:var(--gray);margin:0}
 .form-status.ok{color:var(--green)}
 .form-status.err{color:var(--black);font-weight:500}
+.form-result{max-width:660px;padding:clamp(24px,4vw,36px);border-radius:18px;background:var(--mint-light)}
+.form-result[hidden]{display:none}
+.form-result p{margin-bottom:20px}
+
+/* ---------- proof + audit ---------- */
+.proof{padding-top:0}
+.proof__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.proof__item{background:var(--white);padding:clamp(22px,4vw,36px)}
+.proof__num{display:block;font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1;color:var(--green);margin-bottom:10px}
+.proof__caption{margin-top:18px;color:var(--gray);font-size:.95rem}
+.audit-box{background:var(--mint-light);border-radius:22px;padding:clamp(28px,6vw,64px)}
+.audit-box .lead{max-width:62ch}
+.audit-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.35rem,3vw,2rem);margin-top:24px}
+@media (max-width:700px){.proof__grid{grid-template-columns:1fr}}
 
 /* ---------- CTA band ---------- */
 .cta{background:var(--black);color:var(--white);border-radius:22px;padding:clamp(32px,6vw,64px);
@@ -217,6 +231,7 @@ p,ul,ol{margin:0}
 }
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
+<script defer src="site.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -224,7 +239,7 @@ p,ul,ol{margin:0}
   <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
     <div class="nav__links"><a class="nav__link" href="marketing.html">Oferta</a><a class="nav__link" href="case.html">Case study</a></div>
-    <a class="btn btn--sm" href="#kontakt">Umów rozmowę</a>
+    <a class="btn btn--sm" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
     <a class="lang" href="en.html" hreflang="en" aria-label="English version">EN</a>
   </div>
 </header>
@@ -235,9 +250,18 @@ p,ul,ol{margin:0}
   <h1 class="t-display">Wiesz, ile wydajesz. Zobacz, ile z tego <em>wraca</em>.</h1>
   <p class="lead muted">Prowadzę reklamy Meta i łączę ich koszt z faktycznymi płatnościami. Widzisz osobno, co przypisuje sobie Meta i ile pieniędzy naprawdę wpłynęło.</p>
   <div class="btn-row">
-    <a class="btn" href="#kontakt">Umów rozmowę</a>
-    <a class="btn btn--ghost" href="#pomiar">Zobacz problem</a>
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+    <a class="btn btn--ghost" href="marketing.html#audyt" data-umami-event="audit-scope">Audyt - 2 900 zł</a>
   </div>
+</section>
+
+<section class="wrap dense proof reveal" aria-label="Wyniki case study">
+  <div class="proof__grid">
+    <div class="proof__item"><span class="proof__num">-45%</span><span>koszt pozyskania nowej klientki</span></div>
+    <div class="proof__item"><span class="proof__num">x3,3</span><span>nowe klientki z reklam, przy budżecie +81%</span></div>
+    <div class="proof__item"><span class="proof__num">3x</span><span>tyle zawyżała wynik platforma reklamowa</span></div>
+  </div>
+  <p class="proof__caption">Subskrypcyjna platforma treningowa, 2 miesiące, liczone na pierwszych płatnościach. <a class="textlink" href="case.html">Zobacz case study</a></p>
 </section>
 
 
@@ -256,6 +280,20 @@ p,ul,ol{margin:0}
     </h2>
     <div class="dots" role="img" aria-label="99 zakupów według Meta, z czego 22 potwierdzone płatnością"><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot dot--lost" style="--i:0"></span><span class="dot dot--lost" style="--i:1"></span><span class="dot dot--lost" style="--i:2"></span><span class="dot dot--lost" style="--i:3"></span><span class="dot dot--lost" style="--i:4"></span><span class="dot dot--lost" style="--i:5"></span><span class="dot dot--lost" style="--i:6"></span><span class="dot dot--lost" style="--i:7"></span><span class="dot dot--lost" style="--i:8"></span><span class="dot dot--lost" style="--i:9"></span><span class="dot dot--lost" style="--i:10"></span><span class="dot dot--lost" style="--i:11"></span><span class="dot dot--lost" style="--i:12"></span><span class="dot dot--lost" style="--i:13"></span><span class="dot dot--lost" style="--i:14"></span><span class="dot dot--lost" style="--i:15"></span><span class="dot dot--lost" style="--i:16"></span><span class="dot dot--lost" style="--i:17"></span><span class="dot dot--lost" style="--i:18"></span><span class="dot dot--lost" style="--i:19"></span><span class="dot dot--lost" style="--i:20"></span><span class="dot dot--lost" style="--i:21"></span><span class="dot dot--lost" style="--i:22"></span><span class="dot dot--lost" style="--i:23"></span><span class="dot dot--lost" style="--i:24"></span><span class="dot dot--lost" style="--i:25"></span><span class="dot dot--lost" style="--i:26"></span><span class="dot dot--lost" style="--i:27"></span><span class="dot dot--lost" style="--i:28"></span><span class="dot dot--lost" style="--i:29"></span><span class="dot dot--lost" style="--i:30"></span><span class="dot dot--lost" style="--i:31"></span><span class="dot dot--lost" style="--i:32"></span><span class="dot dot--lost" style="--i:33"></span><span class="dot dot--lost" style="--i:34"></span><span class="dot dot--lost" style="--i:35"></span><span class="dot dot--lost" style="--i:36"></span><span class="dot dot--lost" style="--i:37"></span><span class="dot dot--lost" style="--i:38"></span><span class="dot dot--lost" style="--i:39"></span><span class="dot dot--lost" style="--i:40"></span><span class="dot dot--lost" style="--i:41"></span><span class="dot dot--lost" style="--i:42"></span><span class="dot dot--lost" style="--i:43"></span><span class="dot dot--lost" style="--i:44"></span><span class="dot dot--lost" style="--i:45"></span><span class="dot dot--lost" style="--i:46"></span><span class="dot dot--lost" style="--i:47"></span><span class="dot dot--lost" style="--i:48"></span><span class="dot dot--lost" style="--i:49"></span><span class="dot dot--lost" style="--i:50"></span><span class="dot dot--lost" style="--i:51"></span><span class="dot dot--lost" style="--i:52"></span><span class="dot dot--lost" style="--i:53"></span><span class="dot dot--lost" style="--i:54"></span><span class="dot dot--lost" style="--i:55"></span><span class="dot dot--lost" style="--i:56"></span><span class="dot dot--lost" style="--i:57"></span><span class="dot dot--lost" style="--i:58"></span><span class="dot dot--lost" style="--i:59"></span><span class="dot dot--lost" style="--i:60"></span><span class="dot dot--lost" style="--i:61"></span><span class="dot dot--lost" style="--i:62"></span><span class="dot dot--lost" style="--i:63"></span><span class="dot dot--lost" style="--i:64"></span><span class="dot dot--lost" style="--i:65"></span><span class="dot dot--lost" style="--i:66"></span><span class="dot dot--lost" style="--i:67"></span><span class="dot dot--lost" style="--i:68"></span><span class="dot dot--lost" style="--i:69"></span><span class="dot dot--lost" style="--i:70"></span><span class="dot dot--lost" style="--i:71"></span><span class="dot dot--lost" style="--i:72"></span><span class="dot dot--lost" style="--i:73"></span><span class="dot dot--lost" style="--i:74"></span><span class="dot dot--lost" style="--i:75"></span><span class="dot dot--lost" style="--i:76"></span></div>
     <p class="signal__note">Jeden miesiąc na koncie klienta. Reszty nie da się powiązać z reklamą po stronie płatności. To nie znaczy, że reklamy nie działały - znaczy, że budżet był ustawiany na podstawie liczby, której nikt nie zweryfikował.</p>
+  </div>
+</section>
+
+<section class="wrap dense reveal" aria-labelledby="audyt-home-title">
+  <div class="audit-box">
+    <p class="eyebrow">Oferta</p>
+    <h2 class="t-head" id="audyt-home-title" style="margin-bottom:18px">Audyt Meta Ads i pomiaru</h2>
+    <p class="lead muted">W 5 dni roboczych sprawdzam, ile z zakupów raportowanych przez Meta widać w Twoim systemie płatności, gdzie ucieka budżet i które kreacje naprawdę ciągną wynik.</p>
+    <p class="muted" style="margin-top:16px;max-width:62ch">Raport 8-10 stron, lista napraw w kolejności wpływu, plan na 30 dni, 3 briefy do nagrania i godzina omówienia. Jeśli nie znajdę trzech konkretnych napraw, oddaję pieniądze.</p>
+    <p class="audit-price">2 900 zł netto, płatne z góry. Kwota schodzi z pierwszej faktury, jeśli zostajemy na dłużej.</p>
+    <div class="btn-row">
+      <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+      <a class="btn btn--outlineDark" href="marketing.html#audyt" data-umami-event="audit-scope">Zobacz pełny zakres</a>
+    </div>
   </div>
 </section>
 
@@ -310,7 +348,7 @@ p,ul,ol{margin:0}
           <li>przed pierwszą sprzedażą</li>
           <li>sprzedaż jednorazowa bez powrotów</li>
           <li>marża kilkunastoprocentowa, przy której moja stawka nie ma jak się zwrócić</li>
-          <li>szukanie drugiej opinii do sporu z obecną agencją</li>
+          <li>oczekiwanie, że audyt potwierdzi z góry założoną tezę</li>
         </ul>
       </div>
     </div>
@@ -320,14 +358,14 @@ p,ul,ol{margin:0}
 <section class="wrap dense reveal">
   <div class="split" style="align-items:end">
     <h2 class="t-head">Jak to wygląda u klienta</h2>
-    <div><a class="textlink" href="case.html">Zobacz case study</a></div>
+    <div><p class="muted" style="margin-bottom:12px">Po przejęciu konta i naprawie pomiaru koszt pozyskania nowej klientki spadł o 45%, a liczba nowych klientek z reklam wzrosła 3,3 raza w dwa miesiące.</p><a class="textlink" href="case.html">Zobacz case study</a></div>
   </div>
 </section>
 
 
 <section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
   <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Porozmawiajmy</h2>
-  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Sześć pól. Odpowiadam w ciągu jednego dnia roboczego.</p>
+  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Pięć pól. Po wysłaniu od razu wybierasz termin 15 minut.</p>
   <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
     <input type="hidden" name="_subject" value="Optimattic - zapytanie ze strony głównej">
       <div class="field">
@@ -349,16 +387,6 @@ p,ul,ol{margin:0}
         </select>
       </div>
       <div class="field">
-        <label for="przychod">Miesięczny przychód</label>
-        <select id="przychod" name="przychod" required>
-          <option value="" disabled selected>Wybierz</option>
-          <option>do 20 000 zł</option>
-          <option>20 000 - 50 000 zł</option>
-          <option>50 000 - 150 000 zł</option>
-          <option>powyżej 150 000 zł</option>
-        </select>
-      </div>
-      <div class="field">
         <label for="budzet">Obecny wydatek na reklamy</label>
         <select id="budzet" name="budzet" required>
           <option value="" disabled selected>Wybierz</option>
@@ -374,7 +402,7 @@ p,ul,ol{margin:0}
         <textarea id="kontekst" name="kontekst" rows="3" placeholder="np. Nie wiem, które kampanie faktycznie przynoszą subskrypcje"></textarea>
       </div>
       <div class="form-foot">
-        <button type="submit" class="btn">Wyślij zgłoszenie</button>
+        <button type="submit" class="btn">Wyślij i wybierz termin</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </div>
       <input type="hidden" name="utm_source" value="">
@@ -384,6 +412,11 @@ p,ul,ol{margin:0}
       <input type="hidden" name="utm_term" value="">
       <input type="hidden" name="strona" value="">
   </form>
+  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wolisz od razu termin? Wybierz 15 minut w kalendarzu</a></p>
+  <div class="form-result" hidden>
+    <p>Dzięki, odpowiem w ciągu jednego dnia roboczego. Najszybciej będzie, jeśli od razu wybierzesz termin 15 minut. Przed rozmową przejrzę Twoje reklamy w bibliotece Meta.</p>
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wybierz termin</a>
+  </div>
 </section>
 <script>
 (function(){
@@ -409,13 +442,24 @@ p,ul,ol{margin:0}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
+    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking');
     btn.disabled = true; btn.textContent = 'Wysyłanie...'; status.className = 'form-status'; status.textContent = '';
     fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
       .then(function(res){
-        if(res.ok){ status.classList.add('ok'); status.textContent = 'Dziękuję. Odezwę się w ciągu jednego dnia roboczego.'; form.reset(); }
-        else { status.classList.add('err'); status.textContent = 'Coś poszło nie tak. Napisz na hello@optimattic.com.'; }
+        if(res.ok){
+          form.reset(); form.hidden = true;
+          if(formBooking) formBooking.hidden = true;
+          if(result) result.hidden = false;
+          if(window.umami && typeof window.umami.track === 'function') window.umami.track('form-submit-ok');
+        }else{
+          status.classList.add('err');
+          status.innerHTML = 'Nie udało się wysłać. Napisz na <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> albo <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">wybierz termin w kalendarzu</a>.';
+        }
       })
-      .catch(function(){ status.classList.add('err'); status.textContent = 'Coś poszło nie tak. Napisz na hello@optimattic.com.'; })
+      .catch(function(){
+        status.classList.add('err');
+        status.innerHTML = 'Nie udało się wysłać. Napisz na <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> albo <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">wybierz termin w kalendarzu</a>.';
+      })
       .then(function(){ btn.disabled = false; btn.textContent = label; });
   });
 })();
@@ -426,6 +470,7 @@ p,ul,ol{margin:0}
   <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
   <div class="footer__links">
     <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+    <a href="tel:+48606221835">+48 606 221 835</a>
     <a href="marketing.html">Oferta</a>
     <a href="case.html">Case study</a>
     <a href="polityka-prywatnosci-aplikacji.html">Polityka prywatności</a>
