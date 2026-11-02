@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Optimattic - reklamy Meta i pomiar sprzedaży</title>
+<meta name="description" content="Pomiar sprzedaży i reklamy Meta dla biznesów subskrypcyjnych i twórców internetowych.">
+<link rel="canonical" href="https://optimattic.com/meta.html">
+<meta property="og:image" content="https://optimattic.com/og-pl.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="pl" href="https://optimattic.com/meta.html">
+<link rel="alternate" hreflang="x-default" href="https://optimattic.com/">
+<link rel="alternate" hreflang="en" href="https://optimattic.com/en.html">
+<meta property="og:title" content="Wiesz, ile wydajesz. Zobacz, ile z tego wraca.">
+<meta property="og:description" content="Meta liczy zakup każdemu, kto kliknął reklamę w ciągu siedmiu dni. Na każde trzy zakupy według Meta jeden potwierdzony płatnością.">
+<meta property="og:url" content="https://optimattic.com/meta.html">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0A0A0A; --green:#38B76F; --mint:#E8F5ED; --mint-light:#F0FAF4;
+  --gray:#666666; --gray-light:#F5F5F5; --white:#FFFFFF; --border:#E0E0E0;
+  --pad:clamp(20px,5vw,80px); --max:1240px;
+  --dense:clamp(56px,8vw,96px); --quiet:clamp(96px,16vw,220px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',system-ui,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:'Syne',sans-serif;margin:0;letter-spacing:-.04em}
+p,ul,ol{margin:0}
+::selection{background:var(--mint)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--black);color:var(--white);padding:12px 20px;z-index:100}
+.skip:focus{left:8px;top:8px}
+
+/* ---------- type scale (3 steps only) ---------- */
+.t-display{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,calc((100vw - 2*var(--pad))/9.9),6.8rem);line-height:.86;letter-spacing:-.05em;overflow-wrap:break-word}
+.t-head{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(2rem,6vw,4rem);line-height:.98;letter-spacing:-.04em}
+.t-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;line-height:1.25;letter-spacing:-.02em}
+.lead{font-size:clamp(1.1rem,2.4vw,1.4rem);line-height:1.5;max-width:46ch;text-wrap:pretty}
+.muted{color:var(--gray)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:13px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.dense{padding-top:var(--dense);padding-bottom:var(--dense)}
+.quiet{padding-top:var(--quiet);padding-bottom:var(--quiet)}
+.band-gray{background:var(--gray-light)}
+.grid-3{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.grid-3>*{background:var(--white);padding:clamp(24px,3.2vw,36px)}
+.split{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+.nav img{height:26px;width:auto}
+.nav__right{display:flex;align-items:center;gap:8px}
+.nav__links{display:flex;align-items:center;gap:18px}
+.nav__link{color:var(--black);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+.nav__link[aria-current="page"]{color:var(--gray)}
+.lang{display:inline-flex;align-items:center;justify-content:center;height:44px;min-width:44px;padding:0 12px;
+  border:1px solid var(--border);border-radius:100px;color:var(--gray);text-decoration:none;font-size:14px;font-weight:500;
+  transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.lang:hover{color:var(--black);transform:translateY(-1px)}
+
+/* ---------- buttons (one motion pattern: translateY + opacity) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 34px;border:1px solid var(--black);
+  border-radius:100px;background:var(--black);color:var(--white);text-decoration:none;cursor:pointer;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:16px;
+  transition:transform .25s var(--ease),opacity .25s var(--ease),background-color .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--black);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn--sm{height:44px;padding:0 20px;font-size:14px}
+.btn--ghost{background:transparent;color:var(--black);border-color:var(--border)}
+.btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
+.btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
+.btn--onDark:hover{background:var(--white);border-color:var(--white);color:var(--black)}
+.btn--outlineDark{background:transparent;color:var(--white);border-color:var(--gray)}
+.btn--outlineDark:hover{background:transparent;color:var(--white);border-color:var(--white)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.textlink{display:inline-flex;align-items:center;gap:8px;color:var(--black);text-decoration:none;font-family:'Syne',sans-serif;
+  font-weight:700;font-size:15px;border-bottom:2px solid var(--green);padding-bottom:3px;
+  transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.textlink:hover{transform:translateY(-2px)}
+.textlink--onDark{color:var(--white)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(40px,8.5vw,110px);padding-bottom:clamp(38px,7vw,96px)}
+.hero .eyebrow{margin-bottom:clamp(28px,5vw,52px)}
+.hero h1{max-width:13ch;margin-bottom:clamp(28px,5vw,48px)}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .lead{margin-bottom:clamp(32px,5vw,52px)}
+
+/* ---------- SIGNATURE MOMENT ---------- */
+.signal{background:var(--black);color:var(--white);padding-top:clamp(72px,11vw,132px);padding-bottom:clamp(72px,11vw,132px)}
+.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px);color:var(--green)}
+.signal__row{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:end;margin-bottom:clamp(40px,6vw,64px)}
+@media (min-width:760px){.signal__row{grid-template-columns:auto auto;justify-content:start;gap:clamp(48px,8vw,120px)}}
+.signal__row>span{display:block}
+.signal__num{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(5rem,18vw,13rem);line-height:.78;letter-spacing:-.06em;
+  font-variant-numeric:tabular-nums}
+.signal__num--kept{color:var(--green);display:flex;align-items:baseline;gap:.18em;white-space:nowrap}
+.signal__approx{font-family:'Inter',sans-serif;font-size:.22em;font-weight:700;letter-spacing:0}
+.signal__label{display:block;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--white);margin-top:14px;max-width:20ch}
+.signal__minus{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--green);
+  letter-spacing:-.03em;padding-bottom:clamp(8px,2vw,22px);white-space:nowrap}
+.dots{display:grid;grid-template-columns:repeat(11,1fr);gap:clamp(6px,1.4vw,14px);max-width:640px;margin-bottom:clamp(32px,5vw,48px)}
+@media (min-width:760px){.dots{grid-template-columns:repeat(33,1fr);gap:6px;max-width:720px}}
+.dot{aspect-ratio:1;border-radius:50%;background:var(--green);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i)*7ms)}
+.dot--lost{opacity:.14;transform:scale(.4)}
+.signal__note{color:var(--border);font-size:1rem;max-width:52ch}
+/* JS start state - page without JS shows the end state */
+.signal.is-armed .dot--lost{opacity:1;transform:scale(1)}
+.signal.is-armed .signal__kept,.signal.is-armed .signal__minus{opacity:0;transform:translateY(10px)}
+.signal__kept,.signal__minus{transition:opacity .5s var(--ease) .35s,transform .5s var(--ease) .35s}
+@media (prefers-reduced-motion:reduce){
+  .dot,.signal__kept,.signal__minus,.reveal{transition:none!important}
+  .signal.is-armed .dot--lost{opacity:.14;transform:scale(.4)}
+  .signal.is-armed .signal__kept,.signal.is-armed .signal__minus{opacity:1;transform:none}
+}
+
+/* ---------- reveal (single pattern, whole page) ---------- */
+.reveal{transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .reveal.is-armed{opacity:0;transform:translateY(14px)}
+
+/* ---------- statement ---------- */
+.statement{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,3rem);line-height:1.06;
+  letter-spacing:-.035em;max-width:20ch}
+.statement em{font-style:normal;color:var(--green)}
+
+/* ---------- cards + lists ---------- */
+.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--gray);margin-bottom:20px;letter-spacing:.08em}
+.card .t-sub{margin-bottom:10px}
+.card p{color:var(--gray);font-size:.98rem;margin-bottom:20px}
+.card--mint{background:var(--mint-light)!important}
+.list{list-style:none;padding:0;display:grid;gap:11px}
+.list li{display:grid;grid-template-columns:15px 1fr;gap:11px;align-items:start;font-size:.98rem}
+.list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:8px}
+.list--muted li{color:var(--gray)}
+.list--muted li::before{width:9px;height:1px;border-radius:0;background:var(--gray);margin-top:12px}
+.list--lg li{font-size:1.05rem}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;padding:0}
+.steps li{display:grid;grid-template-columns:48px 1fr;gap:clamp(14px,3vw,40px);padding:26px 0;border-top:1px solid var(--border)}
+.steps li:last-child{border-bottom:1px solid var(--border)}
+.steps__num{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--green)}
+.steps h3{margin-bottom:6px}
+.steps p{color:var(--gray);font-size:.98rem;max-width:56ch}
+
+/* ---------- form ---------- */
+.form{display:grid;gap:18px;max-width:660px}
+@media (min-width:720px){.form{grid-template-columns:1fr 1fr}.form .field--full,.form .form-foot{grid-column:1/-1}}
+.field{display:grid;gap:8px}
+.field label{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--border);border-radius:12px;background:var(--white);
+  color:var(--black);font-family:'Inter',sans-serif;font-size:16px;
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.field input,.field select{height:56px;padding:0 16px}
+.field select{appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--black) 50%),linear-gradient(135deg,var(--black) 50%,transparent 50%);
+  background-position:calc(100% - 21px) 25px,calc(100% - 16px) 25px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.field textarea{padding:15px 16px;min-height:112px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--mint)}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.form-status{font-size:14px;color:var(--gray);margin:0}
+.form-status.ok{color:var(--green)}
+.form-status.err{color:var(--black);font-weight:500}
+.form-result{max-width:660px;padding:clamp(24px,4vw,36px);border-radius:18px;background:var(--mint-light)}
+[hidden]{display:none!important}
+.form-result p{margin-bottom:20px}
+
+/* ---------- proof + audit ---------- */
+.proof{padding-top:0}
+.proof__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.proof__item{background:var(--white);padding:clamp(22px,4vw,36px)}
+.proof__num{display:block;font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1;color:var(--green);margin-bottom:10px}
+.proof__caption{margin-top:18px;color:var(--gray);font-size:.95rem}
+.audit-box{background:var(--mint-light);border-radius:22px;padding:clamp(28px,6vw,64px)}
+.audit-box .lead{max-width:62ch}
+.audit-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.35rem,3vw,2rem);margin-top:24px}
+@media (max-width:700px){.proof__grid{grid-template-columns:1fr}}
+
+/* ---------- CTA band ---------- */
+.cta{background:var(--black);color:var(--white);border-radius:22px;padding:clamp(32px,6vw,64px);
+  display:grid;gap:clamp(24px,4vw,48px);grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:center}
+.cta p{color:var(--border);max-width:38ch}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--border);padding:36px var(--pad);display:flex;flex-wrap:wrap;gap:18px;
+  justify-content:space-between;align-items:center;max-width:var(--max);margin:0 auto}
+.footer__brand{display:flex;align-items:center;gap:10px}
+.footer img{height:18px}
+.footer span,.footer a{font-size:14px;color:var(--gray)}
+.footer a{text-decoration:none;transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.footer a:hover{color:var(--black)}
+.footer__links{display:flex;flex-wrap:wrap;gap:22px}
+
+@media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
+@media (max-width:600px){.nav{padding-left:12px;padding-right:12px;gap:6px}.nav img{height:24px}.nav__right{gap:6px}.nav__links{gap:12px}.nav__right>.btn--sm{display:none}}
+
+/* ---------- fork (moment wyboru) ---------- */
+.fork{position:relative}
+.fork__stem{width:2px;height:44px;background:var(--border);margin:0 0 0 22px}
+.fork__paths{display:grid;gap:24px;grid-template-columns:1fr}
+.fork__path{position:relative;padding:26px 26px 26px 26px;border:1px solid var(--border);border-radius:18px;background:var(--white)}
+.fork__path::before{content:'';position:absolute;left:22px;top:-24px;width:2px;height:24px;background:var(--border)}
+.fork__path--b::before{background:var(--green)}
+.fork__node{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+  background:var(--black);color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:14px;margin-bottom:16px}
+.fork__path--b .fork__node{background:var(--green);color:var(--black)}
+@media (min-width:820px){
+  .fork__stem{margin:0 auto;height:56px}
+  .fork__paths{grid-template-columns:1fr 1fr;gap:64px;position:relative}
+  .fork__paths::before{content:'';position:absolute;top:-28px;left:25%;right:25%;height:2px;background:var(--border)}
+  .fork__path{padding:34px}
+  .fork__path::before{left:50%;transform:translateX(-50%);top:-28px;height:28px}
+}
+</style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
+<script defer src="site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="nav">
+  <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
+  <div class="nav__right">
+    <div class="nav__links"><a class="nav__link" href="marketing.html">Oferta</a><a class="nav__link" href="case.html">Case study</a></div>
+    <a class="btn btn--sm" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+    <a class="lang" href="en.html" hreflang="en" aria-label="English version">EN</a>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap hero">
+  <p class="eyebrow">Pomiar sprzedaży + reklamy Meta</p>
+  <h1 class="t-display">Wiesz, ile wydajesz. Zobacz, ile z tego <em>wraca</em>.</h1>
+  <p class="lead muted">Prowadzę reklamy Meta i łączę ich koszt z faktycznymi płatnościami. Widzisz osobno, co przypisuje sobie Meta i ile pieniędzy naprawdę wpłynęło.</p>
+  <div class="btn-row">
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+    <a class="btn btn--ghost" href="marketing.html#audyt" data-umami-event="audit-scope">Audyt - 2 900 zł</a>
+  </div>
+</section>
+
+<section class="wrap dense proof reveal" aria-label="Wyniki case study">
+  <div class="proof__grid">
+    <div class="proof__item"><span class="proof__num">-45%</span><span>koszt pozyskania nowej klientki</span></div>
+    <div class="proof__item"><span class="proof__num">x3,3</span><span>nowe klientki z reklam, przy budżecie +81%</span></div>
+    <div class="proof__item"><span class="proof__num">3x</span><span>tyle zawyżała wynik platforma reklamowa</span></div>
+  </div>
+  <p class="proof__caption">Subskrypcyjna platforma treningowa, 2 miesiące, liczone na pierwszych płatnościach. <a class="textlink" href="case.html">Zobacz case study</a></p>
+</section>
+
+
+<section class="signal" id="pomiar" aria-labelledby="signal-title">
+  <div class="wrap">
+    <div class="eyebrow signal__eyebrow">Sedno</div>
+    <h2 id="signal-title" class="signal__row">
+      <span>
+        <span class="signal__num">99</span>
+        <span class="signal__label">zakupów według Meta</span>
+      </span>
+      <span class="signal__kept">
+        <span class="signal__num signal__num--kept"><span class="signal__approx">około</span>33</span>
+        <span class="signal__label">potwierdzone płatnością</span>
+      </span>
+    </h2>
+    <div class="dots" role="img" aria-label="99 zakupów według Meta, około 33 potwierdzone płatnością"><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot dot--lost" style="--i:0"></span><span class="dot dot--lost" style="--i:1"></span><span class="dot dot--lost" style="--i:2"></span><span class="dot dot--lost" style="--i:3"></span><span class="dot dot--lost" style="--i:4"></span><span class="dot dot--lost" style="--i:5"></span><span class="dot dot--lost" style="--i:6"></span><span class="dot dot--lost" style="--i:7"></span><span class="dot dot--lost" style="--i:8"></span><span class="dot dot--lost" style="--i:9"></span><span class="dot dot--lost" style="--i:10"></span><span class="dot dot--lost" style="--i:11"></span><span class="dot dot--lost" style="--i:12"></span><span class="dot dot--lost" style="--i:13"></span><span class="dot dot--lost" style="--i:14"></span><span class="dot dot--lost" style="--i:15"></span><span class="dot dot--lost" style="--i:16"></span><span class="dot dot--lost" style="--i:17"></span><span class="dot dot--lost" style="--i:18"></span><span class="dot dot--lost" style="--i:19"></span><span class="dot dot--lost" style="--i:20"></span><span class="dot dot--lost" style="--i:21"></span><span class="dot dot--lost" style="--i:22"></span><span class="dot dot--lost" style="--i:23"></span><span class="dot dot--lost" style="--i:24"></span><span class="dot dot--lost" style="--i:25"></span><span class="dot dot--lost" style="--i:26"></span><span class="dot dot--lost" style="--i:27"></span><span class="dot dot--lost" style="--i:28"></span><span class="dot dot--lost" style="--i:29"></span><span class="dot dot--lost" style="--i:30"></span><span class="dot dot--lost" style="--i:31"></span><span class="dot dot--lost" style="--i:32"></span><span class="dot dot--lost" style="--i:33"></span><span class="dot dot--lost" style="--i:34"></span><span class="dot dot--lost" style="--i:35"></span><span class="dot dot--lost" style="--i:36"></span><span class="dot dot--lost" style="--i:37"></span><span class="dot dot--lost" style="--i:38"></span><span class="dot dot--lost" style="--i:39"></span><span class="dot dot--lost" style="--i:40"></span><span class="dot dot--lost" style="--i:41"></span><span class="dot dot--lost" style="--i:42"></span><span class="dot dot--lost" style="--i:43"></span><span class="dot dot--lost" style="--i:44"></span><span class="dot dot--lost" style="--i:45"></span><span class="dot dot--lost" style="--i:46"></span><span class="dot dot--lost" style="--i:47"></span><span class="dot dot--lost" style="--i:48"></span><span class="dot dot--lost" style="--i:49"></span><span class="dot dot--lost" style="--i:50"></span><span class="dot dot--lost" style="--i:51"></span><span class="dot dot--lost" style="--i:52"></span><span class="dot dot--lost" style="--i:53"></span><span class="dot dot--lost" style="--i:54"></span><span class="dot dot--lost" style="--i:55"></span><span class="dot dot--lost" style="--i:56"></span><span class="dot dot--lost" style="--i:57"></span><span class="dot dot--lost" style="--i:58"></span><span class="dot dot--lost" style="--i:59"></span><span class="dot dot--lost" style="--i:60"></span><span class="dot dot--lost" style="--i:61"></span><span class="dot dot--lost" style="--i:62"></span><span class="dot dot--lost" style="--i:63"></span><span class="dot dot--lost" style="--i:64"></span><span class="dot dot--lost" style="--i:65"></span></div>
+    <p class="signal__note">Tyle wychodziło na koncie klientki: na każde trzy zakupy raportowane przez Meta jeden dawał się potwierdzić płatnością. To nie znaczy, że reklamy nie działały - znaczy, że budżet był ustawiany na podstawie liczby, której nikt nie zweryfikował.</p>
+  </div>
+</section>
+
+<section class="wrap dense reveal" aria-labelledby="audyt-home-title">
+  <div class="audit-box">
+    <p class="eyebrow">Oferta</p>
+    <h2 class="t-head" id="audyt-home-title" style="margin-bottom:18px">Audyt Meta Ads i pomiaru</h2>
+    <p class="lead muted">W 5 dni roboczych sprawdzam, ile z zakupów raportowanych przez Meta widać w Twoim systemie płatności, gdzie ucieka budżet i które kreacje naprawdę ciągną wynik.</p>
+    <p class="muted" style="margin-top:16px;max-width:62ch">Raport 8-10 stron, lista napraw w kolejności wpływu, plan na 30 dni, 3 briefy do nagrania i godzina omówienia. Jeśli nie znajdę trzech konkretnych napraw, oddaję pieniądze.</p>
+    <p class="audit-price">2 900 zł netto, płatne z góry. Kwota schodzi z pierwszej faktury, jeśli zostajemy na dłużej.</p>
+    <div class="btn-row">
+      <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+      <a class="btn btn--outlineDark" href="marketing.html#audyt" data-umami-event="audit-scope">Zobacz pełny zakres</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap quiet reveal">
+  <p class="statement">Reklamy optymalizują się na dane, które dostają. Jeśli dane są <em>zawyżone</em>, budżet też jest.</p>
+</section>
+
+<section class="wrap dense reveal" id="co-robie" aria-labelledby="co-robie-title">
+  <h2 class="t-head" id="co-robie-title" style="margin-bottom:16px">Co robię</h2>
+  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Trzy elementy jednego systemu. Zwykle wdrażane w tej kolejności.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card__num">01</div>
+      <h3 class="t-sub">Pomiar sprzedaży</h3>
+      <p>Łączę konto reklamowe z systemem, w którym faktycznie wpływają pieniądze. Przestajesz wierzyć jednej liczbie z panelu.</p>
+      <ul class="list"><li>pomiar serwerowy, odporny na blokady w przeglądarce</li><li>zestawienie tego, co raportuje Meta, z tym, co wpłynęło</li><li>koszt pozyskania liczony od pierwszej faktycznej wpłaty</li></ul>
+    </div>
+    <div class="card">
+      <div class="card__num">02</div>
+      <h3 class="t-sub">Reklamy Meta</h3>
+      <p>Prowadzę konto na danych z punktu pierwszego, nie na tym, co pokazuje Menedżer Reklam.</p>
+      <ul class="list"><li>przebudowa struktury konta, jeśli tego wymaga</li><li>kierunek kreacji, briefy i lista materiałów do nagrania</li><li>skalowanie oparte na kosztach, nie na przeczuciu</li></ul>
+    </div>
+    <div class="card card--mint">
+      <div class="card__num">03</div>
+      <h3 class="t-sub">Panel i decyzje</h3>
+      <p>Panel, w którym widzisz to sam, bez proszenia o raport.</p>
+      <ul class="list"><li>jedno miejsce z kosztem, sprzedażą i różnicą między źródłami</li><li>przy subskrypcji: ile przychodu wypada na nieudanych płatnościach i ile wraca</li><li>tygodniowe decyzje zamiast miesięcznego pliku PDF</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="band-gray">
+  <div class="wrap quiet split reveal">
+    <div>
+      <h2 class="t-head" style="margin-bottom:16px">Dla kogo</h2>
+      <p class="lead muted">Biznesy, w których pieniądze wracają co miesiąc, i twórcy sprzedający własny produkt. Wspólne mają to, że sprzedaż już jest, a problemem jest to, że nikt nie wie, skąd dokładnie przychodzi.</p>
+    </div>
+    <div class="split" style="gap:clamp(24px,4vw,40px)">
+      <div>
+        <h3 class="t-sub" style="margin-bottom:16px">Pasuje</h3>
+        <ul class="list list--lg">
+          <li>abonament, członkostwo, powtarzalny zakup</li>
+          <li>twórcy sprzedający własny produkt cyfrowy</li>
+          <li>płatność odbywa się poza własną stroną</li>
+          <li>sensowna marża po odjęciu kosztu produktu</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="t-sub" style="margin-bottom:16px">Nie pasuje</h3>
+        <ul class="list list--muted list--lg">
+          <li>przed pierwszą sprzedażą</li>
+          <li>sprzedaż jednorazowa bez powrotów</li>
+          <li>marża kilkunastoprocentowa, przy której moja stawka nie ma jak się zwrócić</li>
+          <li>oczekiwanie, że audyt potwierdzi z góry założoną tezę</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap dense reveal">
+  <div class="split" style="align-items:end">
+    <h2 class="t-head">Jak to wygląda u klienta</h2>
+    <div><p class="muted" style="margin-bottom:12px">Po przejęciu konta i naprawie pomiaru koszt pozyskania nowej klientki spadł o 45%, a liczba nowych klientek z reklam wzrosła 3,3 raza w dwa miesiące.</p><a class="textlink" href="case.html">Zobacz case study</a></div>
+  </div>
+</section>
+
+
+<section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
+  <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Porozmawiajmy</h2>
+  <p class="lead muted form-intro" style="margin-bottom:clamp(32px,5vw,48px)">Pięć pól. Po wysłaniu od razu wybierasz termin 15 minut.</p>
+  <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
+    <input type="hidden" name="_subject" value="Optimattic - zapytanie ze strony głównej">
+      <div class="field">
+        <label for="name">Imię</label>
+        <input type="text" id="name" name="name" required autocomplete="given-name" placeholder="Twoje imię">
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="twoj@email.com">
+      </div>
+      <div class="field">
+        <label for="biznes">Rodzaj biznesu</label>
+        <select id="biznes" name="biznes" required>
+          <option value="" disabled selected>Wybierz</option>
+          <option>Subskrypcja / membership</option>
+          <option>Twórca internetowy</option>
+          <option>E-commerce</option>
+          <option>Inne</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="budzet">Obecny wydatek na reklamy</label>
+        <select id="budzet" name="budzet" required>
+          <option value="" disabled selected>Wybierz</option>
+          <option>Nie reklamuję się</option>
+          <option>do 5 000 zł / mies.</option>
+          <option>5 000 - 20 000 zł / mies.</option>
+          <option>20 000 - 50 000 zł / mies.</option>
+          <option>powyżej 50 000 zł / mies.</option>
+        </select>
+      </div>
+      <div class="field field--full">
+        <label for="kontekst">Jedno zdanie kontekstu</label>
+        <textarea id="kontekst" name="kontekst" rows="3" placeholder="np. Nie wiem, które kampanie faktycznie przynoszą subskrypcje"></textarea>
+      </div>
+      <div class="form-foot">
+        <button type="submit" class="btn">Wyślij i wybierz termin</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </div>
+      <input type="hidden" name="utm_source" value="">
+      <input type="hidden" name="utm_medium" value="">
+      <input type="hidden" name="utm_campaign" value="">
+      <input type="hidden" name="utm_content" value="">
+      <input type="hidden" name="utm_term" value="">
+      <input type="hidden" name="strona" value="">
+  </form>
+  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wolisz od razu termin? Wybierz 15 minut w kalendarzu</a></p>
+  <div class="form-result" tabindex="-1" hidden>
+    <p>Dzięki, odpowiem w ciągu jednego dnia roboczego. Najszybciej będzie, jeśli od razu wybierzesz termin 15 minut. Przed rozmową przejrzę Twoje reklamy w bibliotece Meta.</p>
+    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wybierz termin</a>
+  </div>
+</section>
+<script>
+(function(){
+  var form = document.querySelector('.form'); if(!form) return;
+  try{
+    var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var qs = new URLSearchParams(window.location.search), saved = null;
+    var hasUtm = keys.some(function(k){ return qs.has(k); });
+    if(hasUtm){
+      saved = {};
+      keys.forEach(function(k){ saved[k] = (qs.get(k) || '').slice(0,200); });
+      try{ sessionStorage.setItem('optimattic_utm', JSON.stringify(saved)); }catch(storageError){}
+    }else{
+      try{ saved = JSON.parse(sessionStorage.getItem('optimattic_utm') || 'null'); }catch(storageError){}
+    }
+    keys.forEach(function(k){
+      var f = form.querySelector('input[name="'+k+'"]');
+      if(f) f.value = saved && typeof saved[k] === 'string' ? saved[k] : '';
+    });
+    var p = form.querySelector('input[name="strona"]');
+    if(p) p.value = window.location.pathname;
+  }catch(e){}
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
+    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking'), formIntro = document.querySelector('.form-intro');
+    btn.disabled = true; btn.textContent = 'Wysyłanie...'; status.className = 'form-status'; status.textContent = '';
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
+      .then(function(res){
+        if(res.ok){
+          form.reset(); form.hidden = true; form.style.display = 'none';
+          if(formIntro) formIntro.hidden = true;
+          if(formBooking) formBooking.hidden = true;
+          if(result){
+            result.hidden = false;
+            result.scrollIntoView({block:'center'});
+            result.focus({preventScroll:true});
+          }
+          if(window.umami && typeof window.umami.track === 'function') window.umami.track('form-submit-ok');
+        }else{
+          status.classList.add('err');
+          status.innerHTML = 'Nie udało się wysłać. Napisz na <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> albo <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">wybierz termin w kalendarzu</a>.';
+        }
+      })
+      .catch(function(){
+        status.classList.add('err');
+        status.innerHTML = 'Nie udało się wysłać. Napisz na <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> albo <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">wybierz termin w kalendarzu</a>.';
+      })
+      .then(function(){ btn.disabled = false; btn.textContent = label; });
+  });
+})();
+</script>
+</main>
+
+<footer class="footer">
+  <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
+  <div class="footer__links">
+    <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+    <a href="tel:+48606221835">+48 606 221 835</a>
+    <a href="marketing.html">Oferta</a>
+    <a href="case.html">Case study</a>
+    <a href="polityka-prywatnosci-aplikacji.html">Polityka prywatności</a>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = [].slice.call(document.querySelectorAll('.signal, .reveal'));
+  if (!('IntersectionObserver' in window) || reduce) return;
+  function disarm(el){ el.classList.remove('is-armed'); }
+  targets.forEach(function(el){
+    // only arm what is still below the fold; anything at or above the viewport stays final
+    if (el.getBoundingClientRect().top > window.innerHeight * 0.9) el.classList.add('is-armed');
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting || e.boundingClientRect.top < 0){ disarm(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+  // safety net: nothing may stay invisible (fast scroll, hash jump, restored scroll position)
+  window.setTimeout(function(){ targets.forEach(disarm); }, 4000);
+  window.addEventListener('hashchange', function(){ targets.forEach(disarm); });
+})();
+</script>
+</body>
+</html>
