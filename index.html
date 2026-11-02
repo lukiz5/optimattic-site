@@ -64,6 +64,12 @@ h1,h2,h3{font-family:'Syne',sans-serif;margin:0;letter-spacing:-.04em}h1,h2{text
 @media(max-width:700px){.section-heading,.problem,.about__grid,.contact__grid{grid-template-columns:1fr}.section-heading{gap:18px}.hero__mark{top:140px;right:-120px;opacity:.18}.form{grid-template-columns:1fr}.nav{flex-wrap:nowrap;gap:8px;padding:8px var(--pad)}.nav img{height:clamp(16px,4.8vw,20px)}.nav__right{flex-wrap:nowrap;gap:8px}.nav__links{display:none}#kiedy,#jak,#faq,#kontakt{scroll-margin-top:var(--header-height,61px)}}
 @media(max-width:420px){.nav .btn--sm{padding:8px 10px;font-size:12px}.hero{padding-top:70px}.hero__actions .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.reveal,.btn,.textlink,.nav__link,.lang,.footer a{transition:none!important;transform:none!important}.js .reveal.is-armed{opacity:1;transform:none}}
+/* fix: dopasowanie naglowkow do szerokosci (Syne 800: "Wdrożenia" = ok. 8,41em) */
+h1,h2,h3{overflow-wrap:break-word}
+.hero h1{max-width:8.7em}.hero .t-display{font-size:clamp(2rem,7vw,7rem)}
+.hero__mark{width:clamp(240px,34vw,560px);right:-6vw;top:clamp(110px,12vw,170px)}
+.contact h2{max-width:none;font-size:clamp(1.9rem,3.3vw,2.875rem)}
+@media(max-width:700px){.hero .t-display{font-size:10.2vw}.hero__mark{top:140px;right:-120px;width:clamp(240px,60vw,320px)}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
 <script defer src="site.js"></script>
