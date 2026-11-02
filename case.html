@@ -21,6 +21,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Case study: subskrypcyjna platforma treningowa","description":"Przebudowa pomiaru i konta reklamowego w subskrypcyjnej platformie treningowej: koszt pozyskania -45%, nowe klientki z reklam x3,3 w dwa miesiące.","inLanguage":"pl-PL","url":"https://optimattic.com/case.html","image":"https://optimattic.com/og-pl.png","author":{"@type":"Person","@id":"https://optimattic.com/#lukasz","name":"Łukasz Ziółkowski"},"publisher":{"@type":"Organization","@id":"https://optimattic.com/#org","name":"Optimattic","logo":{"@type":"ImageObject","url":"https://optimattic.com/logo.png"}}}
+</script>
 <style>
 :root{
   --black:#0A0A0A; --green:#38B76F; --mint:#E8F5ED; --mint-light:#F0FAF4;
@@ -41,6 +44,7 @@ p,ul,ol{margin:0}
 :focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
 .skip{position:absolute;left:-9999px;top:0;background:var(--black);color:var(--white);padding:12px 20px;z-index:100}
 .skip:focus{left:8px;top:8px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ---------- type scale (3 steps only) ---------- */
 .t-display{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,calc((100vw - 2*var(--pad))/9.9),6.8rem);line-height:.86;letter-spacing:-.05em;overflow-wrap:break-word}
@@ -242,11 +246,12 @@ p,ul,ol{margin:0}
   <div class="wrap">
     <div class="eyebrow signal__eyebrow">Sedno</div>
     <h2 id="signal-title" class="signal__row">
-      <span>
+      <span class="visually-hidden">Na 99 zakupów raportowanych przez Meta około 33 potwierdzała płatność (lipiec-sierpień 2026, platforma subskrypcyjna).</span>
+      <span aria-hidden="true">
         <span class="signal__num">99</span>
         <span class="signal__label">zakupów według Meta</span>
       </span>
-      <span class="signal__kept">
+      <span class="signal__kept" aria-hidden="true">
         <span class="signal__num signal__num--kept"><span class="signal__approx">około</span>33</span>
         <span class="signal__label">potwierdzone płatnością</span>
       </span>

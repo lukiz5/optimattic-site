@@ -1,20 +1,20 @@
 # Optimattic
 
-Optimattic to jednoosobowa firma Łukasza Ziółkowskiego z Torunia. Pomaga polskim MŚP przez konsultacje, audyty, wdrożenia AI i szkolenia zespołów. Prowadzi także reklamy Meta i pomiar sprzedaży.
+> Jednoosobowa firma Łukasza Ziółkowskiego z Torunia: wdrożenia AI w polskich MŚP oraz reklamy Meta z pomiarem sprzedaży opartym na płatnościach.
+
+## Usługi
+- [Wdrożenia AI w firmach](https://optimattic.com/): konsultacja 15 minut, audyt jednego procesu, wdrożenie w kilka tygodni, szkolenie zespołu.
+- [Reklamy Meta i pomiar sprzedaży](https://optimattic.com/meta.html): pomiar serwerowy, porównanie zakupów z Meta z płatnościami, prowadzenie konta, panel.
+- [Audyt Meta Ads i pomiaru](https://optimattic.com/marketing.html#audyt): 5 dni roboczych, raport z listą napraw i planem na 30 dni, 2 900 zł netto.
 
 ## Przykłady wyników
+- [Case study: subskrypcyjna platforma treningowa](https://optimattic.com/case.html): koszt pozyskania nowej klientki -45%, nowe klientki z reklam x3,3 przy budżecie +81% (lipiec-sierpień 2026).
+- Pozyskiwanie klientów B2B: 8 klientów w 3 miesiące, producent osłon okiennych.
+- Treści SEO: artykuł polecany przez Google Discover, producent rowerów.
 
-- 8 klientów w 3 miesiące - producent osłon okiennych, B2B.
-- Koszt pozyskania klientki: -45% - platforma subskrypcyjna.
-- Artykuł polecany przez Google Discover - producent rowerów.
+## English
+- [Optimattic in English](https://optimattic.com/en.html): AI implementation and Meta ads with payment-based measurement for Polish SMBs.
 
 ## Kontakt
-
-- hello@optimattic.com
-
-## Strony
-
-- https://optimattic.com/
-- https://optimattic.com/meta.html
-- https://optimattic.com/marketing.html
-- https://optimattic.com/case.html
+- E-mail: hello@optimattic.com
+- Rozmowa 15 minut: https://calendar.app.google/GWuQbhH2p4hGBfy58
