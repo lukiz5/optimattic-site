@@ -10,6 +10,10 @@
   </url>
 
   <url>
+    <loc>https://optimattic.com/meta.html</loc>
+  </url>
+
+  <url>
     <loc>https://optimattic.com/en.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://optimattic.com/en.html" />
     <xhtml:link rel="alternate" hreflang="pl" href="https://optimattic.com/" />
