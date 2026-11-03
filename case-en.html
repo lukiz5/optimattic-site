@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=2">
 <style>
 :root{
   --black:#0A0A0A; --green:#38B76F; --mint:#E8F5ED; --mint-light:#F0FAF4;
@@ -63,20 +64,7 @@ p,ul,ol{margin:0}
 .grid-3>*{background:var(--white);padding:clamp(24px,3.2vw,36px)}
 .split{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
 
-[id]{scroll-margin-top:86px}
-/* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
-.nav img{height:26px;width:auto}
-.nav__right{display:flex;align-items:center;gap:8px}
-.nav__links{display:flex;align-items:center;gap:18px}
-.nav__link{color:var(--black);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
-.nav__link[aria-current="page"]{color:var(--gray)}
-.lang{display:inline-flex;align-items:center;justify-content:center;height:44px;min-width:44px;padding:0 12px;
-  border:1px solid var(--border);border-radius:100px;color:var(--gray);text-decoration:none;font-size:14px;font-weight:500;
-  transition:transform .25s var(--ease),opacity .25s var(--ease)}
-.lang:hover{color:var(--black);transform:translateY(-1px)}
-
+[id]{scroll-margin-top:84px}
 /* ---------- buttons (one motion pattern: translateY + opacity) ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 34px;border:1px solid var(--black);
   border-radius:100px;background:var(--black);color:var(--white);text-decoration:none;cursor:pointer;
@@ -84,7 +72,6 @@ p,ul,ol{margin:0}
   transition:transform .25s var(--ease),opacity .25s var(--ease),background-color .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
 .btn:hover{background:var(--green);border-color:var(--green);color:var(--black);transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-.btn--sm{height:44px;padding:0 20px;font-size:14px}
 .btn--ghost{background:transparent;color:var(--black);border-color:var(--border)}
 .btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
 .btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
@@ -187,19 +174,8 @@ p,ul,ol{margin:0}
   display:grid;gap:clamp(24px,4vw,48px);grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:center}
 .cta p{color:var(--border);max-width:38ch}
 
-/* ---------- footer ---------- */
-.footer{border-top:1px solid var(--border);padding:36px var(--pad);display:flex;flex-wrap:wrap;gap:18px;
-  justify-content:space-between;align-items:center;max-width:var(--max);margin:0 auto}
-.footer__brand{display:flex;align-items:center;gap:10px}
-.footer img{height:18px}
-.footer span,.footer a{font-size:14px;color:var(--gray)}
-.footer a{text-decoration:none;transition:transform .25s var(--ease),opacity .25s var(--ease)}
-.footer a:hover{color:var(--black)}
-.footer__links{display:flex;flex-wrap:wrap;gap:22px}
-
-@media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
-@media (max-width:600px){.nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:0 6px;padding:4px 12px}.nav img{height:clamp(18px,5vw,22px)}.nav__right{display:contents}.nav__links{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 12px}.nav__link{display:inline-flex;align-items:center;min-height:44px}.nav__right>.btn--sm{grid-column:2;grid-row:1;width:auto;height:44px;padding:0 9px;font-size:12px}.nav__right>.lang{grid-column:3;grid-row:1}}
-@media (max-width:600px){[id]{scroll-margin-top:114px}}
+@media (max-width:600px){.btn{width:100%}.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
+@media (max-width:700px){[id]{scroll-margin-top:120px}}
 
 /* ---------- fork (moment wyboru) ---------- */
 .fork{position:relative}
@@ -224,13 +200,15 @@ p,ul,ol{margin:0}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav">
-  <a href="en.html" aria-label="Optimattic - home"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
-  <div class="nav__right">
-    <nav class="nav__links" aria-label="Main"><a class="nav__link" href="marketing-en.html">Services</a><span class="nav__link" aria-current="page">Case study</span></nav>
-    <a class="btn btn--sm" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
-    <a class="lang" href="case.html" hreflang="pl" aria-label="Wersja polska">PL</a>
-  </div>
+<header class="site-header">
+  <a class="site-header__logo" href="en.html" aria-label="Optimattic - home"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
+  <nav class="site-header__links" aria-label="Main">
+    <a class="site-header__link" href="en.html">AI implementation</a>
+    <a class="site-header__link" href="meta-en.html">Meta ads</a>
+    <a class="site-header__link" href="case-en.html" aria-current="page">Case study</a>
+  </nav>
+  <a class="btn site-header__cta" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
+  <a class="site-header__lang" href="case.html" hreflang="pl" aria-label="Wersja polska">PL</a>
 </header>
 <main id="main">
 
@@ -304,14 +282,16 @@ p,ul,ol{margin:0}
 </section>
 </main>
 
-<footer class="footer">
-  <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
-  <div class="footer__links">
-    <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
-    <a href="marketing-en.html">Services</a>
+<footer class="site-footer">
+  <div class="site-footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
+  <nav class="site-footer__links" aria-label="Footer">
+    <a href="en.html">AI implementation</a>
+    <a href="meta-en.html">Meta ads</a>
+    <a href="marketing-en.html">Services and terms</a>
     <a href="case-en.html">Case study</a>
     <a href="polityka-prywatnosci-aplikacji.html">Privacy policy</a>
-  </div>
+    <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
+  </nav>
 </footer>
 <script>
 document.documentElement.classList.add('js');
