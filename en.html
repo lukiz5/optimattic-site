@@ -3,508 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Optimattic - Meta ads and sales measurement</title>
-<meta name="description" content="Meta ads and sales measurement for subscription businesses and creators selling their own product.">
+<title>Optimattic - AI implementation in companies</title>
+<meta name="description" content="AI implementation for Polish companies: consultation, audits, implementation and team training. AI takes repetitive work off your team - in a few weeks.">
 <link rel="canonical" href="https://optimattic.com/en.html">
+<link rel="alternate" hreflang="pl" href="https://optimattic.com/">
+<link rel="alternate" hreflang="x-default" href="https://optimattic.com/">
+<link rel="alternate" hreflang="en" href="https://optimattic.com/en.html">
+<meta property="og:title" content="AI implementation in companies.">
+<meta property="og:description" content="AI implementation for Polish companies: consultation, audits, implementation and team training. AI takes repetitive work off your team - in a few weeks.">
+<meta property="og:url" content="https://optimattic.com/en.html">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://optimattic.com/og-en.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" hreflang="pl" href="https://optimattic.com/">
-<link rel="alternate" hreflang="en" href="https://optimattic.com/en.html">
-<link rel="alternate" hreflang="x-default" href="https://optimattic.com/">
-
-<meta property="og:title" content="You know what you spend. See what comes back.">
-<meta property="og:description" content="Meta counts a purchase for anyone who clicked an ad within seven days. For every three purchases Meta reports, one is confirmed by payment.">
-<meta property="og:url" content="https://optimattic.com/en.html">
-<meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://optimattic.com/#org","name":"Optimattic","url":"https://optimattic.com/","logo":"https://optimattic.com/logo.png","image":"https://optimattic.com/og-en.png","email":"hello@optimattic.com","description":"One-person business based in Toruń, Poland. AI implementation for Polish companies (consultation, audits, implementation and team training), plus Meta ads measured against actual payments.","address":{"@type":"PostalAddress","addressLocality":"Toruń","addressCountry":"PL"},"areaServed":{"@type":"Country","name":"Poland"},"founder":{"@id":"https://optimattic.com/#lukasz"},"knowsAbout":["AI implementation","process automation","B2B customer acquisition","Meta ads","sales measurement","Conversions API"]},{"@type":"Person","@id":"https://optimattic.com/#lukasz","name":"Łukasz Ziółkowski","jobTitle":"Founder","worksFor":{"@id":"https://optimattic.com/#org"},"knowsAbout":["e-commerce","Meta ads","AI implementation"]},{"@type":"WebSite","@id":"https://optimattic.com/#website","name":"Optimattic","url":"https://optimattic.com/","inLanguage":"en","publisher":{"@id":"https://optimattic.com/#org"}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do we start?","acceptedAnswer":{"@type":"Answer","text":"With a 15-minute call about one process your team handles manually every day. If AI makes sense there, I suggest an audit of that process. If it doesn't, I say so right away."}},{"@type":"Question","name":"How long does implementation take?","acceptedAnswer":{"@type":"Answer","text":"The first working system usually takes a few weeks. We start with one process and add more when the first produces a measurable result."}},{"@type":"Question","name":"Do we need to change our tools?","acceptedAnswer":{"@type":"Answer","text":"Usually not. I connect to what you already use: email, CRM, your online store and spreadsheets."}},{"@type":"Question","name":"What if AI doesn't make sense for us?","acceptedAnswer":{"@type":"Answer","text":"I will tell you on our first call. An implementation without a measurable result is not worthwhile for either side."}}]}
+</script>
 <style>
-:root{
-  --black:#0A0A0A; --green:#38B76F; --mint:#E8F5ED; --mint-light:#F0FAF4;
-  --gray:#666666; --gray-light:#F5F5F5; --white:#FFFFFF; --border:#E0E0E0;
-  --pad:clamp(20px,5vw,80px); --max:1240px;
-  --dense:clamp(56px,8vw,96px); --quiet:clamp(96px,16vw,220px);
-  --ease:cubic-bezier(.22,.61,.36,1);
-}
+:root{--black:#0A0A0A;--green:#38B76F;--mint:#F0FAF4;--gray:#666666;--border:#E0E0E0;--white:#FFFFFF;--pad:clamp(20px,5vw,80px);--max:1240px;--ease:cubic-bezier(.22,.61,.36,1)}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',system-ui,sans-serif;
-  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--black);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
-h1,h2,h3{font-family:'Syne',sans-serif;margin:0;letter-spacing:-.04em}
-p,ul,ol{margin:0}
-::selection{background:var(--mint)}
-:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
-.skip{position:absolute;left:-9999px;top:0;background:var(--black);color:var(--white);padding:12px 20px;z-index:100}
-.skip:focus{left:8px;top:8px}
-
-/* ---------- type scale (3 steps only) ---------- */
-.t-display{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,calc((100vw - 2*var(--pad))/9.9),6.8rem);line-height:.86;letter-spacing:-.05em;overflow-wrap:break-word}
-.t-head{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(2rem,6vw,4rem);line-height:.98;letter-spacing:-.04em}
-.t-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;line-height:1.25;letter-spacing:-.02em}
-.lead{font-size:clamp(1.1rem,2.4vw,1.4rem);line-height:1.5;max-width:46ch;text-wrap:pretty}
-.muted{color:var(--gray)}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-size:13px;
-  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
-.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
-
-/* ---------- layout ---------- */
+h1,h2,h3{font-family:'Syne',sans-serif;margin:0;letter-spacing:-.04em}h1,h2{text-wrap:balance}p{margin:0;text-wrap:pretty}
+::selection{background:var(--green);color:var(--black)}
+:focus-visible{outline:3px solid var(--black);outline-offset:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--black);color:var(--white);padding:12px 20px;z-index:100}.skip:focus{left:8px;top:8px}
 .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
-.dense{padding-top:var(--dense);padding-bottom:var(--dense)}
-.quiet{padding-top:var(--quiet);padding-bottom:var(--quiet)}
-.band-gray{background:var(--gray-light)}
-.grid-3{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
-.grid-3>*{background:var(--white);padding:clamp(24px,3.2vw,36px)}
-.split{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
-
-[id]{scroll-margin-top:86px}
-/* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
-.nav img{height:26px;width:auto}
-.nav__right{display:flex;align-items:center;gap:8px}
-.nav__links{display:flex;align-items:center;gap:18px}
-.nav__link{color:var(--black);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
-.nav__link[aria-current="page"]{color:var(--gray)}
-.lang{display:inline-flex;align-items:center;justify-content:center;height:44px;min-width:44px;padding:0 12px;
-  border:1px solid var(--border);border-radius:100px;color:var(--gray);text-decoration:none;font-size:14px;font-weight:500;
-  transition:transform .25s var(--ease),opacity .25s var(--ease)}
-.lang:hover{color:var(--black);transform:translateY(-1px)}
-
-/* ---------- buttons (one motion pattern: translateY + opacity) ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 34px;border:1px solid var(--black);
-  border-radius:100px;background:var(--black);color:var(--white);text-decoration:none;cursor:pointer;
-  font-family:'Syne',sans-serif;font-weight:700;font-size:16px;
-  transition:transform .25s var(--ease),opacity .25s var(--ease),background-color .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
-.btn:hover{background:var(--green);border-color:var(--green);color:var(--black);transform:translateY(-2px)}
-.btn:active{transform:translateY(0)}
-.btn--sm{height:44px;padding:0 20px;font-size:14px}
-.btn--ghost{background:transparent;color:var(--black);border-color:var(--border)}
-.btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
-.btn--ghost:focus-visible{color:var(--black)}
-.btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
-.btn--onDark:hover{background:var(--white);border-color:var(--white);color:var(--black)}
-.btn--outlineDark{background:transparent;color:var(--white);border-color:var(--gray)}
-.btn--outlineDark:hover{background:transparent;color:var(--white);border-color:var(--white)}
-.btn-row{display:flex;flex-wrap:wrap;gap:12px}
-.textlink{display:inline-flex;align-items:center;gap:8px;color:var(--black);text-decoration:none;font-family:'Syne',sans-serif;
-  font-weight:700;font-size:15px;border-bottom:2px solid var(--green);padding-bottom:3px;
-  transition:transform .25s var(--ease),opacity .25s var(--ease)}
-.textlink:hover{transform:translateY(-2px)}
-.textlink--onDark{color:var(--white)}
-
-/* ---------- hero ---------- */
-.hero{padding-top:clamp(40px,8.5vw,110px);padding-bottom:clamp(38px,7vw,96px)}
-.hero .eyebrow{margin-bottom:clamp(28px,5vw,52px)}
-.hero h1{max-width:13ch;margin-bottom:clamp(28px,5vw,48px)}
-.hero h1 em{font-style:normal;color:var(--green)}
-.hero .lead{margin-bottom:clamp(32px,5vw,52px)}
-
-/* ---------- SIGNATURE MOMENT ---------- */
-.signal{background:var(--black);color:var(--white);padding-top:clamp(72px,11vw,132px);padding-bottom:clamp(72px,11vw,132px)}
-.signal__eyebrow{margin-bottom:clamp(36px,6vw,64px);color:var(--green)}
-.signal__row{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:end;margin-bottom:clamp(40px,6vw,64px)}
-@media (min-width:760px){.signal__row{grid-template-columns:auto auto;justify-content:start;gap:clamp(48px,8vw,120px)}}
-.signal__row>span{display:block}
-.signal__num{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(5rem,18vw,13rem);line-height:.78;letter-spacing:-.06em;
-  font-variant-numeric:tabular-nums}
-.signal__num--kept{color:var(--green);display:flex;align-items:baseline;gap:.18em;white-space:nowrap}
-.signal__approx{font-family:'Inter',sans-serif;font-size:.22em;font-weight:700;letter-spacing:0}
-.signal__label{display:block;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--white);margin-top:14px;max-width:20ch}
-.signal__minus{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--green);
-  letter-spacing:-.03em;padding-bottom:clamp(8px,2vw,22px);white-space:nowrap}
-.dots{display:grid;grid-template-columns:repeat(11,1fr);gap:clamp(6px,1.4vw,14px);max-width:640px;margin-bottom:clamp(32px,5vw,48px)}
-@media (min-width:760px){.dots{grid-template-columns:repeat(33,1fr);gap:6px;max-width:720px}}
-.dot{aspect-ratio:1;border-radius:50%;background:var(--green);
-  transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i)*7ms)}
-.dot--lost{opacity:.14;transform:scale(.4)}
-.signal__note{color:var(--border);font-size:1rem;max-width:52ch}
-/* JS start state - page without JS shows the end state */
-.signal.is-armed .dot--lost{opacity:1;transform:scale(1)}
-.signal.is-armed .signal__kept,.signal.is-armed .signal__minus{opacity:0;transform:translateY(10px)}
-.signal__kept,.signal__minus{transition:opacity .5s var(--ease) .35s,transform .5s var(--ease) .35s}
-@media (prefers-reduced-motion:reduce){
-  .dot,.signal__kept,.signal__minus,.reveal{transition:none!important}
-  .signal.is-armed .dot--lost{opacity:.14;transform:scale(.4)}
-  .signal.is-armed .signal__kept,.signal.is-armed .signal__minus{opacity:1;transform:none}
-}
-
-/* ---------- reveal (single pattern, whole page) ---------- */
-.reveal{transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.js .reveal.is-armed{opacity:0;transform:translateY(14px)}
-
-/* ---------- statement ---------- */
-.statement{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,3rem);line-height:1.06;
-  letter-spacing:-.035em;max-width:20ch}
-.statement em{font-style:normal;color:var(--green)}
-
-/* ---------- cards + lists ---------- */
-.card__num{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--gray);margin-bottom:20px;letter-spacing:.08em}
-.card .t-sub{margin-bottom:10px}
-.card p{color:var(--gray);font-size:.98rem;margin-bottom:20px}
-.card--mint{background:var(--mint-light)!important}
-.list{list-style:none;padding:0;display:grid;gap:11px}
-.list li{display:grid;grid-template-columns:15px 1fr;gap:11px;align-items:start;font-size:.98rem}
-.list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:8px}
-.list--muted li{color:var(--gray)}
-.list--muted li::before{width:9px;height:1px;border-radius:0;background:var(--gray);margin-top:12px}
-.list--lg li{font-size:1.05rem}
-
-/* ---------- steps ---------- */
-.steps{list-style:none;padding:0}
-.steps li{display:grid;grid-template-columns:48px 1fr;gap:clamp(14px,3vw,40px);padding:26px 0;border-top:1px solid var(--border)}
-.steps li:last-child{border-bottom:1px solid var(--border)}
-.steps__num{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--green)}
-.steps h3{margin-bottom:6px}
-.steps p{color:var(--gray);font-size:.98rem;max-width:56ch}
-
-/* ---------- form ---------- */
-.form{display:grid;gap:18px;max-width:660px}
-@media (min-width:720px){.form{grid-template-columns:1fr 1fr}.form .field--full,.form .form-foot{grid-column:1/-1}}
-.field{display:grid;gap:8px}
-.field label{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
-.field input,.field select,.field textarea{width:100%;border:1px solid var(--border);border-radius:12px;background:var(--white);
-  color:var(--black);font-family:'Inter',sans-serif;font-size:16px;
-  transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
-.field input,.field select{height:56px;padding:0 16px}
-.field select{appearance:none;
-  background-image:linear-gradient(45deg,transparent 50%,var(--black) 50%),linear-gradient(135deg,var(--black) 50%,transparent 50%);
-  background-position:calc(100% - 21px) 25px,calc(100% - 16px) 25px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
-.field textarea{padding:15px 16px;min-height:112px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--mint)}
-.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
-.form-status{font-size:14px;color:var(--gray);margin:0}
-.form-status.ok{color:var(--green)}
-.form-status.err{color:var(--black);font-weight:500}
-.form-result{max-width:660px;padding:clamp(24px,4vw,36px);border-radius:18px;background:var(--mint-light)}
-[hidden]{display:none!important}
-.form-result p{margin-bottom:20px}
-
-/* ---------- proof + audit ---------- */
-.proof{padding-top:0}
-.proof__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden}
-.proof__item{background:var(--white);padding:clamp(22px,4vw,36px)}
-.proof__num{display:block;font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1;color:var(--green);margin-bottom:10px}
-.proof__caption{margin-top:18px;color:var(--gray);font-size:.95rem}
-.audit-box{background:var(--mint-light);border-radius:22px;padding:clamp(28px,6vw,64px)}
-.audit-box .lead{max-width:62ch}
-.audit-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.35rem,3vw,2rem);margin-top:24px}
-@media (max-width:700px){.proof__grid{grid-template-columns:1fr}}
-
-/* ---------- CTA band ---------- */
-.cta{background:var(--black);color:var(--white);border-radius:22px;padding:clamp(32px,6vw,64px);
-  display:grid;gap:clamp(24px,4vw,48px);grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:center}
-.cta p{color:var(--border);max-width:38ch}
-
-/* ---------- footer ---------- */
-.footer{border-top:1px solid var(--border);padding:36px var(--pad);display:flex;flex-wrap:wrap;gap:18px;
-  justify-content:space-between;align-items:center;max-width:var(--max);margin:0 auto}
-.footer__brand{display:flex;align-items:center;gap:10px}
-.footer img{height:18px}
-.footer span,.footer a{font-size:14px;color:var(--gray)}
-.footer a{text-decoration:none;transition:transform .25s var(--ease),opacity .25s var(--ease)}
-.footer a:hover{color:var(--black)}
-.footer__links{display:flex;flex-wrap:wrap;gap:22px}
-
-@media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
-@media (max-width:600px){.nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:0 6px;padding:4px 12px}.nav img{height:clamp(18px,5vw,22px)}.nav__right{display:contents}.nav__links{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 12px}.nav__link{display:inline-flex;align-items:center;min-height:44px}.nav__right>.btn--sm{grid-column:2;grid-row:1;width:auto;height:44px;padding:0 9px;font-size:12px}.nav__right>.lang{grid-column:3;grid-row:1}}
-@media (max-width:600px){[id]{scroll-margin-top:114px}}
-
-/* ---------- fork (moment wyboru) ---------- */
-.fork{position:relative}
-.fork__stem{width:2px;height:44px;background:var(--border);margin:0 0 0 22px}
-.fork__paths{display:grid;gap:24px;grid-template-columns:1fr}
-.fork__path{position:relative;padding:26px 26px 26px 26px;border:1px solid var(--border);border-radius:18px;background:var(--white)}
-.fork__path::before{content:'';position:absolute;left:22px;top:-24px;width:2px;height:24px;background:var(--border)}
-.fork__path--b::before{background:var(--green)}
-.fork__node{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
-  background:var(--black);color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:14px;margin-bottom:16px}
-.fork__path--b .fork__node{background:var(--green);color:var(--black)}
-@media (min-width:820px){
-  .fork__stem{margin:0 auto;height:56px}
-  .fork__paths{grid-template-columns:1fr 1fr;gap:64px;position:relative}
-  .fork__paths::before{content:'';position:absolute;top:-28px;left:25%;right:25%;height:2px;background:var(--border)}
-  .fork__path{padding:34px}
-  .fork__path::before{left:50%;transform:translateX(-50%);top:-28px;height:28px}
-}
+.t-display{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3.3rem,10.3vw,9.25rem);line-height:.92;letter-spacing:-.04em}
+.t-head{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.02;letter-spacing:-.04em}
+.t-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.18;letter-spacing:-.03em}
+.muted{color:var(--gray)}.section{padding-top:clamp(80px,10vw,144px);padding-bottom:clamp(80px,10vw,144px)}
+#kiedy,#jak,#faq,#kontakt{scroll-margin-top:var(--header-height,96px)}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad);background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav img{height:26px;width:auto}.nav__right{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px 20px}.nav__links{display:contents}
+.nav__link{color:var(--black);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap;transition:opacity .25s var(--ease),transform .25s var(--ease)}.nav__link:hover{opacity:.65;transform:translateY(-1px)}
+.lang{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 12px;border:1px solid var(--border);border-radius:100px;color:var(--black);text-decoration:none;font-size:14px;font-weight:500;transition:opacity .25s var(--ease),transform .25s var(--ease)}.lang:hover{opacity:.65;transform:translateY(-1px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:12px 32px;border:1px solid var(--black);border-radius:100px;background:var(--black);color:var(--white);text-align:center;text-decoration:none;cursor:pointer;font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.2;transition:opacity .25s var(--ease),transform .25s var(--ease)}.btn:hover{opacity:.82;transform:translateY(-2px)}.btn:active{transform:translateY(0)}.btn--sm{min-height:44px;padding:8px 20px;font-size:14px;white-space:nowrap}
+.textlink{display:inline-flex;align-items:center;gap:8px;color:var(--black);text-decoration:none;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;border-bottom:2px solid var(--green);padding-bottom:3px;transition:opacity .25s var(--ease),transform .25s var(--ease)}.textlink:hover{opacity:.7;transform:translateY(-2px)}
+.reveal{transition:opacity .5s var(--ease),transform .5s var(--ease)}.js .reveal.is-armed{opacity:0;transform:translateY(14px)}
+.hero{position:relative;overflow-x:clip;min-height:760px;padding-top:clamp(72px,9vw,120px);padding-bottom:clamp(100px,11vw,150px)}.hero__mark{position:absolute;z-index:0;width:clamp(280px,46vw,680px);height:auto;right:-8vw;top:clamp(90px,10vw,140px);pointer-events:none}.hero__inner{position:relative;z-index:1}.hero h1{max-width:9.5ch;margin-bottom:clamp(28px,4vw,50px)}.hero h1 span,.dot-green{color:var(--green)}.hero__lead{font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.4;max-width:34ch;margin-bottom:36px}.hero__actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px 30px}
+.section-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:28px;align-items:end;margin-bottom:clamp(48px,7vw,90px)}.section-heading p{color:var(--gray);max-width:34ch}
+.problem{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,7vw,100px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--black)}.problem:last-child{border-bottom:1px solid var(--black)}.problem__quote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.9rem,3vw,2.5rem);line-height:1.14;letter-spacing:-.04em;max-width:22ch}.problem__right p{max-width:53ch}.problem__number{display:block;margin-top:28px;color:#1F7A47;font-family:'Syne',sans-serif;font-size:clamp(2rem,3vw,2.5rem);font-weight:800;line-height:1.1;letter-spacing:-.04em}.problem__caption{display:block;margin-top:4px;color:var(--gray);font-size:15px}.problem .textlink{margin-top:20px}
+.process{background:var(--black);color:var(--white)}.process :focus-visible{outline-color:var(--green)}.process h2{max-width:16ch;margin-bottom:clamp(48px,7vw,86px)}.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(32px,4vw,54px)}.steps li{border-top:2px solid var(--green);padding-top:22px}.steps__num{display:block;color:var(--green);font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:44px}.steps h3{margin-bottom:14px}.steps p{color:#C7C7C7;font-size:16px;line-height:1.55}
+.about__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,7vw,100px)}.about__lead{font-size:clamp(1.45rem,2.6vw,2rem);line-height:1.4;max-width:39ch}.about__detail{color:var(--gray);margin-top:28px;max-width:48ch}
+.faq{padding-top:0}.faq h2{margin-bottom:clamp(44px,6vw,72px)}.faq__item{padding:28px 0;border-top:1px solid var(--border)}.faq__item:last-child{border-bottom:1px solid var(--border)}.faq__item h3{margin-bottom:12px}.faq__item p{max-width:76ch;color:var(--gray)}
+.contact{background:var(--mint)}.contact__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,7vw,100px)}.contact h2{max-width:12ch;margin-bottom:24px}.contact__intro{max-width:33ch;margin-bottom:32px}.contact__details{display:grid;gap:6px}.contact__details a{color:var(--black);text-decoration:none;width:max-content;border-bottom:1px solid var(--black)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:grid;gap:7px;align-content:start}.field--full,.form-foot{grid-column:1/-1}.field label{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}.field input,.field select,.field textarea{width:100%;min-height:52px;border:1px solid var(--black);border-radius:10px;background:var(--white);color:var(--black);font-family:'Inter',sans-serif;font-size:16px;padding:12px 15px}.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--black) 50%),linear-gradient(135deg,var(--black) 50%,transparent 50%);background-position:calc(100% - 22px) 24px,calc(100% - 17px) 24px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}.field textarea{min-height:116px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid #1F7A47;outline-offset:2px}.field [aria-invalid="true"]{border-width:2px;border-color:#9B1C1C}.field-error{color:#9B1C1C;font-size:14px;line-height:1.35}.field-error:empty{display:none}.form-foot{display:flex;align-items:center;flex-wrap:wrap;gap:14px}.form-status{font-size:14px;color:var(--gray)}.form-status.err{color:var(--black);font-weight:500}.form-result{padding:30px;border:1px solid var(--border);border-radius:16px;background:var(--white)}.form-result p{margin-bottom:20px}[hidden]{display:none!important}
+.footer{border-top:1px solid var(--border);padding:36px var(--pad);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:var(--max);margin:0 auto}.footer__brand{display:flex;align-items:center;gap:10px}.footer img{height:18px}.footer span,.footer a{font-size:14px;color:var(--gray)}.footer a{text-decoration:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}.footer a:hover{color:var(--black);opacity:.7;transform:translateY(-1px)}.footer__links{display:flex;flex-wrap:wrap;gap:20px}
+@media(max-width:900px){.nav{flex-wrap:wrap}.nav__right{justify-content:flex-start}.hero{min-height:0}.hero__mark{opacity:.3}}
+@media(max-width:700px){.section-heading,.problem,.about__grid,.contact__grid{grid-template-columns:1fr}.section-heading{gap:18px}.hero__mark{display:none}.form{grid-template-columns:1fr}.nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:0 6px;padding:8px var(--pad)}.nav img{height:clamp(16px,4.8vw,20px)}.nav__right{display:contents}.nav__links{grid-column:1/-1;grid-row:2;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 4px}.nav__link{display:inline-flex;align-items:center;min-height:44px;padding:0 1px;font-size:clamp(11px,3.5vw,12px)}.nav__right>.btn--sm{grid-column:2;grid-row:1}.nav__right>.lang{grid-column:3;grid-row:1}#kiedy,#jak,#faq,#kontakt{scroll-margin-top:var(--header-height,61px)}}
+@media(max-width:420px){.nav .btn--sm{padding:8px 10px;font-size:12px}.hero{padding-top:70px}.hero__actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.reveal,.btn,.textlink,.nav__link,.lang,.footer a{transition:none!important;transform:none!important}.js .reveal.is-armed{opacity:1;transform:none}}
+/* fix: dopasowanie naglowkow do szerokosci (Syne 800: "Wdrożenia" = ok. 8,41em) */
+h1,h2,h3{overflow-wrap:break-word}
+.hero h1{max-width:8.7em}.hero .t-display{font-size:clamp(2rem,7vw,7rem)}
+.hero__mark{width:clamp(240px,34vw,560px);right:-6vw;top:clamp(110px,12vw,170px)}
+.contact h2{max-width:none;font-size:clamp(1.9rem,3.3vw,2.875rem)}
+@media(max-width:700px){.hero .t-display{font-size:10.2vw}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="dafa0028-72b2-44c8-8e10-4a8a624410fc"></script>
 <script defer src="site.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav">
+<nav class="nav" aria-label="Main">
   <a href="en.html" aria-label="Optimattic - home"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
-    <nav class="nav__links" aria-label="Main"><a class="nav__link" href="marketing-en.html">Services</a><a class="nav__link" href="case-en.html">Case study</a></nav>
+    <div class="nav__links">
+      <a class="nav__link" href="#kiedy">What I do</a>
+      <a class="nav__link" href="#jak">How I work</a>
+      <a class="nav__link" href="meta-en.html">Meta ads</a>
+      <a class="nav__link" href="case-en.html">Case study</a>
+    </div>
     <a class="btn btn--sm" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
-    <a class="lang" href="index.html" hreflang="pl" aria-label="Wersja polska">PL</a>
+    <a class="lang" href="index.html" hreflang="pl" aria-label="Polish version">PL</a>
   </div>
-</header>
+</nav>
 <main id="main">
-
-<section class="wrap hero">
-  <p class="eyebrow">Sales measurement + Meta ads</p>
-  <h1 class="t-display">You know what you spend. See what comes <em>back</em>.</h1>
-  <p class="lead muted">I run Meta ads and connect their cost to actual payments. You see separately what Meta claims for itself and how much money really came in.</p>
-  <div class="btn-row">
-    <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
-    <a class="btn btn--ghost" href="marketing-en.html#audyt" data-umami-event="audit-scope">Audit - PLN 2,900</a>
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="hero__mark" viewBox="0 0 180 180" aria-hidden="true" focusable="false"><circle cx="85" cy="85" r="58" fill="none" stroke="#38B76F" stroke-width="18"/><rect x="15" y="70" width="30" height="5" fill="#FFFFFF"/><rect x="125" y="70" width="30" height="5" fill="#FFFFFF"/><circle cx="143" cy="138" r="12" fill="#38B76F"/></svg>
+  <div class="wrap hero__inner">
+    <h1 class="t-display" id="hero-title">AI implementation in companies<span>.</span></h1>
+    <p class="hero__lead">I make AI take repetitive work off your team - in a few weeks, not half a year.</p>
+    <div class="hero__actions"><a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a><a class="textlink" href="#kiedy">See client results</a></div>
   </div>
 </section>
-
-<section class="wrap dense proof reveal" aria-label="Case study results">
-  <div class="proof__grid">
-    <div class="proof__item"><span class="proof__num">-45%</span><span>cost to acquire a new customer</span></div>
-    <div class="proof__item"><span class="proof__num">x3.3</span><span>new customers from ads, with an 81% higher budget</span></div>
-    <div class="proof__item"><span class="proof__num">3x</span><span>how much the ad platform overstated the result</span></div>
-  </div>
-  <p class="proof__caption">Subscription training platform, 2 months, counted from first payments. <a class="textlink" href="case-en.html">Read the case study</a></p>
+<section class="section wrap" id="kiedy" aria-labelledby="kiedy-title">
+  <div class="section-heading reveal"><h2 class="t-head" id="kiedy-title">When it makes sense to talk</h2><p>I start with a problem I hear from business owners. Then I choose the technology.</p></div>
+  <div class="problem reveal"><h3 class="problem__quote">"Our salespeople don't have time to find new customers."</h3><div class="problem__right"><p>I build a system that finds companies, checks them and prepares personalised emails. The salesperson gets a company profile and a ready first email.</p><strong class="problem__number">8 clients</strong><span class="problem__caption">in 3 months, window coverings manufacturer, B2B</span></div></div>
+  <div class="problem reveal"><h3 class="problem__quote">"We spend on ads and don't know what comes back."</h3><div class="problem__right"><p>I connect ad spend to actual payments and run campaigns using that data, rather than numbers from the ad platform.</p><strong class="problem__number">-45%</strong><span class="problem__caption">customer acquisition cost, subscription platform</span><a class="textlink" href="marketing-en.html#audyt" data-umami-event="audit-scope">Meta ads and measurement audit</a></div></div>
+  <div class="problem reveal"><h3 class="problem__quote">"No one here has time to write content for the website."</h3><div class="problem__right"><p>I set up an automated process that prepares SEO articles and publishes them on the website. Someone on the team only needs to approve them.</p><strong class="problem__number">Google Discover</strong><span class="problem__caption">article featured by Google, bicycle manufacturer</span></div></div>
 </section>
-
-
-<section class="signal" id="pomiar" aria-labelledby="signal-title">
-  <div class="wrap">
-    <div class="eyebrow signal__eyebrow">The core</div>
-    <h2 id="signal-title" class="signal__row">
-      <span>
-        <span class="signal__num">99</span>
-        <span class="signal__label">purchases according to Meta</span>
-      </span>
-      <span class="signal__kept">
-        <span class="signal__num signal__num--kept"><span class="signal__approx">about</span>33</span>
-        <span class="signal__label">confirmed by payment</span>
-      </span>
-    </h2>
-    <div class="dots" role="img" aria-label="99 purchases according to Meta, about 33 confirmed by payment"><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot" style="--i:0"></span><span class="dot dot--lost" style="--i:0"></span><span class="dot dot--lost" style="--i:1"></span><span class="dot dot--lost" style="--i:2"></span><span class="dot dot--lost" style="--i:3"></span><span class="dot dot--lost" style="--i:4"></span><span class="dot dot--lost" style="--i:5"></span><span class="dot dot--lost" style="--i:6"></span><span class="dot dot--lost" style="--i:7"></span><span class="dot dot--lost" style="--i:8"></span><span class="dot dot--lost" style="--i:9"></span><span class="dot dot--lost" style="--i:10"></span><span class="dot dot--lost" style="--i:11"></span><span class="dot dot--lost" style="--i:12"></span><span class="dot dot--lost" style="--i:13"></span><span class="dot dot--lost" style="--i:14"></span><span class="dot dot--lost" style="--i:15"></span><span class="dot dot--lost" style="--i:16"></span><span class="dot dot--lost" style="--i:17"></span><span class="dot dot--lost" style="--i:18"></span><span class="dot dot--lost" style="--i:19"></span><span class="dot dot--lost" style="--i:20"></span><span class="dot dot--lost" style="--i:21"></span><span class="dot dot--lost" style="--i:22"></span><span class="dot dot--lost" style="--i:23"></span><span class="dot dot--lost" style="--i:24"></span><span class="dot dot--lost" style="--i:25"></span><span class="dot dot--lost" style="--i:26"></span><span class="dot dot--lost" style="--i:27"></span><span class="dot dot--lost" style="--i:28"></span><span class="dot dot--lost" style="--i:29"></span><span class="dot dot--lost" style="--i:30"></span><span class="dot dot--lost" style="--i:31"></span><span class="dot dot--lost" style="--i:32"></span><span class="dot dot--lost" style="--i:33"></span><span class="dot dot--lost" style="--i:34"></span><span class="dot dot--lost" style="--i:35"></span><span class="dot dot--lost" style="--i:36"></span><span class="dot dot--lost" style="--i:37"></span><span class="dot dot--lost" style="--i:38"></span><span class="dot dot--lost" style="--i:39"></span><span class="dot dot--lost" style="--i:40"></span><span class="dot dot--lost" style="--i:41"></span><span class="dot dot--lost" style="--i:42"></span><span class="dot dot--lost" style="--i:43"></span><span class="dot dot--lost" style="--i:44"></span><span class="dot dot--lost" style="--i:45"></span><span class="dot dot--lost" style="--i:46"></span><span class="dot dot--lost" style="--i:47"></span><span class="dot dot--lost" style="--i:48"></span><span class="dot dot--lost" style="--i:49"></span><span class="dot dot--lost" style="--i:50"></span><span class="dot dot--lost" style="--i:51"></span><span class="dot dot--lost" style="--i:52"></span><span class="dot dot--lost" style="--i:53"></span><span class="dot dot--lost" style="--i:54"></span><span class="dot dot--lost" style="--i:55"></span><span class="dot dot--lost" style="--i:56"></span><span class="dot dot--lost" style="--i:57"></span><span class="dot dot--lost" style="--i:58"></span><span class="dot dot--lost" style="--i:59"></span><span class="dot dot--lost" style="--i:60"></span><span class="dot dot--lost" style="--i:61"></span><span class="dot dot--lost" style="--i:62"></span><span class="dot dot--lost" style="--i:63"></span><span class="dot dot--lost" style="--i:64"></span><span class="dot dot--lost" style="--i:65"></span></div>
-    <p class="signal__note">That was the ratio on a client's account: for every three purchases Meta reported, one could be confirmed by payment. This does not mean the ads were not working - it means the budget was being set on a number nobody had verified.</p>
-  </div>
-</section>
-
-<section class="wrap dense reveal" aria-labelledby="audit-home-title">
-  <div class="audit-box">
-    <p class="eyebrow">Services</p>
-    <h2 class="t-head" id="audit-home-title" style="margin-bottom:18px">Meta Ads and measurement audit</h2>
-    <p class="lead muted">In 5 business days I check how many purchases reported by Meta appear in your payment system, where budget leaks and which creatives actually drive the result.</p>
-    <p class="muted" style="margin-top:16px;max-width:62ch">An 8-10 page report, a list of fixes ordered by impact, a 30-day plan, 3 recording briefs and a one-hour review. If I do not find three specific fixes, I refund your money.</p>
-    <p class="audit-price">PLN 2,900 net, paid upfront. The amount comes off the first invoice if we continue working together.</p>
-    <div class="btn-row">
-      <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Book 15 minutes</a>
-      <a class="btn btn--ghost" href="marketing-en.html#audyt" data-umami-event="audit-scope">See the full scope</a>
-    </div>
-  </div>
-</section>
-
-<section class="wrap quiet reveal">
-  <p class="statement">Ads optimise on the data they are given. If the data is <em>inflated</em>, so is the budget.</p>
-</section>
-
-<section class="wrap dense reveal" id="co-robie" aria-labelledby="co-robie-title">
-  <h2 class="t-head" id="co-robie-title" style="margin-bottom:16px">What I do</h2>
-  <p class="lead muted" style="margin-bottom:clamp(32px,5vw,48px)">Three parts of one system. Usually implemented in this order.</p>
-  <div class="grid-3">
-    <div class="card">
-      <div class="card__num">01</div>
-      <h3 class="t-sub">Sales measurement</h3>
-      <p>I connect the ad account to the system where the money actually lands. You stop trusting a single number from the dashboard.</p>
-      <ul class="list"><li>server-side measurement, resistant to browser blocking</li><li>what Meta reports set side by side with what actually came in</li><li>cost per acquisition counted from the first real payment</li></ul>
-    </div>
-    <div class="card">
-      <div class="card__num">02</div>
-      <h3 class="t-sub">Meta ads</h3>
-      <p>I run the account on the data from step one, not on what Ads Manager shows.</p>
-      <ul class="list"><li>rebuilding the account structure where it is needed</li><li>creative direction, briefs and a list of material to record</li><li>scaling based on cost, not on gut feeling</li></ul>
-    </div>
-    <div class="card card--mint">
-      <div class="card__num">03</div>
-      <h3 class="t-sub">Dashboard and decisions</h3>
-      <p>A dashboard where you see it yourself, without asking for a report.</p>
-      <ul class="list"><li>one place with cost, revenue and the gap between sources</li><li>for subscriptions: how much revenue drops out on failed payments and how much comes back</li><li>weekly decisions instead of a monthly PDF</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="band-gray">
-  <div class="wrap quiet split reveal">
-    <div>
-      <h2 class="t-head" style="margin-bottom:16px">Who it is for</h2>
-      <p class="lead muted">Businesses where money comes back every month, and creators selling their own product. What they share is that the revenue is already there, and the problem is that nobody knows exactly where it comes from.</p>
-    </div>
-    <div class="split" style="gap:clamp(24px,4vw,40px)">
-      <div>
-        <h3 class="t-sub" style="margin-bottom:16px">A fit</h3>
-        <ul class="list list--lg">
-          <li>subscription, membership, repeat purchase</li>
-          <li>creators selling their own digital product</li>
-          <li>payment happens outside your own website</li>
-          <li>a sensible margin once product cost is deducted</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="t-sub" style="margin-bottom:16px">Not a fit</h3>
-        <ul class="list list--muted list--lg">
-          <li>before the first sale</li>
-          <li>one-off sales with no repeat business</li>
-          <li>margins in the low teens, where my fee has no way of paying for itself</li>
-          <li>expecting the audit to confirm a conclusion you have already reached</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap dense reveal">
-  <div class="split" style="align-items:end">
-    <h2 class="t-head">How this looks with a client</h2>
-    <div><p class="muted" style="margin-bottom:12px">After taking over the account and fixing measurement, the cost to acquire a new customer fell by 45%, while the number of new customers from ads grew 3.3 times in two months.</p><a class="textlink" href="case-en.html">Read the case study</a></div>
-  </div>
-</section>
-
-
-<section class="wrap dense" id="kontakt" aria-labelledby="kontakt-title">
-  <h2 class="t-head" id="kontakt-title" style="margin-bottom:16px">Let's talk</h2>
-  <p class="lead muted form-intro" style="margin-bottom:clamp(32px,5vw,48px)">Five fields. After sending, you pick a 15-minute slot right away.</p>
-  <form class="form" method="POST" action="https://formspree.io/f/mykjnzey">
-    <input type="hidden" name="_subject" value="Optimattic - enquiry from homepage">
-      <div class="field">
-        <label for="name">First name</label>
-        <input type="text" id="name" name="name" required autocomplete="given-name" placeholder="Your first name">
-      </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="you@email.com">
-      </div>
-      <div class="field">
-        <label for="biznes">Type of business</label>
-        <select id="biznes" name="biznes" required>
-          <option value="" disabled selected>Select</option>
-          <option>Subscription / membership</option>
-          <option>Creator selling own product</option>
-          <option>E-commerce</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="budzet">Current ad spend</label>
-        <select id="budzet" name="budzet" required>
-          <option value="" disabled selected>Select</option>
-          <option>Not advertising yet</option>
-          <option>under PLN 5,000 / month</option>
-          <option>PLN 5,000 - 20,000 / month</option>
-          <option>PLN 20,000 - 50,000 / month</option>
-          <option>over PLN 50,000 / month</option>
-        </select>
-      </div>
-      <div class="field field--full">
-        <label for="kontekst">One line of context</label>
-        <textarea id="kontekst" name="kontekst" rows="3" placeholder="e.g. I have no idea which campaigns actually bring subscriptions"></textarea>
-      </div>
-      <div class="form-foot">
-        <button type="submit" class="btn">Send and pick a time</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </div>
-      <input type="hidden" name="utm_source" value="">
-      <input type="hidden" name="utm_medium" value="">
-      <input type="hidden" name="utm_campaign" value="">
-      <input type="hidden" name="utm_content" value="">
-      <input type="hidden" name="utm_term" value="">
-      <input type="hidden" name="strona" value="">
-  </form>
-  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Prefer to book right away? Pick a 15-minute slot in the calendar</a></p>
-  <div class="form-result" tabindex="-1" hidden>
-    <p>Thanks, I will reply within one business day. The fastest option is to pick a 15-minute slot now. Before the call, I will review your ads in the Meta Ad Library.</p>
-    <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Pick a time</a>
-  </div>
-</section>
-<script>
-(function(){
-  var form = document.querySelector('.form'); if(!form) return;
-  try{
-    var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-    var qs = new URLSearchParams(window.location.search), saved = null;
-    var hasUtm = keys.some(function(k){ return qs.has(k); });
-    if(hasUtm){
-      saved = {};
-      keys.forEach(function(k){ saved[k] = (qs.get(k) || '').slice(0,200); });
-      try{ sessionStorage.setItem('optimattic_utm', JSON.stringify(saved)); }catch(storageError){}
-    }else{
-      try{ saved = JSON.parse(sessionStorage.getItem('optimattic_utm') || 'null'); }catch(storageError){}
-    }
-    keys.forEach(function(k){
-      var f = form.querySelector('input[name="'+k+'"]');
-      if(f) f.value = saved && typeof saved[k] === 'string' ? saved[k] : '';
-    });
-    var p = form.querySelector('input[name="strona"]');
-    if(p) p.value = window.location.pathname;
-  }catch(e){}
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]'), status = form.querySelector('.form-status'), label = btn.textContent;
-    var result = document.querySelector('.form-result'), formBooking = document.querySelector('.form-booking'), formIntro = document.querySelector('.form-intro');
-    btn.disabled = true; btn.textContent = 'Sending...'; status.className = 'form-status'; status.textContent = '';
-    fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })
-      .then(function(res){
-        if(res.ok){
-          form.reset(); form.hidden = true; form.style.display = 'none';
-          if(formIntro) formIntro.hidden = true;
-          if(formBooking) formBooking.hidden = true;
-          if(result){
-            result.hidden = false;
-            result.scrollIntoView({block:'center'});
-            result.focus({preventScroll:true});
-          }
-          if(window.umami && typeof window.umami.track === 'function') window.umami.track('form-submit-ok');
-        }else{
-          status.classList.add('err');
-          status.innerHTML = 'The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">pick a time in the calendar</a>.';
-        }
-      })
-      .catch(function(){
-        status.classList.add('err');
-        status.innerHTML = 'The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+BOOKING_URL+'" data-umami-event="booking-click" target="_blank" rel="noopener">pick a time in the calendar</a>.';
-      })
-      .then(function(){ btn.disabled = false; btn.textContent = label; });
-  });
-})();
-</script>
+<section class="section process" id="jak" aria-labelledby="jak-title"><div class="wrap"><h2 class="t-head reveal" id="jak-title">We start with one thing<span class="dot-green">.</span></h2><ol class="steps"><li class="reveal"><span class="steps__num">01</span><h3 class="t-sub">Consultation</h3><p>15 minutes on what your team does by hand. I tell you plainly where AI makes sense and where it doesn't.</p></li><li class="reveal"><span class="steps__num">02</span><h3 class="t-sub">Audit</h3><p>I look at one process through its numbers. You get a list of fixes ranked by impact and a 30-day plan.</p></li><li class="reveal"><span class="steps__num">03</span><h3 class="t-sub">Implementation</h3><p>A working system in a few weeks, connected to the tools you already use.</p></li><li class="reveal"><span class="steps__num">04</span><h3 class="t-sub">Team training</h3><p>A workshop using your own tasks. Everyone leaves with a process they can do faster from the next day.</p></li></ol></div></section>
+<section class="section wrap about" aria-labelledby="about-title"><div class="about__grid reveal"><h2 class="t-head" id="about-title">Who does it</h2><div><p class="about__lead">My name is Łukasz Ziółkowski and I run Optimattic. For 10 years I built e-commerce: a brand from zero to PLN 45 million in annual revenue across 5 European markets. Today I combine that experience with AI.</p><p class="about__detail">I work from Toruń, Poland, with companies across Poland. One person from the first call to implementation, with no handoffs.</p></div></div></section>
+<section class="section wrap faq" id="faq" aria-labelledby="faq-title"><h2 class="t-head reveal" id="faq-title">Questions before we talk</h2><div class="faq__item reveal"><h3 class="t-sub">Where do we start?</h3><p>With a 15-minute call about one process your team handles manually every day. If AI makes sense there, I suggest an audit of that process. If it doesn't, I say so right away.</p></div><div class="faq__item reveal"><h3 class="t-sub">How long does implementation take?</h3><p>The first working system usually takes a few weeks. We start with one process and add more when the first produces a measurable result.</p></div><div class="faq__item reveal"><h3 class="t-sub">Do we need to change our tools?</h3><p>Usually not. I connect to what you already use: email, CRM, your online store and spreadsheets.</p></div><div class="faq__item reveal"><h3 class="t-sub">What if AI doesn't make sense for us?</h3><p>I will tell you on our first call. An implementation without a measurable result is not worthwhile for either side.</p></div></section>
+<section class="section contact" id="kontakt" aria-labelledby="kontakt-title"><div class="wrap contact__grid"><div class="reveal"><h2 class="t-head" id="kontakt-title">Let's talk for 15 minutes<span class="dot-green">.</span></h2><p class="contact__intro form-intro">Four fields. After you send the form, I will show a calendar link so you can choose a time right away.</p><div class="contact__details"><a href="mailto:hello@optimattic.com">hello@optimattic.com</a></div></div><div class="reveal"><form class="form" method="POST" action="https://formspree.io/f/mykjnzey"><input type="hidden" name="_subject" value="Optimattic - inquiry from the English homepage"><div class="field"><label for="name">First name</label><input type="text" id="name" name="name" required autocomplete="given-name" aria-describedby="name-error"><span class="field-error" role="alert" id="name-error"></span></div><div class="field"><label for="email">E-mail</label><input type="email" id="email" name="email" required autocomplete="email" inputmode="email" aria-describedby="email-error"><span class="field-error" role="alert" id="email-error"></span></div><div class="field field--full"><label for="topic">What is this about?</label><select id="topic" name="topic" required aria-describedby="topic-error"><option value="" disabled selected>Choose one</option><option>B2B customer acquisition</option><option>Ads and sales measurement</option><option>Content and marketing</option><option>Team training</option><option>I am not sure yet</option></select><span class="field-error" role="alert" id="topic-error"></span></div><div class="field field--full"><label for="manual">What does your team do manually today?</label><textarea id="manual" name="manual" rows="3"></textarea></div><div class="form-foot"><button type="submit" class="btn">Send and choose a time</button><p class="form-status" role="status" aria-live="polite"></p></div><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="strona" value=""></form><div class="form-result" tabindex="-1" hidden><p>Thank you for your message. Choose a time for a 15-minute call in the calendar.</p><a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Choose a time</a></div></div></div></section>
 </main>
-
-<footer class="footer">
-  <div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div>
-  <div class="footer__links">
-    <a href="mailto:hello@optimattic.com">hello@optimattic.com</a>
-    <a href="marketing-en.html">Services</a>
-    <a href="case-en.html">Case study</a>
-    <a href="polityka-prywatnosci-aplikacji.html">Privacy policy</a>
-  </div>
-</footer>
+<footer class="footer"><div class="footer__brand"><img src="favicon.png" alt="" width="18" height="18"><span>© 2026 Optimattic</span></div><div class="footer__links"><a href="meta-en.html">Meta ads</a><a href="case-en.html">Case study</a><a href="polityka-prywatnosci-aplikacji.html">Privacy policy</a></div></footer>
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var targets = [].slice.call(document.querySelectorAll('.signal, .reveal'));
-  if (!('IntersectionObserver' in window) || reduce) return;
-  function disarm(el){ el.classList.remove('is-armed'); }
-  targets.forEach(function(el){
-    // only arm what is still below the fold; anything at or above the viewport stays final
-    if (el.getBoundingClientRect().top > window.innerHeight * 0.9) el.classList.add('is-armed');
-  });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting || e.boundingClientRect.top < 0){ disarm(e.target); io.unobserve(e.target); }
+  var header = document.querySelector('.nav');
+  if(header){
+    var setHeaderHeight = function(){document.documentElement.style.setProperty('--header-height',header.getBoundingClientRect().height+'px');};
+    setHeaderHeight();
+    if('ResizeObserver' in window) new ResizeObserver(setHeaderHeight).observe(header);
+    else window.addEventListener('resize',setHeaderHeight);
+  }
+  var bookingUrl = typeof BOOKING_URL !== 'undefined' ? BOOKING_URL : 'https://calendar.app.google/GWuQbhH2p4hGBfy58';
+  var form = document.querySelector('.form');
+  if(form){
+    try{
+      var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+      var qs = new URLSearchParams(window.location.search), saved = null;
+      var hasUtm = keys.some(function(k){ return qs.has(k); });
+      if(hasUtm){
+        saved = {};
+        keys.forEach(function(k){ saved[k] = (qs.get(k) || '').slice(0,200); });
+        try{ sessionStorage.setItem('optimattic_utm', JSON.stringify(saved)); }catch(storageError){}
+      }else{
+        try{ saved = JSON.parse(sessionStorage.getItem('optimattic_utm') || 'null'); }catch(storageError){}
+      }
+      keys.forEach(function(k){
+        var field = form.querySelector('input[name="'+k+'"]');
+        if(field) field.value = saved && typeof saved[k] === 'string' ? saved[k] : '';
+      });
+      var pathField = form.querySelector('input[name="strona"]');
+      if(pathField) pathField.value = window.location.pathname;
+    }catch(e){}
+    function setFieldError(field){
+      var message = field.validity.valueMissing ? 'Please fill in this field.' : field.validity.typeMismatch ? 'Please enter a valid email address.' : field.validationMessage;
+      field.setAttribute('aria-invalid','true');
+      var error = document.getElementById(field.id+'-error');
+      if(error) error.textContent = message;
+    }
+    form.addEventListener('invalid',function(e){setFieldError(e.target);},{capture:true});
+    function clearFieldError(e){
+      var field=e.target;
+      if(field.validity && field.validity.valid){
+        field.removeAttribute('aria-invalid');
+        var error=document.getElementById(field.id+'-error');
+        if(error) error.textContent='';
+      }
+    }
+    form.addEventListener('input',clearFieldError);
+    form.addEventListener('change',clearFieldError);
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=form.querySelector('button[type=submit]'), status=form.querySelector('.form-status'), label=btn.textContent;
+      var result=document.querySelector('.form-result'), formIntro=document.querySelector('.form-intro');
+      btn.disabled=true;btn.textContent='Sending...';status.className='form-status';status.textContent='';
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+        .then(function(res){
+          if(res.ok){
+            form.reset();form.hidden=true;
+            if(formIntro) formIntro.hidden=true;
+            if(result){result.hidden=false;result.scrollIntoView({block:'center'});result.focus({preventScroll:true});}
+            if(window.umami && typeof window.umami.track==='function') window.umami.track('form-submit-ok');
+          }else{
+            status.classList.add('err');
+            status.innerHTML='The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+bookingUrl+'" data-umami-event="booking-click" target="_blank" rel="noopener">choose a time in the calendar</a>.';
+          }
+        })
+        .catch(function(){
+          status.classList.add('err');
+          status.innerHTML='The message could not be sent. Email <a href="mailto:hello@optimattic.com">hello@optimattic.com</a> or <a href="'+bookingUrl+'" data-umami-event="booking-click" target="_blank" rel="noopener">choose a time in the calendar</a>.';
+        })
+        .then(function(){btn.disabled=false;btn.textContent=label;});
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
-  targets.forEach(function(el){ io.observe(el); });
-  // safety net: nothing may stay invisible (fast scroll, hash jump, restored scroll position)
-  window.setTimeout(function(){ targets.forEach(disarm); }, 4000);
-  window.addEventListener('hashchange', function(){ targets.forEach(disarm); });
+  }
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var targets=[].slice.call(document.querySelectorAll('.reveal'));
+  targets.forEach(function(el){if(el.getBoundingClientRect().top>window.innerHeight*.9) el.classList.add('is-armed');});
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting || entry.boundingClientRect.top<0){entry.target.classList.remove('is-armed');observer.unobserve(entry.target);}});},{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+  targets.forEach(function(el){observer.observe(el);});
+  window.setTimeout(function(){targets.forEach(function(el){el.classList.remove('is-armed');});},4000);
+  window.addEventListener('hashchange',function(){targets.forEach(function(el){el.classList.remove('is-armed');});});
 })();
 </script>
 </body>

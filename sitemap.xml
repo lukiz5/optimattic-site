@@ -11,12 +11,23 @@
 
   <url>
     <loc>https://optimattic.com/meta.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://optimattic.com/meta.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://optimattic.com/meta-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://optimattic.com/meta.html" />
+  </url>
+
+  <url>
+    <loc>https://optimattic.com/meta-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://optimattic.com/meta.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://optimattic.com/meta-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://optimattic.com/meta.html" />
   </url>
 
   <url>
     <loc>https://optimattic.com/en.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://optimattic.com/en.html" />
     <xhtml:link rel="alternate" hreflang="pl" href="https://optimattic.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://optimattic.com/" />
   </url>
 
   <url>
