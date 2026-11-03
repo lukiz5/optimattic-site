@@ -62,6 +62,7 @@ p,ul,ol{margin:0}
 .grid-3>*{background:var(--white);padding:clamp(24px,3.2vw,36px)}
 .split{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
 
+[id]{scroll-margin-top:86px}
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
@@ -211,7 +212,8 @@ p,ul,ol{margin:0}
 .footer__links{display:flex;flex-wrap:wrap;gap:22px}
 
 @media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
-@media (max-width:600px){.nav{padding-left:12px;padding-right:12px;gap:6px}.nav img{height:24px}.nav__right{gap:6px}.nav__links{gap:12px}.nav__right>.btn--sm{display:none}}
+@media (max-width:600px){.nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:0 6px;padding:4px 12px}.nav img{height:clamp(18px,5vw,22px)}.nav__right{display:contents}.nav__links{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 12px}.nav__link{display:inline-flex;align-items:center;min-height:44px}.nav__right>.btn--sm{grid-column:2;grid-row:1;width:auto;height:44px;padding:0 9px;font-size:12px}.nav__right>.lang{grid-column:3;grid-row:1}}
+@media (max-width:600px){[id]{scroll-margin-top:114px}}
 
 /* ---------- fork (moment wyboru) ---------- */
 .fork{position:relative;padding-top:44px}
@@ -234,8 +236,8 @@ p,ul,ol{margin:0}
 <header class="nav">
   <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
-    <div class="nav__links"><span class="nav__link" aria-current="page">Oferta</span><a class="nav__link" href="case.html">Case study</a></div>
-    <a class="btn btn--sm" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+    <nav class="nav__links" aria-label="Główna"><span class="nav__link" aria-current="page">Oferta</span><a class="nav__link" href="case.html">Case study</a></nav>
+    <a class="btn btn--sm" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
     <a class="lang" href="marketing-en.html" hreflang="en" aria-label="English version">EN</a>
   </div>
 </header>
@@ -245,7 +247,7 @@ p,ul,ol{margin:0}
   <p class="eyebrow">Oferta</p>
   <h1 class="t-display">Meta pokazuje sprzedaż. Ja pokazuję, ile z niej <em>wpłynęło</em>.</h1>
   <p class="lead muted">Prowadzenie reklam Meta połączone z pomiarem faktycznych płatności. Przy subskrypcji dochodzi pilnowanie odnowień i nieudanych płatności. Dla biznesów subskrypcyjnych i twórców sprzedających własny produkt.</p>
-  <div class="btn-row"><a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a></div>
+  <div class="btn-row"><a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a></div>
 </section>
 
 
@@ -327,7 +329,7 @@ p,ul,ol{margin:0}
       <h3 class="t-sub" style="margin-bottom:10px">Czego potrzebuję</h3>
       <ul class="list"><li>dostępu do odczytu konta reklamowego (rola Analityk), nic nie zmieniam na koncie w trakcie audytu</li><li>eksportu płatności z ostatnich 3 miesięcy i adresu strony</li><li>nie potrzebuję dostępu do systemu płatności ani do kodu</li><li>z Twojej strony to około 30 minut na start i godzina na omówienie</li></ul>
     </div>
-    <div class="btn-row" style="margin-top:clamp(32px,5vw,48px)"><a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a><a class="btn btn--ghost" href="#kontakt">Wypełnij formularz</a></div>
+    <div class="btn-row" style="margin-top:clamp(32px,5vw,48px)"><a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a><a class="btn btn--ghost" href="#kontakt">Wypełnij formularz</a></div>
   </div>
 </section>
 
@@ -431,10 +433,10 @@ p,ul,ol{margin:0}
       <input type="hidden" name="utm_term" value="">
       <input type="hidden" name="strona" value="">
   </form>
-  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wolisz od razu termin? Wybierz 15 minut w kalendarzu</a></p>
+  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wolisz od razu termin? Wybierz 15 minut w kalendarzu</a></p>
   <div class="form-result" tabindex="-1" hidden>
     <p>Dzięki, odpowiem w ciągu jednego dnia roboczego. Najszybciej będzie, jeśli od razu wybierzesz termin 15 minut. Przed rozmową przejrzę Twoje reklamy w bibliotece Meta.</p>
-    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wybierz termin</a>
+    <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wybierz termin</a>
   </div>
 </section>
 <script>
