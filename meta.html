@@ -67,6 +67,7 @@ p,ul,ol{margin:0}
 .grid-3>*{background:var(--white);padding:clamp(24px,3.2vw,36px)}
 .split{display:grid;gap:clamp(32px,6vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
 
+[id]{scroll-margin-top:86px}
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:12px var(--pad);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
@@ -90,6 +91,7 @@ p,ul,ol{margin:0}
 .btn--sm{height:44px;padding:0 20px;font-size:14px}
 .btn--ghost{background:transparent;color:var(--black);border-color:var(--border)}
 .btn--ghost:hover{background:transparent;color:var(--black);border-color:var(--black)}
+.btn--ghost:focus-visible{color:var(--black)}
 .btn--onDark{background:var(--green);border-color:var(--green);color:var(--black)}
 .btn--onDark:hover{background:var(--white);border-color:var(--white);color:var(--black)}
 .btn--outlineDark{background:transparent;color:var(--white);border-color:var(--gray)}
@@ -215,7 +217,8 @@ p,ul,ol{margin:0}
 .footer__links{display:flex;flex-wrap:wrap;gap:22px}
 
 @media (max-width:600px){.btn{width:100%}.btn--sm,.btn-row .btn{width:auto}.form-foot .btn{width:100%}}
-@media (max-width:600px){.nav{padding-left:12px;padding-right:12px;gap:6px}.nav img{height:24px}.nav__right{gap:6px}.nav__links{gap:12px}.nav__right>.btn--sm{display:none}}
+@media (max-width:600px){.nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:0 6px;padding:4px 12px}.nav img{height:clamp(18px,5vw,22px)}.nav__right{display:contents}.nav__links{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 12px}.nav__link{display:inline-flex;align-items:center;min-height:44px}.nav__right>.btn--sm{grid-column:2;grid-row:1;width:auto;height:44px;padding:0 9px;font-size:12px}.nav__right>.lang{grid-column:3;grid-row:1}}
+@media (max-width:600px){[id]{scroll-margin-top:114px}}
 
 /* ---------- fork (moment wyboru) ---------- */
 .fork{position:relative}
@@ -243,8 +246,8 @@ p,ul,ol{margin:0}
 <header class="nav">
   <a href="index.html" aria-label="Optimattic - strona główna"><img src="logo.png" alt="Optimattic" width="500" height="80"></a>
   <div class="nav__right">
-    <div class="nav__links"><a class="nav__link" href="marketing.html">Oferta</a><a class="nav__link" href="case.html">Case study</a></div>
-    <a class="btn btn--sm" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+    <nav class="nav__links" aria-label="Główna"><a class="nav__link" href="marketing.html">Oferta</a><a class="nav__link" href="case.html">Case study</a></nav>
+    <a class="btn btn--sm" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
     <a class="lang" href="en.html" hreflang="en" aria-label="English version">EN</a>
   </div>
 </header>
@@ -255,7 +258,7 @@ p,ul,ol{margin:0}
   <h1 class="t-display">Wiesz, ile wydajesz. Zobacz, ile z tego <em>wraca</em>.</h1>
   <p class="lead muted">Prowadzę reklamy Meta i łączę ich koszt z faktycznymi płatnościami. Widzisz osobno, co przypisuje sobie Meta i ile pieniędzy naprawdę wpłynęło.</p>
   <div class="btn-row">
-    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+    <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
     <a class="btn btn--ghost" href="marketing.html#audyt" data-umami-event="audit-scope">Audyt - 2 900 zł</a>
   </div>
 </section>
@@ -297,8 +300,8 @@ p,ul,ol{margin:0}
     <p class="muted" style="margin-top:16px;max-width:62ch">Raport 8-10 stron, lista napraw w kolejności wpływu, plan na 30 dni, 3 briefy do nagrania i godzina omówienia. Jeśli nie znajdę trzech konkretnych napraw, oddaję pieniądze.</p>
     <p class="audit-price">2 900 zł netto, płatne z góry. Kwota schodzi z pierwszej faktury, jeśli zostajemy na dłużej.</p>
     <div class="btn-row">
-      <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
-      <a class="btn btn--outlineDark" href="marketing.html#audyt" data-umami-event="audit-scope">Zobacz pełny zakres</a>
+      <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Umów 15 minut</a>
+      <a class="btn btn--ghost" href="marketing.html#audyt" data-umami-event="audit-scope">Zobacz pełny zakres</a>
     </div>
   </div>
 </section>
@@ -418,10 +421,10 @@ p,ul,ol{margin:0}
       <input type="hidden" name="utm_term" value="">
       <input type="hidden" name="strona" value="">
   </form>
-  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wolisz od razu termin? Wybierz 15 minut w kalendarzu</a></p>
+  <p class="form-booking muted" style="margin-top:18px"><a class="textlink" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wolisz od razu termin? Wybierz 15 minut w kalendarzu</a></p>
   <div class="form-result" tabindex="-1" hidden>
     <p>Dzięki, odpowiem w ciągu jednego dnia roboczego. Najszybciej będzie, jeśli od razu wybierzesz termin 15 minut. Przed rozmową przejrzę Twoje reklamy w bibliotece Meta.</p>
-    <a class="btn" href="#" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wybierz termin</a>
+    <a class="btn" href="https://calendar.app.google/GWuQbhH2p4hGBfy58" data-booking-url data-umami-event="booking-click" target="_blank" rel="noopener">Wybierz termin</a>
   </div>
 </section>
 <script>
