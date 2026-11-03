@@ -13,7 +13,8 @@
 - Treści SEO: artykuł polecany przez Google Discover, producent rowerów.
 
 ## English
-- [Optimattic in English](https://optimattic.com/en.html): AI implementation and Meta ads with payment-based measurement for Polish SMBs.
+- [Optimattic in English](https://optimattic.com/en.html): AI implementation for Polish SMBs - consultation, audit, implementation, team training.
+- [Meta ads and sales measurement](https://optimattic.com/meta-en.html): Meta ads run on payment data, server-side measurement, audit PLN 2,900 net.
 
 ## Kontakt
 - E-mail: hello@optimattic.com
